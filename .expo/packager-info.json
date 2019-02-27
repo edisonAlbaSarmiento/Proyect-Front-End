@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 47418,
-  "expoServerNgrokUrl": "https://w9-iff.anonymous.proyectuniversityfrontend.exp.direct",
-  "packagerNgrokUrl": "https://packager.w9-iff.anonymous.proyectuniversityfrontend.exp.direct",
-  "ngrokPid": 47434
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }
