@@ -1,11 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-
+import Login from './src/Components/Login'
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Red Social Politecnico Gran Colombiano Proximamente!</Text>
+        <Text>Red Social Politecnico Gran Colombiano!</Text>
+        <Login/>
       </View>
     );
   }
