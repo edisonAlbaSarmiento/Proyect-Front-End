@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, TextInput, TouchableHighlight, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableHighlight, Dimensions, ScrollView } from 'react-native';
 import { Button } from 'react-native-material-ui';
 
 class Login extends React.Component{
@@ -10,8 +10,15 @@ class Login extends React.Component{
         
 render(){
     return(
-        <View style={{flex: 1}}>
-            <View style={{flex: 3, backgroundColor: 'powderblue', width: 350, height: 150,
+    <ScrollView>
+        <View style={{
+          flex: 1,
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'stretch',
+        }}>
+          <View style={{height: 210, width:370, backgroundColor: 'steelblue'}} >
+          <View style={{flex: 3, backgroundColor: 'powderblue', width: 360, height: 150,
                 justifyContent: 'center',
                 alignItems: 'center'}} >
                 <TouchableHighlight
@@ -28,14 +35,14 @@ render(){
                     >
                         <Text> Imagen </Text>
                     </TouchableHighlight>
-                    <View style={{ backgroundColor:'yellow', width: 350, height: 50}}>
-                        <Text> Bienvenidos Egresados </Text>
-                    </View>
-
             </View>
-            <View style={{flex: 3, backgroundColor: 'skyblue'}} >
-                <TextInput
-                    style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+          </View>
+          <View style={{ flex: 1, height: 50, backgroundColor: 'red'}} >
+                <Text style={{textAlign:'center', padding: 8, color: 'white'}}> Bienvenidos Egresados </Text>
+          </View>
+          <View style={{height: 100, backgroundColor: 'green', alignItems:'center',justifyContent:'center'}} >
+          <TextInput
+                    style={{width:150,borderColor: 'gray', borderWidth: 1}}
                     onChangeText={(textUserName) => this.setState({textUserName})}
                     value={this.state.textUserName}
                 />
@@ -45,9 +52,10 @@ render(){
                     value={this.state.textPassword}
                 />
                 <Button raised primary text="Primary" />
-            </View>
-            <View style={{flex: 1, backgroundColor: 'steelblue'}} />
+          </View>
+          <View style={{flex: 1, height: 100, backgroundColor: 'yellow'}} />
         </View>
+    </ScrollView>
     )
     }
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import {Footer} from './style'
 import logo from '../../images/logo_poli_login.png'
 import fondo from '../../images/fondo.jpg'
+import Button from '@material-ui/core/Button';
 
 class Login extends React.Component{
     render(){
@@ -66,7 +67,13 @@ class Login extends React.Component{
                         <div style={{
                             padding: '13px'
                         }}>
-                            input
+                            <Button style={{backgroundColor:"#0F385A", color: 'white'}}>
+                                Ingresar
+                            </Button>
+                        </div>
+                        <div style={{
+                        }}>
+                                Olvido contraseña
                         </div>
                         <div style={{
                             display: 'flex',
