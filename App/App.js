@@ -33,6 +33,7 @@ const CustomDrawerComponent  = (props) => (
   </SafeAreaView>
 )
 const AppDrawerNavigator = createDrawerNavigator({
+  Login: Login,
   Home: HomeScreen,
   Settings: SettingsScreen
 },{

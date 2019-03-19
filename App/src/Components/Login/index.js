@@ -31,7 +31,7 @@ render(){
                         alignItems: 'center'
                         }}
                         underlayColor = '#ccc'
-                        onPress = { () => alert('Yaay!') }
+                        onPress = {() => this.props.navigation.navigate('Home')}
                     >
                         <Text> Imagen </Text>
                     </TouchableHighlight>
@@ -40,18 +40,28 @@ render(){
           <View style={{ flex: 1, height: 50, backgroundColor: 'red'}} >
                 <Text style={{textAlign:'center', padding: 8, color: 'white'}}> Bienvenidos Egresados </Text>
           </View>
-          <View style={{height: 100, backgroundColor: 'green', alignItems:'center',justifyContent:'center'}} >
-          <TextInput
-                    style={{width:150,borderColor: 'gray', borderWidth: 1}}
+          <View style={{height: 180, backgroundColor: 'green', alignItems:'center',justifyContent:'center'}} >
+                <TextInput
+                    style={{width:150, height: 40, borderColor: 'gray', borderWidth: 1, padding:10}}
                     onChangeText={(textUserName) => this.setState({textUserName})}
                     value={this.state.textUserName}
                 />
                 <TextInput
-                    style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+                    style={{width:150, height: 40, borderColor: 'gray', borderWidth: 1,  padding:10}}
                     onChangeText={(textPassword) => this.setState({textPassword})}
                     value={this.state.textPassword}
                 />
-                <Button raised primary text="Primary" />
+            <Button raised primary text="Primary" />
+            <Text>Olvido su Contraseña</Text>
+          <View style={{flexDirection:'row', padding: 2}}>
+            <View>
+                <Text>Terminos y Condiciones</Text>
+
+            </View>
+            <View>
+                <Text>Politicas de Privacidad</Text>
+          </View>
+            </View>
           </View>
           <View style={{flex: 1, height: 100, backgroundColor: 'yellow'}} />
         </View>
