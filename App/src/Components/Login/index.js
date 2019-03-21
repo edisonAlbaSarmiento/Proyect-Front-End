@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, TextInput, TouchableHighlight, Dimensions, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableHighlight, Dimensions, ScrollView,Image } from 'react-native';
 import { Button } from 'react-native-material-ui';
 
 class Login extends React.Component{
@@ -18,7 +18,7 @@ render(){
           alignItems: 'stretch',
         }}>
           <View style={{height: 210, width:370, backgroundColor: 'steelblue'}} >
-          <View style={{flex: 3, backgroundColor: 'powderblue', width: 360, height: 150,
+          <View style={{flex: 3, backgroundColor: 'powderblue', width: 360,
                 justifyContent: 'center',
                 alignItems: 'center'}} >
                 <TouchableHighlight
@@ -26,23 +26,24 @@ render(){
                         borderRadius: Math.round(Dimensions.get('window').width + Dimensions.get('window').height) / 2,
                         width: Dimensions.get('window').width * 0.5,
                         height: Dimensions.get('window').width * 0.5,
-                        backgroundColor:'#f00',
+                        backgroundColor:'white',
                         justifyContent: 'center',
                         alignItems: 'center'
                         }}
                         underlayColor = '#ccc'
                         onPress = {() => this.props.navigation.navigate('Home')}
                     >
-                        <Text> Imagen </Text>
+                      <Image source={require('../../../assets/logoPoli.png')}
+                      />
                     </TouchableHighlight>
             </View>
           </View>
-          <View style={{ flex: 1, height: 50, backgroundColor: 'red'}} >
+          <View style={{ flex: 1, height: 50, backgroundColor: '#0F385A'}} >
                 <Text style={{textAlign:'center', padding: 8, color: 'white'}}> Bienvenidos Egresados </Text>
           </View>
-          <View style={{height: 180, backgroundColor: 'green', alignItems:'center',justifyContent:'center'}} >
+          <View style={{height: 190, backgroundColor: 'green', alignItems:'center',justifyContent:'center'}} >
                 <TextInput
-                    style={{width:150, height: 40, borderColor: 'gray', borderWidth: 1, padding:10}}
+                    style={{width:170, height: 40, borderColor: 'gray', borderWidth: 1, padding:10}}
                     onChangeText={(textUserName) => this.setState({textUserName})}
                     value={this.state.textUserName}
                 />
@@ -63,7 +64,7 @@ render(){
           </View>
             </View>
           </View>
-          <View style={{flex: 1, height: 100, backgroundColor: 'yellow'}} />
+          <View style={{flex: 1, height: 150, backgroundColor: 'yellow'}} />
         </View>
     </ScrollView>
     )

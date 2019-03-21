@@ -21,9 +21,7 @@ const CustomDrawerComponent  = (props) => (
     <View style={{
       height:150,  backgroundColor: 'white',  alignItems: 'center', justifyContent: 'center'
     }}>
-      <Image source={require('./assets/logoPoli.png')} style={{
-        height: 120, width: 120, borderRadius: 60
-      }}
+      <Image source={require('./assets/logoPoli.png')}
       />
     </View>
     <ScrollView>
@@ -34,8 +32,8 @@ const CustomDrawerComponent  = (props) => (
 )
 const AppDrawerNavigator = createDrawerNavigator({
   Login: Login,
-  Home: HomeScreen,
-  Settings: SettingsScreen
+  Noticias: HomeScreen,
+  Eventos: SettingsScreen
 },{
   contentComponent: CustomDrawerComponent,
   contentOptions: {
