@@ -1,11 +1,21 @@
 import React from 'react';
 import { List, Datagrid, TextField, EmailField, 
 EditButton, Edit, SimpleForm, DisabledInput, ReferenceInput, SelectInput,
-TextInput,LongTextInput, Create
+TextInput,LongTextInput, Create, Filter
 } from 'react-admin';
 
+const PostFilter = (props) => (
+    <Filter {...props}>
+        <TextInput label="Search" source="q" alwaysOn />
+        <ReferenceInput label="User" source="userId" reference="users" allowEmpty>
+            <SelectInput optionText="name" />
+        </ReferenceInput>
+    </Filter>
+);
+
+
 export const UserList = props => (
-    <List {...props}>
+    <List {...props} filters={<PostFilter />}>
         <Datagrid rowClick="edit">
             <TextField source="id" />
             <TextField source="name" />
