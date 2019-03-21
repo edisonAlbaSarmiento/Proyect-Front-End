@@ -4,7 +4,8 @@ import logo from '../../images/logo_poli_login.png'
 import fondo from '../../images/fondo.jpg'
 import TextField from '@material-ui/core/TextField'; 
 import InputAdornment from '@material-ui/core/InputAdornment';
-
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 
 class Login extends React.Component{
     render(){
@@ -63,29 +64,41 @@ class Login extends React.Component{
           ),
         }}
       />
-         <div className={classes.margin}>
+                <div style={{
+                        height: '73px',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+         <div style={{
+                        height: '16px',
+                        background: '#ffff',
+                        width: '16px',
+                        borderRadius: '20px',
+                        padding: '3px',
+                        marginLeft: '83px'
+                        
+                    }}></div>
               <Grid container spacing={8} alignItems="flex-end">
               <Grid item>
-              <AccountCircle />
               </Grid>
               <Grid item>
               <TextField id="input-with-icon-grid" label="With a grid" />  
               </Grid>
               </Grid>
               </div>
-              </div>
-                        <div style={{
-                            padding: '16px'
+
+              
+                        
+<div style={{ 
+                        height: '43px',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        
                         }}>
-                            input
-                        </div>
-                        render() {
-                      
-}
-<div style={{
-                        }}>
-                                <a href='/home'> Olvido contraseña</a>
-                        </div>
+    <Button variant="contained" color="white">
+        Ingresar
+      </Button>                        </div>
      
       
                         <div style={{
