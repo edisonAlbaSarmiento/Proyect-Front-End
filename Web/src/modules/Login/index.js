@@ -2,7 +2,9 @@ import React from 'react'
 import {Footer} from './style'
 import logo from '../../images/logo_poli_login.png'
 import fondo from '../../images/fondo.jpg'
-import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField'; 
+import InputAdornment from '@material-ui/core/InputAdornment';
+
 
 class Login extends React.Component{
     render(){
@@ -49,31 +51,50 @@ class Login extends React.Component{
                         borderRadius: '23px',
                         padding: '3px'
                     }}> 
+     <TextField
+             
+              id="input-with-icon-textfield"
+              label="TextField"
+              InputProps={{
+              startAdornment: (
+              <InputAdornment position="start">
+              
+            </InputAdornment>
+          ),
+        }}
+      />
+         <div className={classes.margin}>
+              <Grid container spacing={8} alignItems="flex-end">
+              <Grid item>
+              <AccountCircle />
+              </Grid>
+              <Grid item>
+              <TextField id="input-with-icon-grid" label="With a grid" />  
+              </Grid>
+              </Grid>
+              </div>
+              </div>
                         <div style={{
-                            padding: '13px'
+                            padding: '16px'
                         }}>
                             input
                         </div>
-                        <div style={{
-                            padding: '13px'
+                        render() {
+                      
+}
+<div style={{
                         }}>
-                            input
+                                <a href='/home'> Olvido contraseña</a>
                         </div>
+     
+      
                         <div style={{
-                            padding: '13px'
+                            padding: '16px'
                         }}>
-                            input
-                        </div>
-                        <div style={{
-                            padding: '13px'
-                        }}>
-                            <Button style={{backgroundColor:"#0F385A", color: 'white'}}>
-                                Ingresar
-                            </Button>
                         </div>
                         <div style={{
                         }}>
-                                Olvido contraseña
+                                <a href='/home'> Olvido contraseña</a>
                         </div>
                         <div style={{
                             display: 'flex',
