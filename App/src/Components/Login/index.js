@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, TextInput, TouchableHighlight, Dimensions, ScrollView,Image } from 'react-native';
 import { Button } from 'react-native-material-ui';
+import { Container, Header, Content, Item, Input, Icon } from 'native-base';
 
 class Login extends React.Component{
     constructor(props) {
@@ -42,6 +43,10 @@ render(){
                 <Text style={{textAlign:'center', padding: 8, color: 'white'}}> Bienvenidos Egresados </Text>
           </View>
           <View style={{height: 190, backgroundColor: 'green', alignItems:'center',justifyContent:'center'}} >
+          <Item>
+            <Icon active name='home' />
+            <Input placeholder='Icon Textbox'/>
+          </Item>
                 <TextInput
                     style={{width:170, height: 40, borderColor: 'gray', borderWidth: 1, padding:10}}
                     onChangeText={(textUserName) => this.setState({textUserName})}
