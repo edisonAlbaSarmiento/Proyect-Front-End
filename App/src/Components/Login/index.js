@@ -31,7 +31,7 @@ render(){
                         alignItems: 'center'
                         }}
                         underlayColor = '#ccc'
-                        onPress = {() => this.props.navigation.navigate('Home')}
+                        onPress = {() => this.props.navigation.navigate('Noticias')}
                     >
                       <Image source={require('../../../assets/logoPoli.png')}
                       />
@@ -54,12 +54,12 @@ render(){
                 />
             <Button raised primary text="Primary" />
             <Text>Olvido su Contraseña</Text>
-          <View style={{flexDirection:'row', padding: 2}}>
-            <View>
+          <View style={{flex: 1, flexDirection:'row',justifyContent: 'space-between'}}>
+            <View style={{padding: 5}}>
                 <Text>Terminos y Condiciones</Text>
 
-            </View>
-            <View>
+            </View >
+            <View style={{padding: 5}}>
                 <Text>Politicas de Privacidad</Text>
           </View>
             </View>

@@ -27,7 +27,7 @@ class HomeScreen extends Component {
                       alignItems: 'center'
                       }}
                       underlayColor = '#ccc'
-                      onPress = {() => this.props.navigation.navigate('Home')}
+                      onPress = {() => this.props.navigation.navigate('Noticias')}
                   >
                       <Text> Imagen </Text>
                   </TouchableHighlight>
@@ -35,7 +35,7 @@ class HomeScreen extends Component {
         </View>
         <Header>
             <Left>
-                <Icon name='book' onPress={()=>this.props.navigation.openDrawer()} />
+                <Icon name='menu' onPress={()=>this.props.navigation.openDrawer()} />
             </Left>
         </Header>
         <View style={{
@@ -45,7 +45,7 @@ class HomeScreen extends Component {
         }}
 
         >
-            <Text>VISTA Noticias</Text>
+            <Text>VISTA Evento</Text>
         </View>
       </View>
     );
