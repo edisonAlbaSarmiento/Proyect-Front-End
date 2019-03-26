@@ -1,17 +1,45 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, SafeAreaView, Image } from 'react-native';
 import Login from './src/Components/Login'
+import { createDrawerNavigator, DrawerItems } from 'react-navigation'
+import HomeScreen from './src/screens/HomeScreen'
+import SettingsScreen from './src/screens/SettingsScreen'
+
+
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Red Social Politecnico Gran Colombiano!</Text>
-        <Login/>
-      </View>
+      <AppDrawerNavigator/>
     );
   }
 }
 
+const CustomDrawerComponent  = (props) => (
+  <SafeAreaView styles={{
+    flex:1
+  }}>
+    <View style={{
+      height:150,  backgroundColor: 'white',  alignItems: 'center', justifyContent: 'center'
+    }}>
+      <Image source={require('./assets/logoPoli.png')}
+      />
+    </View>
+    <ScrollView>
+      <DrawerItems {...props} />
+    </ScrollView>
+  
+  </SafeAreaView>
+)
+const AppDrawerNavigator = createDrawerNavigator({
+  Login: Login,
+  Noticias: HomeScreen,
+  Eventos: SettingsScreen
+},{
+  contentComponent: CustomDrawerComponent,
+  contentOptions: {
+    activeTintColor: 'orange'
+  }
+})
 const styles = StyleSheet.create({
   container: {
     flex: 1,
