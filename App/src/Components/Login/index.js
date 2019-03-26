@@ -6,7 +6,7 @@ import { Container, Header, Content, Item, Input, Icon } from 'native-base';
 class Login extends React.Component{
     constructor(props) {
         super(props);
-        this.state = { textUserName: 'Usuario', textPassword: 'Contraseña' };
+        this.state = { textUserName: '', textPassword: '' };
         }
         
 render(){
@@ -42,22 +42,37 @@ render(){
           <View style={{ flex: 1, height: 50, backgroundColor: '#0F385A'}} >
                 <Text style={{textAlign:'center', padding: 8, color: 'white'}}> Bienvenidos Egresados </Text>
           </View>
-          <View style={{height: 190, backgroundColor: 'green', alignItems:'center',justifyContent:'center'}} >
-          <Item>
-            <Icon active name='home' />
-            <Input placeholder='Icon Textbox'/>
-          </Item>
-                <TextInput
-                    style={{width:170, height: 40, borderColor: 'gray', borderWidth: 1, padding:10}}
+          <View style={{height: 190, alignItems:'center',justifyContent:'center',padding: 3}} >
+                <View style={{
+                  padding: 3
+                }}>
+                  <Item style={{
+                    width:150, height: 40, backgroundColor:'grey'
+                  }} rounded> 
+                    <Icon active name='home' />
+                    <Input placeholder='Usuario' 
                     onChangeText={(textUserName) => this.setState({textUserName})}
                     value={this.state.textUserName}
-                />
-                <TextInput
-                    style={{width:150, height: 40, borderColor: 'gray', borderWidth: 1,  padding:10}}
+                    />
+                  </Item>
+                </View>
+                <View style={{
+                  padding: 5
+                }}>
+                  <Item style={{
+                    width:150, height: 40, backgroundColor:'grey'
+                  }} rounded> 
+                    <Icon active name='car' />
+                    <Input placeholder='Contraseña' 
+                    secureTextEntry={true}
                     onChangeText={(textPassword) => this.setState({textPassword})}
                     value={this.state.textPassword}
-                />
-            <Button raised primary text="Primary" />
+                    />
+                  </Item>
+                </View>
+                <View>
+                  <Button raised primary text="Primary" />
+                </View>
             <Text>Olvido su Contraseña</Text>
           <View style={{flex: 1, flexDirection:'row',justifyContent: 'space-between'}}>
             <View style={{padding: 5}}>
@@ -69,7 +84,16 @@ render(){
           </View>
             </View>
           </View>
-          <View style={{flex: 1, height: 150, backgroundColor: 'yellow'}} />
+          <View style={{display: 'flex', flexDirection:'row',height: 150, backgroundColor: '#0F385A', padding: 15}} >
+            <View style={{flex: 3}}>
+              <Text style={{color: 'white'}}>CXXXX</Text>
+
+            </View>
+            <View style={{flex: 1}}>
+              <Text style={{color: 'white'}}>CXXXX</Text>
+
+            </View>
+          </View>
         </View>
     </ScrollView>
     )
