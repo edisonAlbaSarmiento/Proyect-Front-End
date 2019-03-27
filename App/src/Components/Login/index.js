@@ -71,7 +71,7 @@ render(){
                   </Item>
                 </View>
                 <View>
-                  <Button raised primary text="Primary" />
+                  <Button raised primary text="Ingresar" />
                 </View>
             <Text>Olvido su Contraseña</Text>
           <View style={{flex: 1, flexDirection:'row',justifyContent: 'space-between'}}>
