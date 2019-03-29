@@ -32,7 +32,6 @@ render(){
                         alignItems: 'center'
                         }}
                         underlayColor = '#ccc'
-                        onPress = {() => this.props.navigation.navigate('Noticias')}
                     >
                       <Image source={require('../../../assets/logoPoli.png')}
                       />
@@ -71,7 +70,7 @@ render(){
                   </Item>
                 </View>
                 <View>
-                  <Button raised primary text="Ingresar" />
+                  <Button raised primary text="Ingresar" onPress = {() => this.props.navigation.navigate('Noticias')} />
                 </View>
             <Text>Olvido su Contraseña</Text>
           <View style={{flex: 1, flexDirection:'row',justifyContent: 'space-between'}}>

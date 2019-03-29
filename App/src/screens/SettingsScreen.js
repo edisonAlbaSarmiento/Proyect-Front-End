@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View,  TouchableHighlight, Dimensions, ScrollView, Image } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
 import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right } from 'native-base'
+import HeaderEntry from '../Components/Header'
 
 class HomeScreen extends Component {
     static navigationOptions = {
@@ -13,26 +14,7 @@ class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={{height: 210, width:370, backgroundColor: 'steelblue'}} >
-          <View style={{flex: 3, backgroundColor: 'powderblue', width: 360, height: 150,
-              justifyContent: 'center',
-              alignItems: 'center'}} >
-              <TouchableHighlight
-                      style = {{
-                      borderRadius: Math.round(Dimensions.get('window').width + Dimensions.get('window').height) / 2,
-                      width: Dimensions.get('window').width * 0.5,
-                      height: Dimensions.get('window').width * 0.5,
-                      backgroundColor:'#f00',
-                      justifyContent: 'center',
-                      alignItems: 'center'
-                      }}
-                      underlayColor = '#ccc'
-                      onPress = {() => this.props.navigation.navigate('Noticias')}
-                  >
-                      <Text> Imagen </Text>
-                  </TouchableHighlight>
-          </View>
-        </View>
+        <HeaderEntry/>
         <Header>
             <Left>
                 <Icon name='menu' onPress={()=>this.props.navigation.openDrawer()} />
@@ -63,7 +45,7 @@ class HomeScreen extends Component {
               </CardItem>
               <CardItem>
                 <Right>
-                  <Button transparent textStyle={{color: '#87838B'}}>
+                  <Button transparent textStyle={{color: '#87838B'}} onPress = {() => this.props.navigation.navigate('Noticias')} >
                     <Icon name="add" />
                     <Text>1,926 stars</Text>
                   </Button>
