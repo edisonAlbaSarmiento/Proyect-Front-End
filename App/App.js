@@ -2,8 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View, ScrollView, SafeAreaView, Image } from 'react-native';
 import Login from './src/Components/Login'
 import { createDrawerNavigator, DrawerItems } from 'react-navigation'
-import HomeScreen from './src/screens/HomeScreen'
-import SettingsScreen from './src/screens/SettingsScreen'
+import News from './src/screens/News'
+import Events from './src/screens/Events'
 
 
 export default class App extends React.Component {
@@ -31,9 +31,9 @@ const CustomDrawerComponent  = (props) => (
   </SafeAreaView>
 )
 const AppDrawerNavigator = createDrawerNavigator({
+  Noticias: News,
   Login: Login,
-  Noticias: HomeScreen,
-  Eventos: SettingsScreen
+  Eventos: Events
 },{
   contentComponent: CustomDrawerComponent,
   contentOptions: {

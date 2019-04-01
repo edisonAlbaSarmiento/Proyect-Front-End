@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, ScrollView, Image  } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
 import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right } from 'native-base'
-
 import HeaderEntry from '../Components/Header'
-class HomeScreen extends Component {
+
+class Events extends Component {
     static navigationOptions = {
         drawerIcon : ({tintColor}) =>(
             <Icon name='home'  style={{
@@ -14,11 +14,10 @@ class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <HeaderEntry />
+        <HeaderEntry/>
         <Header>
             <Left>
-                <Icon name='book' onPress={()=>this.props.navigation.openDrawer()} />
-                <Text> Noticias </Text>
+                <Icon name='menu' onPress={()=>this.props.navigation.openDrawer()} />
             </Left>
         </Header>
         <ScrollView>
@@ -27,7 +26,7 @@ class HomeScreen extends Component {
                 <Left>
                   <Thumbnail source={{url: '../../assets/icon.png'}} />
                   <Body>
-                    <Text>Noticia</Text>
+                    <Text>Evento</Text>
                     <Text note>April 15, 2016</Text>
                   </Body>
                 </Left>
@@ -46,7 +45,7 @@ class HomeScreen extends Component {
               </CardItem>
               <CardItem>
                 <Right>
-                  <Button transparent textStyle={{color: '#87838B'}}>
+                  <Button transparent textStyle={{color: '#87838B'}} onPress = {() => this.props.navigation.navigate('Noticias')} >
                     <Icon name="add" />
                     <Text>1,926 stars</Text>
                   </Button>
@@ -58,7 +57,7 @@ class HomeScreen extends Component {
                 <Left>
                   <Thumbnail source={{url: '../../assets/icon.png'}} />
                   <Body>
-                    <Text>Titulo de la noticia</Text>
+                    <Text>Titulo de la Evento</Text>
                     <Text note>April 15, 2016</Text>
                   </Body>
                 </Left>
@@ -84,12 +83,12 @@ class HomeScreen extends Component {
                 </Right>
               </CardItem>
             </Card>
-        </ScrollView>    
+        </ScrollView>
       </View>
     );
   }
 }
-export default HomeScreen
+export default Events
 
 const styles = StyleSheet.create({
   container: {

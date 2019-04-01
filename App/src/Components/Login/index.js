@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View, TextInput, TouchableHighlight, Dimensions, ScrollView,Image } from 'react-native';
 import { Button } from 'react-native-material-ui';
 import { Container, Header, Content, Item, Input, Icon } from 'native-base';
-
+import HeaderEntry from '../Header'
 class Login extends React.Component{
     constructor(props) {
         super(props);
@@ -18,26 +18,7 @@ render(){
           justifyContent: 'center',
           alignItems: 'stretch',
         }}>
-          <View style={{height: 210, width:370, backgroundColor: 'steelblue'}} >
-          <View style={{flex: 3, backgroundColor: 'powderblue', width: 360,
-                justifyContent: 'center',
-                alignItems: 'center'}} >
-                <TouchableHighlight
-                        style = {{
-                        borderRadius: Math.round(Dimensions.get('window').width + Dimensions.get('window').height) / 2,
-                        width: Dimensions.get('window').width * 0.5,
-                        height: Dimensions.get('window').width * 0.5,
-                        backgroundColor:'white',
-                        justifyContent: 'center',
-                        alignItems: 'center'
-                        }}
-                        underlayColor = '#ccc'
-                    >
-                      <Image source={require('../../../assets/logoPoli.png')}
-                      />
-                    </TouchableHighlight>
-            </View>
-          </View>
+          <HeaderEntry/>
           <View style={{ flex: 1, height: 50, backgroundColor: '#0F385A'}} >
                 <Text style={{textAlign:'center', padding: 8, color: 'white'}}> Bienvenidos Egresados </Text>
           </View>
