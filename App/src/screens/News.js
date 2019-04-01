@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image  } from 'react-native';
 import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right } from 'native-base'
+import ImageF from '../Images/fondoHeader.jpg'
 import HeaderEntry from '../Components/Header'
 
-class HomeScreen extends Component {
+class News extends Component {
     static navigationOptions = {
         drawerIcon : ({tintColor}) =>(
             <Icon name='home'  style={{
@@ -14,11 +15,14 @@ class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <HeaderEntry/>
-        <Header>
-            <Left>
-                <Icon name='menu' onPress={()=>this.props.navigation.openDrawer()} />
-            </Left>
+        <HeaderEntry />
+        <Header style={{display: 'flex', alignItems:'center' }}>
+          <View style={{flex: 1}}>
+          <Icon name='book' onPress={()=>this.props.navigation.openDrawer()} />
+          </View>
+          <View style={{flex: 2}}>
+            <Text> Noticias </Text>
+          </View>
         </Header>
         <ScrollView>
           <Card style={{flex: 0}}>
@@ -26,14 +30,14 @@ class HomeScreen extends Component {
                 <Left>
                   <Thumbnail source={{url: '../../assets/icon.png'}} />
                   <Body>
-                    <Text>Evento</Text>
+                    <Text>Noticia</Text>
                     <Text note>April 15, 2016</Text>
                   </Body>
                 </Left>
               </CardItem>
               <CardItem>
                 <Body>
-                  <Image source={{url: '../../assets/icon.png'}} style={{height: 20, width: 20, flex: 1}}/>
+                  <Image source={{url: ImageF}} style={{height: 20, width: 20, flex: 1}}/>
                   <Text>
                     Your text here
                     Your text here
@@ -44,10 +48,10 @@ class HomeScreen extends Component {
                 </Body>
               </CardItem>
               <CardItem>
-                <Right>
-                  <Button transparent textStyle={{color: '#87838B'}} onPress = {() => this.props.navigation.navigate('Noticias')} >
+                <Right style={{flex: 1}}>
+                  <Button textStyle={{color: '#87838B'}}>
                     <Icon name="add" />
-                    <Text>1,926 stars</Text>
+                    <Text>Ver más</Text>
                   </Button>
                 </Right>
               </CardItem>
@@ -57,7 +61,7 @@ class HomeScreen extends Component {
                 <Left>
                   <Thumbnail source={{url: '../../assets/icon.png'}} />
                   <Body>
-                    <Text>Titulo de la Evento</Text>
+                    <Text>Titulo de la noticia</Text>
                     <Text note>April 15, 2016</Text>
                   </Body>
                 </Left>
@@ -83,12 +87,12 @@ class HomeScreen extends Component {
                 </Right>
               </CardItem>
             </Card>
-        </ScrollView>
+        </ScrollView>    
       </View>
     );
   }
 }
-export default HomeScreen
+export default News
 
 const styles = StyleSheet.create({
   container: {
