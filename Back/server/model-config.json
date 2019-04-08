@@ -12,5 +12,9 @@
       "../common/mixins",
       "./mixins"
     ]
+  },
+  "news": {
+    "dataSource": "mydb",
+    "public": true
   }
 }
