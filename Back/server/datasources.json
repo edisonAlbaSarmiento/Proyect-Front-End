@@ -1,6 +1,6 @@
 {
-    "mydb": {
-        "name": "testDB",
-        "connector": "mysql"
-    }
+  "mydb": {
+    "name": "mydb",
+    "connector": "mysql"
+  }
 }
