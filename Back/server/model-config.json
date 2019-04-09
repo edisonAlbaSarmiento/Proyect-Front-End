@@ -8,13 +8,13 @@
     ],
     "mixins": [
       "loopback/common/mixins",
-      "loopback/server/mixins",
+      "../node_modules/loopback-ds-timestamp-mixin",
       "../common/mixins",
       "./mixins"
     ]
   },
   "news": {
-    "dataSource": "mydb",
+    "dataSource": "polireddb",
     "public": true
   }
 }
