@@ -6,6 +6,10 @@
     "compression": {},
     "cors": {
       "params": {
+        "exposedHeaders": [
+          "X-Total-Count",
+          "Content-Disposition"
+        ],
         "origin": true,
         "credentials": true,
         "maxAge": 86400
