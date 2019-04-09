@@ -5,10 +5,21 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "TimeStamp": {
+      "createdAt" : "created_at"
+    }
+  },
   "properties": {
     "name": {
       "type": "string",
       "required": true
+    },
+    "short_description": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
     }
   },
   "validations": [],
