@@ -4,11 +4,13 @@ import './App.css';
 import { Admin, Resource } from 'react-admin';
 import News from './resources/news'
 import loopbackRestClient from './services/Provider';
+import authProvider from './authProvider'
 
 const dataProvider = loopbackRestClient('http://localhost:8000/api')
 
 const App = () =>   
 <Admin
+authProvider={authProvider}
 dataProvider={dataProvider}
 >
 {
