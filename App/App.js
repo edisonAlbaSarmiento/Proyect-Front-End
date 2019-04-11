@@ -31,9 +31,9 @@ const CustomDrawerComponent  = (props) => (
   </SafeAreaView>
 )
 const AppDrawerNavigator = createDrawerNavigator({
-  Noticias: News,
   Login: Login,
-  Eventos: Events
+  Eventos: Events,
+  Noticias: News
 },{
   contentComponent: CustomDrawerComponent,
   contentOptions: {

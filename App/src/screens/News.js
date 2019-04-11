@@ -16,28 +16,30 @@ class News extends Component {
     return (
       <View style={styles.container}>
         <HeaderEntry />
-        <Header style={{display: 'flex', alignItems:'center' }}>
+        <Header style={{display: 'flex', alignItems:'center', backgroundColor: '#0F385A'}}>
           <View style={{flex: 1}}>
-          <Icon name='book' onPress={()=>this.props.navigation.openDrawer()} />
+          <Icon name='book' style={{color:'white'}} onPress={()=>this.props.navigation.openDrawer()} />
           </View>
           <View style={{flex: 2}}>
-            <Text> Noticias </Text>
+            <Text style={{color: 'white'}}> Noticias </Text>
           </View>
         </Header>
         <ScrollView>
-          <Card style={{flex: 0}}>
+            <Card style={{flex: 0}}>
               <CardItem>
                 <Left>
-                  <Thumbnail source={{url: '../../assets/icon.png'}} />
+                  <Thumbnail source={require('../../assets/logoPoli.png')} />
                   <Body>
-                    <Text>Noticia</Text>
+                    <Text>Noticias</Text>
                     <Text note>April 15, 2016</Text>
                   </Body>
                 </Left>
               </CardItem>
               <CardItem>
-                <Body>
-                  <Image source={{url: ImageF}} style={{height: 20, width: 20, flex: 1}}/>
+                <Body style={{display: 'flex', alignItems:'center' }}>
+                  <Image source={require('../../assets/logoPoli.png')} style={{ justifyContent: 'center',
+                    alignItems: 'center', height: 240, width: 320, flex: 1}}
+                  />
                   <Text>
                     Your text here
                     Your text here
@@ -49,8 +51,7 @@ class News extends Component {
               </CardItem>
               <CardItem>
                 <Right style={{flex: 1}}>
-                  <Button textStyle={{color: '#87838B'}}>
-                    <Icon name="add" />
+                  <Button textStyle={{color: '#87838B'}} onPress = {() => this.props.navigation.navigate('Noticias')}>
                     <Text>Ver más</Text>
                   </Button>
                 </Right>
@@ -59,16 +60,18 @@ class News extends Component {
             <Card style={{flex: 0}}>
               <CardItem>
                 <Left>
-                  <Thumbnail source={{url: '../../assets/icon.png'}} />
+                  <Thumbnail source={require('../../assets/logoPoli.png')} />
                   <Body>
-                    <Text>Titulo de la noticia</Text>
+                    <Text>Noticias</Text>
                     <Text note>April 15, 2016</Text>
                   </Body>
                 </Left>
               </CardItem>
               <CardItem>
-                <Body>
-                  <Image source={{url: '../../assets/icon.png'}} style={{height: 20, width: 20, flex: 1}}/>
+                <Body style={{display: 'flex', alignItems:'center' }}>
+                  <Image source={require('../../assets/logoPoli.png')} style={{ justifyContent: 'center',
+                    alignItems: 'center', height: 240, width: 320, flex: 1}}
+                  />
                   <Text>
                     Your text here
                     Your text here
@@ -79,10 +82,9 @@ class News extends Component {
                 </Body>
               </CardItem>
               <CardItem>
-                <Right>
-                  <Button transparent textStyle={{color: '#87838B'}}>
-                    <Icon name="add" />
-                    <Text>1,926</Text>
+                <Right style={{flex: 1}}>
+                  <Button textStyle={{color: '#87838B'}} onPress = {() => this.props.navigation.navigate('Noticias')}>
+                    <Text>Ver más</Text>
                   </Button>
                 </Right>
               </CardItem>
