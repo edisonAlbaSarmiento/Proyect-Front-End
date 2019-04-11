@@ -27,7 +27,7 @@ render(){
                   padding: 3
                 }}>
                   <Item style={{
-                    width:150, height: 40, backgroundColor:'grey'
+                    width:150, height: 40, backgroundColor:'#9ba2b0'
                   }} rounded> 
                     <Icon active name='home' />
                     <Input placeholder='Usuario' 
@@ -40,7 +40,7 @@ render(){
                   padding: 5
                 }}>
                   <Item style={{
-                    width:150, height: 40, backgroundColor:'grey'
+                    width:150, height: 40, backgroundColor:'#9ba2b0'
                   }} rounded> 
                     <Icon active name='car' />
                     <Input placeholder='Contraseña' 
@@ -66,11 +66,11 @@ render(){
           </View>
           <View style={{display: 'flex', flexDirection:'row',height: 150, backgroundColor: '#0F385A', padding: 15}} >
             <View style={{flex: 3}}>
-              <Text style={{color: 'white'}}>CXXXX</Text>
+              <Text style={{color: 'white'}}>Logo 1</Text>
 
             </View>
             <View style={{flex: 1}}>
-              <Text style={{color: 'white'}}>CXXXX</Text>
+              <Text style={{color: 'white'}}>Logo 2</Text>
 
             </View>
           </View>
