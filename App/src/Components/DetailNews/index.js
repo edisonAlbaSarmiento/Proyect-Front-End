@@ -16,9 +16,6 @@ class detailNews extends Component {
       <View style={styles.container}>
         <HeaderEntry />
         <Header style={{display: 'flex', alignItems:'center', backgroundColor: '#0F385A'}}>
-          <View style={{flex: 1}}>
-          <Icon name='book' style={{color:'white'}} onPress={()=>this.props.navigation.openDrawer()} />
-          </View>
           <View style={{flex: 2}}>
             <Text style={{color: 'white'}}> Detalle de la noticia </Text>
           </View>
