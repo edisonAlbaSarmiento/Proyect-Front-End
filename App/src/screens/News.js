@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, ScrollView, Image  } from 'react-native';
-import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right } from 'native-base'
+import { Header, Footer, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right, Footer } from 'native-base'
 import ImageF from '../Images/fondoHeader.jpg'
 import HeaderEntry from '../Components/Header'
+import FooterVertical from '../Components/Footer'
 
 class News extends Component {
     static navigationOptions = {
@@ -89,7 +90,16 @@ class News extends Component {
                 </Right>
               </CardItem>
             </Card>
-        </ScrollView>    
+            <FooterVertical />
+        </ScrollView> 
+        <Footer style={{display: 'flex', alignItems:'center', backgroundColor: '#0F385A'}}>
+          <View style={{flex: 1}}>
+          <Icon name='book' style={{color:'white'}} onPress={()=>this.props.navigation.openDrawer()} />
+          </View>
+          <View style={{flex: 2}}>
+            <Text style={{color: 'white'}}> Noticias </Text>
+          </View>
+        </Footer> 
       </View>
     );
   }
