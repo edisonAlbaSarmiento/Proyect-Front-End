@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, ScrollView, Image  } from 'react-native';
-import { Header, Footer, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right, Footer } from 'native-base'
+import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right, Footer, FooterTab } from 'native-base'
 import ImageF from '../Images/fondoHeader.jpg'
 import HeaderEntry from '../Components/Header'
 import FooterVertical from '../Components/Footer'
@@ -90,15 +90,27 @@ class News extends Component {
                 </Right>
               </CardItem>
             </Card>
-            <FooterVertical />
+            
         </ScrollView> 
         <Footer style={{display: 'flex', alignItems:'center', backgroundColor: '#0F385A'}}>
-          <View style={{flex: 1}}>
-          <Icon name='book' style={{color:'white'}} onPress={()=>this.props.navigation.openDrawer()} />
-          </View>
-          <View style={{flex: 2}}>
-            <Text style={{color: 'white'}}> Noticias </Text>
-          </View>
+        <FooterTab>
+            <Button vertical>
+              <Icon name="apps" />
+              <Text>Apps</Text>
+            </Button>
+            <Button vertical>
+              <Icon name="camera" />
+              <Text>Camera</Text>
+            </Button>
+            <Button vertical active>
+              <Icon active name="navigate" />
+              <Text>Navigate</Text>
+            </Button>
+            <Button vertical>
+              <Icon name="person" />
+              <Text>Contact</Text>
+            </Button>
+          </FooterTab>
         </Footer> 
       </View>
     );
