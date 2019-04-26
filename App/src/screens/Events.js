@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
-import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right } from 'native-base'
+import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right, Footer, FooterTab} from 'native-base'
 import HeaderEntry from '../Components/Header'
 import axios from 'axios'
 
@@ -121,6 +121,22 @@ class Events extends Component {
               </CardItem>
             </Card>
         </ScrollView>
+        <Footer style={{display: 'flex', alignItems:'center', backgroundColor: '#0F385A'}}>
+        <FooterTab>
+            <Button vertical
+              onPress = {() => this.props.navigation.navigate('Noticias')}
+            >
+              <Icon active name="navigate" />
+              <Text>Noticias</Text>
+            </Button>
+            <Button vertical active
+              onPress = {() => this.props.navigation.navigate('Eventos')}
+            >
+              <Icon name="person" />
+              <Text>Eventos</Text>
+            </Button>
+          </FooterTab>
+        </Footer>
       </View>
     );
   }

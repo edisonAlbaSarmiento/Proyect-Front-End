@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, ScrollView, Image  } from 'react-native';
-import { Header, Footer, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right, Footer } from 'native-base'
+import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right, Footer, FooterTab } from 'native-base'
 import ImageF from '../Images/fondoHeader.jpg'
 import HeaderEntry from '../Components/Header'
 import FooterVertical from '../Components/Footer'
@@ -14,6 +14,8 @@ class News extends Component {
         )
     }
   render() {
+    const {navigate} = this.props.navigation;
+
     return (
       <View style={styles.container}>
         <HeaderEntry />
@@ -90,15 +92,23 @@ class News extends Component {
                 </Right>
               </CardItem>
             </Card>
-            <FooterVertical />
+            
         </ScrollView> 
         <Footer style={{display: 'flex', alignItems:'center', backgroundColor: '#0F385A'}}>
-          <View style={{flex: 1}}>
-          <Icon name='book' style={{color:'white'}} onPress={()=>this.props.navigation.openDrawer()} />
-          </View>
-          <View style={{flex: 2}}>
-            <Text style={{color: 'white'}}> Noticias </Text>
-          </View>
+        <FooterTab>
+            <Button vertical active
+              onPress = {() => this.props.navigation.navigate('Noticias')}
+            >
+              <Icon active name="navigate" />
+              <Text>Noticias</Text>
+            </Button>
+            <Button vertical
+              onPress = {() => this.props.navigation.navigate('Eventos')}
+            >
+              <Icon name="person" />
+              <Text>Eventos</Text>
+            </Button>
+          </FooterTab>
         </Footer> 
       </View>
     );
