@@ -14,6 +14,8 @@ class News extends Component {
         )
     }
   render() {
+    const {navigate} = this.props.navigation;
+
     return (
       <View style={styles.container}>
         <HeaderEntry />
@@ -94,21 +96,17 @@ class News extends Component {
         </ScrollView> 
         <Footer style={{display: 'flex', alignItems:'center', backgroundColor: '#0F385A'}}>
         <FooterTab>
-            <Button vertical>
-              <Icon name="apps" />
-              <Text>Apps</Text>
-            </Button>
-            <Button vertical>
-              <Icon name="camera" />
-              <Text>Camera</Text>
-            </Button>
-            <Button vertical active>
+            <Button vertical active
+              onPress = {() => this.props.navigation.navigate('Noticias')}
+            >
               <Icon active name="navigate" />
-              <Text>Navigate</Text>
+              <Text>Noticias</Text>
             </Button>
-            <Button vertical>
+            <Button vertical
+              onPress = {() => this.props.navigation.navigate('Eventos')}
+            >
               <Icon name="person" />
-              <Text>Contact</Text>
+              <Text>Eventos</Text>
             </Button>
           </FooterTab>
         </Footer> 
