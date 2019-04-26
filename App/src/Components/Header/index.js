@@ -4,7 +4,7 @@ import { Text, View, TouchableHighlight, Dimensions, Image } from 'react-native'
 class HeaderEntry extends React.Component{ 
 render(){
     return(
-    <View style={{height: 210, width:370, backgroundColor: 'steelblue'}} >
+    <View style={{height: 130, width:370, backgroundColor: 'steelblue'}} >
         <View style={{flex: 3, backgroundColor:'white', backgroundImage: 'url(../../Images/fondoHeader.jpg)', width: 360, height: 150,
             justifyContent: 'center',
             alignItems: 'center'}} >
