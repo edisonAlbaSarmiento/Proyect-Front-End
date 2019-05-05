@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, TextInput, TouchableHighlight, Dimensions, ScrollView,Image } from 'react-native';
 import { Button } from 'react-native-material-ui';
-import { Container, Header, Content, Item, Input, Icon } from 'native-base';
+import { Container, Header, Content, Item, Input, Icon, CardItem } from 'native-base';
 import HeaderEntry from '../Header'
 class Login extends React.Component{
     constructor(props) {
@@ -53,14 +53,22 @@ render(){
                 <View>
                   <Button raised primary text="Ingresar" onPress = {() => this.props.navigation.navigate('Noticias')} />
                 </View>
-            <Text>Olvido su Contraseña</Text>
+
+                <View style={{flex: 1}}>
+          <CardItem button onPress={() => alert("This is Card Header")}>
+                    <Text>Olvido su Contraseña</Text>
+                  </CardItem>
+                  </View>
           <View style={{flex: 1, flexDirection:'row',justifyContent: 'space-between'}}>
             <View style={{padding: 5}}>
+              <CardItem button onPress={() => alert("This is Card Header")}>
                 <Text>Terminos y Condiciones</Text>
-
+              </CardItem>
             </View >
             <View style={{padding: 5}}>
+              <CardItem button onPress={() => alert("This is Card Header")}>
                 <Text>Politicas de Privacidad</Text>
+              </CardItem>
           </View>
             </View>
           </View>

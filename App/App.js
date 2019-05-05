@@ -27,8 +27,6 @@ const CustomDrawerComponent  = (props) => (
     <ScrollView>
       <DrawerItems {...props} />
     </ScrollView>
-    <DrawerItems {...props} />
-
   </SafeAreaView>
 )
 const AppDrawerNavigator = createDrawerNavigator({
