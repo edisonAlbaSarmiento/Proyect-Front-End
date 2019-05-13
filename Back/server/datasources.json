@@ -1,11 +1,11 @@
 {
   "polireddb": {
-    "name": "polireddb",
-    "database": "polireddb",
-    "connector": "mysql",
     "host": "localhost",
     "port": 3306,
+    "database": "polireddb",
     "username": "root",
-    "password": ""
+    "password": "",
+    "name": "polireddb",
+    "connector": "mysql"
   }
 }

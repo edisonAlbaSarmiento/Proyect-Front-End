@@ -16,5 +16,9 @@
   "news": {
     "dataSource": "polireddb",
     "public": true
+  },
+  "events": {
+    "dataSource": "polireddb",
+    "public": true
   }
 }

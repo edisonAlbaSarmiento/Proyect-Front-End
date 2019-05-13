@@ -1,5 +1,5 @@
 {
-  "name": "news",
+  "name": "events",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
