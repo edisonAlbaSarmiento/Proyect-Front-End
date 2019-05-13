@@ -25,6 +25,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.7.1"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
