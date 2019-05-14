@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Admin, Resource } from 'react-admin';
@@ -11,12 +11,14 @@ import Login from './Auth/Login'
 
 const dataProvider = loopbackRestClient('http://localhost:8000/api')
 
-const App = () =>   
-<Admin
-authProvider={authProvider}
-dataProvider={dataProvider}
-// loginPage={Login}
->
+class App extends Component   {
+    render () {
+      return (
+    <Admin
+    authProvider={authProvider}
+    dataProvider={dataProvider}
+    // loginPage={Login}
+    >
     <Resource name="news"
         create={News.Create}
         list={News.List} 
@@ -32,5 +34,8 @@ dataProvider={dataProvider}
         icon={Events.PostIcon}
     /> 
 </Admin>
+    )
+}
+}
 
 export default App;
