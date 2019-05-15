@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { StyleSheet, Text, View, ScrollView, ActivityIndicator, Image } from 'react-native';
 import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right, Footer, FooterTab} from 'native-base'
 import HeaderEntry from '../Components/Header'
-import axios from 'axios'
 
 class Events extends Component {
     constructor(props){
@@ -21,7 +20,7 @@ class Events extends Component {
         )
     }
     componentDidMount = async () => {
-      return fetch('http://192.168.88.7:8000/api/events/', {
+      return fetch('http://10.10.0.28:8000/api/events/', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -60,43 +59,39 @@ class Events extends Component {
           </View>
         </Header>
         <ScrollView>
-          {/* {data.map((item, i) => {
-             {console.log('item', item)}
-          })} */}
-         
-          <Card style={{flex: 0}}>
-              <CardItem>
-                <Left>
-                  <Thumbnail source={require('../../assets/logoPoli.png')} />
-                  <Body>
-                    <Text>{data[0].name}</Text>
-                    <Text note>April 15, 2016</Text>
+          {data.map((item, i) => (
+            <View key={i}>
+               {console.log('item', item.name)}
+                <Card style={{flex: 0}}>
+                <CardItem>
+                  <Left>
+                    <Thumbnail source={require('../../assets/logoPoli.png')} />
+                    <Body>
+                      <Text>{item.name}</Text>
+                      <Text note>{item.create_at}</Text>
+                    </Body>
+                  </Left>
+                </CardItem>
+                <CardItem>
+                  <Body style={{display: 'flex', alignItems:'center' }}>
+                    <Image source={require('../../assets/logoPoli.png')} style={{ justifyContent: 'center',
+                      alignItems: 'center', height: 240, width: 320, flex: 1}}
+                    />
+                    <Text>
+                      {item.short_description}
+                    </Text>
                   </Body>
-                </Left>
-              </CardItem>
-              <CardItem>
-                <Body style={{display: 'flex', alignItems:'center' }}>
-                  <Image source={require('../../assets/logoPoli.png')} style={{ justifyContent: 'center',
-                    alignItems: 'center', height: 240, width: 320, flex: 1}}
-                  />
-                  <Text>
-                    Your text here
-                    Your text here
-                    Your text here
-                    Your text here
-                    Your text here
-                  </Text>
-                </Body>
-              </CardItem>
-              <CardItem>
-                <Right style={{flex: 1}}>
-                  <Button textStyle={{color: '#87838B'}} onPress = {() => this.props.navigation.navigate('Noticias')}>
-                    <Text>Ver más</Text>
-                  </Button>
-                </Right>
-              </CardItem>
-            </Card>
-
+                </CardItem>
+                <CardItem>
+                  <Right style={{flex: 1}}>
+                    <Button textStyle={{color: '#87838B'}} onPress = {() => this.props.navigation.navigate('Noticias')}>
+                      <Text>Ver más</Text>
+                    </Button>
+                  </Right>
+                </CardItem>
+              </Card>
+            </View>
+          ))}
         </ScrollView>
         <Footer style={{display: 'flex', alignItems:'center', backgroundColor: '#0F385A'}}>
         <FooterTab>
