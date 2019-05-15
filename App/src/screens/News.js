@@ -22,7 +22,7 @@ class News extends Component {
         )
     }
     componentDidMount = async () => {
-      return fetch('http://192.168.20.60:8000/api/news/', {
+      return fetch('http://192.168.20.60:8003/api/news/', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -86,7 +86,7 @@ class News extends Component {
                 </CardItem>
                 <CardItem>
                   <Right style={{flex: 1}}>
-                    <Button style={{backgroundColor: '#0F385A', width: 100, justifyContent: 'center'}} onPress = {() => this.props.navigation.navigate('Terminos')}>
+                    <Button style={{backgroundColor: '#0F385A', width: 100, justifyContent: 'center'}} onPress = {() => this.props.navigation.navigate('Perfil',{ info: item })}>
                       <Text style={{color: 'white'}}>Ver más</Text>
                     </Button>
                   </Right>

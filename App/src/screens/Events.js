@@ -21,7 +21,7 @@ class Events extends Component {
         )
     }
     componentDidMount = async () => {
-      return fetch('http://192.168.20.60:8000/api/events/', {
+      return fetch('http://192.168.20.60:8003/api/events/', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -85,7 +85,7 @@ class Events extends Component {
                 </CardItem>
                 <CardItem>
                   <Right style={{flex: 1}}>
-                    <Button style={{backgroundColor: '#0F385A', width: 100, justifyContent: 'center'}} onPress = {() => this.props.navigation.navigate('Perfil')}>
+                    <Button style={{backgroundColor: '#0F385A', width: 100, justifyContent: 'center'}} onPress = {() => this.props.navigation.navigate('Terminos', { info: item })}>
                       <Text style={{color: 'white'}}>Ver más</Text>
                     </Button>
                   </Right>
