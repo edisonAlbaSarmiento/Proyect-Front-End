@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, ScrollView, Image  } from 'react-native';
 import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right } from 'native-base'
 import HeaderEntry from '../Header'
 
-class detailNews extends Component {
+class detailEvents extends Component {
     static navigationOptions = {
         drawerIcon : ({tintColor}) =>(
             <Icon name='home'  style={{
@@ -59,7 +59,7 @@ class detailNews extends Component {
     );
   }
 }
-export default detailNews
+export default detailEvents
 
 const styles = StyleSheet.create({
   container: {

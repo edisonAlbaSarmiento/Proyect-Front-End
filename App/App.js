@@ -5,6 +5,7 @@ import { createDrawerNavigator, DrawerItems } from 'react-navigation'
 import News from './src/screens/News'
 import Events from './src/screens/Events'
 import detailNews from './src/Components/DetailNews'
+import detailEvents from './src/Components/DetailEvents'
 
 export default class App extends React.Component {
   render() {
@@ -33,7 +34,8 @@ const AppDrawerNavigator = createDrawerNavigator({
   Login: Login,
   Eventos: Events,
   Noticias: News,
-  detailNews: detailNews
+  Perfil: detailNews,
+  Terminos: detailEvents
 },{
   contentComponent: CustomDrawerComponent,
   contentOptions: {

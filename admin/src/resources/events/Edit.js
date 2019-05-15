@@ -8,6 +8,8 @@ const Component = props => (
             <TextInput source="name"/>
             <LongTextInput source="short_description"/>
             <TextInput source="description"/>
+            <TextInput source="linkPage" />
+            <TextInput source="imagenUrl" />
             <DateInput label="Publication date" source="published_at" />
         </SimpleForm>
     </Edit>

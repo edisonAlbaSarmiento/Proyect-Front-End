@@ -8,6 +8,8 @@ const Component = props => (
             <TextField source="name" />
             <TextField source="short_description" />
             <TextField source="description" />
+            <TextField source="linkPage" />
+            <TextField source="imagenUrl" />
             <DateField label="Publication date" source="created_at" />
         </SimpleShowLayout>
     </Show>
