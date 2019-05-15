@@ -85,8 +85,8 @@ class Events extends Component {
                 </CardItem>
                 <CardItem>
                   <Right style={{flex: 1}}>
-                    <Button textStyle={{color: '#87838B'}} onPress = {() => this.props.navigation.navigate('detailNews')}>
-                      <Text>Ver más</Text>
+                    <Button style={{backgroundColor: '#0F385A', width: 100, justifyContent: 'center'}} onPress = {() => this.props.navigation.navigate('Perfil')}>
+                      <Text style={{color: 'white'}}>Ver más</Text>
                     </Button>
                   </Right>
                 </CardItem>
