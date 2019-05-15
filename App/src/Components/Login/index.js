@@ -22,12 +22,12 @@ render(){
           <View style={{ flex: 1, height: 50, backgroundColor: '#0F385A'}} >
                 <Text style={{textAlign:'center', padding: 8, color: 'white'}}> Bienvenidos Egresados </Text>
           </View>
-          <View style={{height: 190, alignItems:'center',justifyContent:'center',padding: 3}} >
+          <View style={{height: 290, alignItems:'center',justifyContent:'center',padding: 3}} >
                 <View style={{
-                  padding: 3
+                  padding: 15
                 }}>
                   <Item style={{
-                    width:150, height: 40, backgroundColor:'#9ba2b0'
+                    width:200, height: 40, backgroundColor:'#9ba2b0'
                   }} rounded> 
                     <Icon active name='home' />
                     <Input placeholder='Usuario' 
@@ -40,7 +40,7 @@ render(){
                   padding: 5
                 }}>
                   <Item style={{
-                    width:150, height: 40, backgroundColor:'#9ba2b0'
+                    width:200, height: 40, backgroundColor:'#9ba2b0'
                   }} rounded> 
                     <Icon active name='car' />
                     <Input placeholder='Contraseña' 
@@ -55,30 +55,29 @@ render(){
                 </View>
 
                 <View style={{flex: 1}}>
-          <CardItem button onPress={() => alert("This is Card Header")}>
+          <CardItem button onPress={() => alert("Validar contraseña")}>
                     <Text>Olvido su Contraseña</Text>
                   </CardItem>
                   </View>
           <View style={{flex: 1, flexDirection:'row',justifyContent: 'space-between'}}>
             <View style={{padding: 5}}>
-              <CardItem button onPress={() => alert("This is Card Header")}>
+              <CardItem button onPress={() => alert("Terminos y Condiciones")}>
                 <Text>Terminos y Condiciones</Text>
               </CardItem>
             </View >
             <View style={{padding: 5}}>
-              <CardItem button onPress={() => alert("This is Card Header")}>
+              <CardItem button onPress={() => alert("Politicas de Privacidad")}>
                 <Text>Politicas de Privacidad</Text>
               </CardItem>
           </View>
             </View>
           </View>
-          <View style={{display: 'flex', flexDirection:'row',height: 150, backgroundColor: '#0F385A', padding: 15}} >
+          <View style={{display: 'flex', flexDirection:'row',height: 150, backgroundColor: '#0F385A', padding: 15, textAlign: 'center'}} >
             <View style={{flex: 3}}>
-              <Text style={{color: 'white'}}>Logo 1</Text>
-
+              <Image source={{uri: 'https://www.poli.edu.co/sites/default/files/logos/icontec9001-a1.png'}} style={{width: 180, height: 100, resizeMode: 'contain'}}/>
             </View>
             <View style={{flex: 1}}>
-              <Text style={{color: 'white'}}>Logo 2</Text>
+              <Text style={{color: 'white'}}>Somos diferentes</Text>
 
             </View>
           </View>

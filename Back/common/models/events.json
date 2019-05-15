@@ -20,6 +20,12 @@
     },
     "description": {
       "type": "string"
+    },
+    "linkPage": {
+      "type": "string"
+    },
+    "imagenUrl": {
+      "type": "string"
     }
   },
   "validations": [],

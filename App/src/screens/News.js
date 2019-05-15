@@ -4,6 +4,7 @@ import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right, Foo
 import ImageF from '../Images/fondoHeader.jpg'
 import HeaderEntry from '../Components/Header'
 import FooterVertical from '../Components/Footer'
+import moment from 'moment'
 
 class News extends Component {
     constructor(props){
@@ -21,7 +22,7 @@ class News extends Component {
         )
     }
     componentDidMount = async () => {
-      return fetch('http://10.10.0.28:8000/api/news/', {
+      return fetch('http://192.168.20.60:8000/api/news/', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -66,17 +67,17 @@ class News extends Component {
                 <Card style={{flex: 0}}>
                 <CardItem>
                   <Left>
-                    <Thumbnail source={require('../../assets/logoPoli.png')} />
+                    <Thumbnail source={require('../../assets/logoPoli.png')} style={{resizeMode: 'contain'}} />
                     <Body>
                       <Text>{item.name}</Text>
-                      <Text note>{item.create_at}</Text>
+                      <Text note>{moment(item.created_at).format("YYYY-MM-DD")}</Text>
                     </Body>
                   </Left>
                 </CardItem>
                 <CardItem>
                   <Body style={{display: 'flex', alignItems:'center' }}>
-                    <Image source={require('../../assets/logoPoli.png')} style={{ justifyContent: 'center',
-                      alignItems: 'center', height: 240, width: 320, flex: 1}}
+                    <Image source={{uri: item.imagenUrl !== "" ? item.imagenUrl : 'https://www.poli.edu.co/sites/default/files/logos/logo-poli-politecnico-grancolombiano2018.png' }} style={{ justifyContent: 'center',
+                      alignItems: 'center', height: 240, width: 320, flex: 1, resizeMode: 'contain'}}
                     />
                     <Text>
                       {item.short_description}
@@ -85,7 +86,7 @@ class News extends Component {
                 </CardItem>
                 <CardItem>
                   <Right style={{flex: 1}}>
-                    <Button textStyle={{color: '#87838B'}} onPress = {() => this.props.navigation.navigate('Noticias')}>
+                    <Button textStyle={{color: '#87838B'}} onPress = {() => this.props.navigation.navigate('detailNews')}>
                       <Text>Ver más</Text>
                     </Button>
                   </Right>
@@ -98,15 +99,17 @@ class News extends Component {
         <FooterTab>
             <Button vertical active
               onPress = {() => this.props.navigation.navigate('Noticias')}
+              style={{backgroundColor: '#0F385A'}}
             >
               <Icon active name="navigate" />
-              <Text>Noticias</Text>
+              <Text style={{color: 'white'}}>Noticias</Text>
             </Button>
             <Button vertical
               onPress = {() => this.props.navigation.navigate('Eventos')}
+              style={{backgroundColor: '#0F385A'}}
             >
               <Icon name="person" />
-              <Text>Eventos</Text>
+              <Text style={{color: 'white'}}>Eventos</Text>
             </Button>
           </FooterTab>
         </Footer> 
