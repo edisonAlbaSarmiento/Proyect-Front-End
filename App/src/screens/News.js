@@ -22,7 +22,7 @@ class News extends Component {
         )
     }
     componentDidMount = async () => {
-      return fetch('http://10.10.0.40:8003/api/news/', {
+      return fetch('http://192.168.20.60:8003/api/news/', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
