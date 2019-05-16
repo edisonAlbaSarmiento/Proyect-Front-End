@@ -15,13 +15,13 @@ class Events extends Component {
 
     static navigationOptions = {
         drawerIcon : ({tintColor}) =>(
-            <Icon name='home'  style={{
+            <Icon name='calendar'  style={{
                 fontSize:24, color: tintColor
             }}/>
         )
     }
     componentDidMount = async () => {
-      return fetch('http://192.168.20.60:8003/api/events/', {
+      return fetch('http://10.10.0.40:8003/api/events/', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -53,7 +53,7 @@ class Events extends Component {
         <HeaderEntry/>
         <Header style={{display: 'flex', alignItems:'center', backgroundColor: '#0F385A' }}>
           <View style={{flex: 1}}>
-          <Icon name='book' style={{color: 'white'}} onPress={()=>this.props.navigation.openDrawer()} />
+          <Icon name='menu' style={{color: 'white'}} onPress={()=>this.props.navigation.openDrawer()} />
           </View>
           <View style={{flex: 2}}>
             <Text style={{color: 'white'}}> Eventos </Text>
@@ -100,14 +100,14 @@ class Events extends Component {
               style={{backgroundColor: '#0F385A'}}
               onPress = {() => this.props.navigation.navigate('Noticias')}
             >
-              <Icon active name="navigate" />
+              <Icon active name="paper" />
               <Text style={{color: 'white'}}>Noticias</Text>
             </Button>
             <Button vertical active
               style={{backgroundColor: '#0F385A'}}
               onPress = {() => this.props.navigation.navigate('Eventos')}
             >
-              <Icon name="person" />
+              <Icon name="calendar" />
               <Text style={{color: 'white'}}>Eventos</Text>
             </Button>
           </FooterTab>
