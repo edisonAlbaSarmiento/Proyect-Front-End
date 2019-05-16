@@ -7,7 +7,7 @@ import moment from 'moment'
 class detailEvents extends Component {
     static navigationOptions = {
         drawerIcon : ({tintColor}) =>(
-            <Icon name='home'  style={{
+            <Icon name='document'  style={{
                 fontSize:24, color: tintColor
             }}/>
         )
@@ -20,7 +20,7 @@ class detailEvents extends Component {
           <HeaderEntry />
           <Header style={{display: 'flex', alignItems:'center', backgroundColor: '#0F385A'}}>
             <View style={{flex: 1}}>
-              <Icon name='book' style={{color:'white'}} onPress = {() => this.props.navigation.navigate('Noticias')} />
+              <Icon name='arrow-round-back' style={{color:'white'}} onPress = {() => this.props.navigation.navigate('Eventos')} />
             </View>
             <View style={{flex: 2}}>
               <Text style={{color: 'white'}}>{data.name} </Text>
@@ -43,6 +43,10 @@ class detailEvents extends Component {
                     <Text>
                       {data.short_description}
                     </Text>
+                  </Body>
+                </CardItem>
+                <CardItem>
+                  <Body style={{display: 'flex', alignItems:'center' }}>
                     <Text>
                       {data.description}
                     </Text>

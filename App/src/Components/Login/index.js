@@ -29,7 +29,7 @@ render(){
                   <Item style={{
                     width:200, height: 40, backgroundColor:'#9ba2b0'
                   }} rounded> 
-                    <Icon active name='home' />
+                    <Icon active name='contact' />
                     <Input placeholder='Usuario' 
                     onChangeText={(textUserName) => this.setState({textUserName})}
                     value={this.state.textUserName}
@@ -42,7 +42,7 @@ render(){
                   <Item style={{
                     width:200, height: 40, backgroundColor:'#9ba2b0'
                   }} rounded> 
-                    <Icon active name='car' />
+                    <Icon active name='lock' />
                     <Input placeholder='Contraseña' 
                     secureTextEntry={true}
                     onChangeText={(textPassword) => this.setState({textPassword})}
@@ -73,12 +73,11 @@ render(){
             </View>
           </View>
           <View style={{display: 'flex', flexDirection:'row',height: 150, backgroundColor: '#0F385A', padding: 15, textAlign: 'center'}} >
-            <View style={{flex: 3}}>
-              <Image source={{uri: 'https://www.poli.edu.co/sites/default/files/logos/icontec9001-a1.png'}} style={{width: 180, height: 100, resizeMode: 'contain'}}/>
+            <View style={{flex: 1}}>
+              <Image source={{uri: 'https://www.poli.edu.co/sites/default/files/logos/logo_poli_nuevo_footer-ver5.png'}} style={{width: 180, height: 100, resizeMode: 'contain'}}/>
             </View>
             <View style={{flex: 1}}>
-              <Text style={{color: 'white'}}>Somos diferentes</Text>
-
+              <Image source={{uri: 'https://www.poli.edu.co/sites/default/files/logos/icontec9001-a1.png'}} style={{width: 180, height: 100, resizeMode: 'contain'}}/>
             </View>
           </View>
         </View>

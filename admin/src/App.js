@@ -9,7 +9,7 @@ import loopbackRestClient from './services/Provider';
 import authProvider from './Auth/authProvider'
 import Login from './Auth/Login'
 
-const dataProvider = loopbackRestClient('http://localhost:8000/api')
+const dataProvider = loopbackRestClient('http://localhost:8003/api')
 
 class App extends Component   {
     render () {
