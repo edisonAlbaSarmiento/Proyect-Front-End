@@ -9,3 +9,6 @@ instalar node
 instalar el proyecto con npm i
 <br>
 ejecutarlo npm start
+
+Se utilizan los iconos
+https://ionicons.com/
