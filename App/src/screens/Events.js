@@ -21,7 +21,7 @@ class Events extends Component {
         )
     }
     componentDidMount = async () => {
-      return fetch('http://192.168.20.60:8003/api/events/', {
+      return fetch('http://192.168.88.7:8003/api/events/', {
         method: 'GET',
         headers: {
           Accept: 'application/json',

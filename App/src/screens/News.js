@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, ScrollView, Image, ActivityIndicator  } from 'react-native';
-import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right, Footer, FooterTab } from 'native-base'
+import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right, Footer, FooterTab, Badge } from 'native-base'
 import ImageF from '../Images/fondoHeader.jpg'
 import HeaderEntry from '../Components/Header'
 import FooterVertical from '../Components/Footer'
@@ -22,7 +22,7 @@ class News extends Component {
         )
     }
     componentDidMount = async () => {
-      return fetch('http://192.168.20.60:8003/api/news/', {
+      return fetch('http://192.168.88.7:8003/api/news/', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -101,6 +101,7 @@ class News extends Component {
               onPress = {() => this.props.navigation.navigate('Noticias')}
               style={{backgroundColor: '#0F385A'}}
             >
+               <Badge ><Text>{data.length >= 0 ? data.length : ''}</Text></Badge>
               <Icon active name="paper" />
               <Text style={{color: 'white'}}>Noticias</Text>
             </Button>
