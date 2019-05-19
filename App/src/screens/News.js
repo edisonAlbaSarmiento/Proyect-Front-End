@@ -22,7 +22,7 @@ class News extends Component {
         )
     }
     componentDidMount = async () => {
-      return fetch('http://192.168.88.7:8003/api/news/', {
+      return fetch('http://192.168.88.8:8003/api/news/', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -30,7 +30,6 @@ class News extends Component {
         }
       }).then((response) => response.json())
       .then((responseJson) => {
-        console.log('responseJson',responseJson)
         this.setState({
           isLoading: false,
           data: responseJson.reverse()
@@ -41,7 +40,6 @@ class News extends Component {
     }
   render() {
     const { data, isLoading } = this.state
-    console.log('data render NOticias', data)
     if(isLoading){
       return(
         <View style={{flex: 1, padding: 50}}>
@@ -63,7 +61,6 @@ class News extends Component {
         <ScrollView>
         {data.map((item, i) => (
             <View key={i}>
-               {console.log('item', item.name)}
                 <Card style={{flex: 0}}>
                 <CardItem>
                   <Left>
