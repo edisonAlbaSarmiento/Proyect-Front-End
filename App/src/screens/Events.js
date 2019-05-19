@@ -32,7 +32,7 @@ class Events extends Component {
         console.log('responseJson',responseJson)
         this.setState({
           isLoading: false,
-          data: responseJson
+          data: responseJson.reverse()
         })
       }).catch((error) =>{
         console.error(error);
