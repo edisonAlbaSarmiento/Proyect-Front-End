@@ -1,10 +1,10 @@
 {
-  "packagerPort": 19001,
-  "packagerPid": 7956,
-  "devToolsPort": 19002,
   "expoServerPort": 19000,
   "expoServerNgrokUrl": "https://7a-seh.anonymous.app.exp.direct",
   "packagerNgrokUrl": "https://packager.7a-seh.anonymous.app.exp.direct",
-  "ngrokPid": 26328,
+  "ngrokPid": 1416,
+  "devToolsPort": 19002,
+  "packagerPort": 19001,
+  "packagerPid": 10568,
   "webpackServerPort": null
 }

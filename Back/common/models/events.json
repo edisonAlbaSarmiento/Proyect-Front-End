@@ -26,6 +26,9 @@
     },
     "imagenUrl": {
       "type": "string"
+    },
+    "status": {
+      "type": "number"
     }
   },
   "validations": [],

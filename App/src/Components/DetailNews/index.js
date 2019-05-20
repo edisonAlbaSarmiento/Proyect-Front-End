@@ -12,6 +12,25 @@ class detailNews extends Component {
             }}/>
         )
     }
+    componentDidMount = async () => {
+      let formData = [{name : 'nnnn', status : 1}]
+      const dataUpdate = this.props.navigation.state.params.info
+console.log('DATA EN DISO', dataUpdate)
+
+      console.log('formDataO', formData)
+
+      const id = dataUpdate.id
+      await fetch(`http://192.168.88.9:8003/api/news/${id}`, {
+        method: 'put',
+        body: JSON.stringify(formData),
+
+      }).then((response) => response.json())
+      .then((responseJson) => {
+        console.log('responseJson',responseJson)
+      }).catch((error) =>{
+        console.error(error);
+      });
+    }
   render() {
     const data = this.props.navigation.state.params.info
     console.log('esto es en el detalle NEWS', data)

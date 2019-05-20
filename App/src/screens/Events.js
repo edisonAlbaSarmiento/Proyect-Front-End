@@ -21,7 +21,7 @@ class Events extends Component {
         )
     }
     componentDidMount = async () => {
-      return fetch('http://10.10.0.40:8003/api/events/', {
+      return fetch('http://192.168.88.9:8003/api/events/', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -32,7 +32,7 @@ class Events extends Component {
         console.log('responseJson',responseJson)
         this.setState({
           isLoading: false,
-          data: responseJson
+          data: responseJson.reverse()
         })
       }).catch((error) =>{
         console.error(error);
