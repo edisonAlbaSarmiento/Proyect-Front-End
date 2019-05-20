@@ -4,6 +4,7 @@ import Login from './src/Components/Login'
 import { createDrawerNavigator, DrawerItems } from 'react-navigation'
 import News from './src/screens/News'
 import Events from './src/screens/Events'
+import Profile from './src/screens/Profile'
 import detailNews from './src/Components/DetailNews'
 import detailEvents from './src/Components/DetailEvents'
 
@@ -31,6 +32,7 @@ const CustomDrawerComponent  = (props) => (
   </SafeAreaView>
 )
 const AppDrawerNavigator = createDrawerNavigator({
+  Profile: Profile,
   Login: Login,
   Eventos: Events,
   Noticias: News,
