@@ -20,5 +20,17 @@
   "events": {
     "dataSource": "polireddb",
     "public": true
+  },
+  "users": {
+    "dataSource": "polireddb",
+    "public": true
+  },
+  "formationprograms": {
+    "dataSource": "polireddb",
+    "public": true
+  },
+  "dusersprograms": {
+    "dataSource": "polireddb",
+    "public": true
   }
 }
