@@ -22,7 +22,7 @@ class Profile extends Component {
         )
     }
     componentDidMount = async () => {
-      return fetch('http://192.168.88.9:8003/api/news/', {
+      return fetch('http://192.168.20.60:8003/api/news/', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -74,19 +74,19 @@ class Profile extends Component {
                   <Body>
                   <Item disabled>
                     <Icon name='information-circle' />
-                    <Input disabled placeholder='Disabled Textbox'/>
+                    <Input disabled placeholder='Nombre'/>
                   </Item>
                   <Item disabled>
                      <Icon name='information-circle' />
-                    <Input disabled placeholder='Disabled Textbox'/>
+                    <Input disabled placeholder='Telefono'/>
                   </Item>
                   <Item disabled>
                      <Icon name='information-circle' />
-                    <Input disabled placeholder='Disabled Textbox'/>
+                    <Input disabled placeholder='email'/>
                   </Item>
                   <Item disabled>
                      <Icon name='information-circle' />
-                    <Input disabled placeholder='Disabled Textbox'/>
+                    <Input disabled placeholder='Direccion'/>
                   </Item>
                   <Item disabled>
                      <Icon name='information-circle' />

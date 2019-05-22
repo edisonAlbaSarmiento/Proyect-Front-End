@@ -32,11 +32,11 @@ const CustomDrawerComponent  = (props) => (
   </SafeAreaView>
 )
 const AppDrawerNavigator = createDrawerNavigator({
-  Profile: Profile,
   Login: Login,
   Eventos: Events,
   Noticias: News,
   Perfil: detailNews,
+  Profile: Profile,
   Terminos: detailEvents
 },{
   contentComponent: CustomDrawerComponent,

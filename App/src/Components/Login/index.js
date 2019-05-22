@@ -1,14 +1,18 @@
 import React from 'react'
-import { StyleSheet, Text, View, TextInput, TouchableHighlight, Dimensions, ScrollView,Image } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableHighlight, Dimensions, ScrollView,Image, Modal, Alert } from 'react-native'
 import { Button } from 'react-native-material-ui';
 import { Container, Header, Content, Item, Input, Icon, CardItem } from 'native-base';
 import HeaderEntry from '../Header'
 class Login extends React.Component{
     constructor(props) {
         super(props);
-        this.state = { textUserName: '', textPassword: '' };
+        this.state = { textUserName: '', textPassword: '', modalVisible: false };
         }
-        
+      
+        setModalVisible(visible) {
+          this.setState({modalVisible: visible});
+        }
+      
 render(){
     return(
     <ScrollView>
@@ -61,7 +65,9 @@ render(){
                   </View>
           <View style={{flex: 1, flexDirection:'row',justifyContent: 'space-between'}}>
             <View style={{padding: 5}}>
-              <CardItem button onPress={() => alert("Terminos y Condiciones")}>
+              <CardItem button  onPress={() => {
+                  this.setModalVisible(true);
+                }}>
                 <Text>Terminos y Condiciones</Text>
               </CardItem>
             </View >
@@ -79,6 +85,29 @@ render(){
             <View style={{flex: 1}}>
               <Image source={{uri: 'https://www.poli.edu.co/sites/default/files/logos/icontec9001-a1.png'}} style={{width: 180, height: 100, resizeMode: 'contain'}}/>
             </View>
+          </View>
+
+          <View style={{marginTop: 22}}>
+            <Modal
+              animationType="slide"
+              transparent={false}
+              visible={this.state.modalVisible}
+              onRequestClose={() => {
+                Alert.alert('Modal has been closed.');
+              }}>
+              <View style={{marginTop: 22}}>
+                <View>
+                  <Text>Hello World!</Text>
+
+                  <TouchableHighlight
+                    onPress={() => {
+                      this.setModalVisible(!this.state.modalVisible);
+                    }}>
+                    <Text>Hide Modal</Text>
+                  </TouchableHighlight>
+                </View>
+              </View>
+            </Modal>
           </View>
         </View>
     </ScrollView>

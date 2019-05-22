@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, ScrollView, Image  } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image,Linking  } from 'react-native';
 import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right } from 'native-base'
 import HeaderEntry from '../Header'
 import moment from 'moment'
@@ -20,10 +20,9 @@ console.log('DATA EN DISO', dataUpdate)
       console.log('formDataO', formData)
 
       const id = dataUpdate.id
-      await fetch(`http://192.168.88.9:8003/api/news/${id}`, {
+      await fetch(`http://192.168.20.60:8003/api/news/${id}`, {
         method: 'put',
         body: JSON.stringify(formData),
-
       }).then((response) => response.json())
       .then((responseJson) => {
         console.log('responseJson',responseJson)
@@ -76,7 +75,7 @@ console.log('DATA EN DISO', dataUpdate)
               </CardItem>
               <CardItem>
                 <Right style={{flex: 1}}>
-                  <Button style={{backgroundColor: '#0F385A', width: 100, justifyContent: 'center'}} onPress = {() => data.linkPage}>
+                  <Button style={{backgroundColor: '#0F385A', width: 100, justifyContent: 'center'}} onPress = {() => Linking.openURL(`${data.linkPage !== "" ?data.linkPage : 'https://www.poli.edu.co/'}`).catch((err) => console.error('An error occurred', err))}>
                     <Text style={{color: 'white'}} >Ir a web</Text>
                   </Button>
                 </Right>
