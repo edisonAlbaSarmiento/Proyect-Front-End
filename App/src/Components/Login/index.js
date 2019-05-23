@@ -8,7 +8,22 @@ class Login extends React.Component{
         super(props);
         this.state = { textUserName: '', textPassword: '', modalVisible: false };
         }
-      
+        static navigationOptions = {
+          drawerIcon : ({tintColor}) =>(
+              <Icon name='close'  style={{
+                  fontSize:24, color: tintColor
+              }}/>
+          )
+      }
+      onLogin(){
+        const { textUserName, textPassword } = this.state;
+
+        if(textUserName === 'Admin' && textPassword === 'edison01'){
+          this.props.navigation.navigate('Noticias')
+        }else {
+          Alert.alert('Error');
+        }
+      }
         setModalVisible(visible) {
           this.setState({modalVisible: visible});
         }
@@ -55,7 +70,7 @@ render(){
                   </Item>
                 </View>
                 <View>
-                  <Button raised primary text="Ingresar" onPress = {() => this.props.navigation.navigate('Noticias')} />
+                  <Button raised primary text="Ingresar" onPress ={this.onLogin.bind(this)} />
                 </View>
 
                 <View style={{flex: 1}}>
@@ -75,6 +90,28 @@ render(){
               <CardItem button onPress={() => alert("Politicas de Privacidad")}>
                 <Text>Politicas de Privacidad</Text>
               </CardItem>
+              <View style={{marginTop: 22}}>
+            <Modal
+              animationType="slide"
+              transparent={false}
+              visible={this.state.modalVisible}
+              onRequestClose={() => {
+                Alert.alert('Modal has been closed.');
+              }}>
+              <View style={{marginTop: 22}}>
+                <View>
+                  <Text>Terminos</Text>
+
+                  <TouchableHighlight
+                    onPress={() => {
+                      this.setModalVisible(!this.state.modalVisible);
+                    }}>
+                    <Text>Cerrar</Text>
+                  </TouchableHighlight>
+                </View>
+              </View>
+            </Modal>
+          </View>
           </View>
             </View>
           </View>
@@ -85,29 +122,6 @@ render(){
             <View style={{flex: 1}}>
               <Image source={{uri: 'https://www.poli.edu.co/sites/default/files/logos/icontec9001-a1.png'}} style={{width: 180, height: 100, resizeMode: 'contain'}}/>
             </View>
-          </View>
-
-          <View style={{marginTop: 22}}>
-            <Modal
-              animationType="slide"
-              transparent={false}
-              visible={this.state.modalVisible}
-              onRequestClose={() => {
-                Alert.alert('Modal has been closed.');
-              }}>
-              <View style={{marginTop: 22}}>
-                <View>
-                  <Text>Hello World!</Text>
-
-                  <TouchableHighlight
-                    onPress={() => {
-                      this.setModalVisible(!this.state.modalVisible);
-                    }}>
-                    <Text>Hide Modal</Text>
-                  </TouchableHighlight>
-                </View>
-              </View>
-            </Modal>
           </View>
         </View>
     </ScrollView>

@@ -5,16 +5,32 @@ import HeaderEntry from '../Header'
 import moment from 'moment'
 
 class detailEvents extends Component {
-    static navigationOptions = {
-        drawerIcon : ({tintColor}) =>(
-            <Icon name='document'  style={{
-                fontSize:24, color: tintColor
-            }}/>
-        )
+    // static navigationOptions = {
+    //     drawerIcon : ({tintColor}) =>(
+    //         <Icon name='document'  style={{
+    //             fontSize:24, color: tintColor
+    //         }}/>
+    //     )
+    // }
+    componentDidMount = async () => {
+      let formData = {status : 1}
+      const dataUpdate = this.props.navigation.state.params.info
+      const id = dataUpdate.id
+      console.log('ENTRO EVENTO', id)
+      await fetch(`http://10.10.5.183:8003/api/events/${id}`, {
+        method: 'PATCH',
+        body: JSON.stringify(formData),
+        headers:{
+          'Content-Type': 'application/json'
+        }
+      }).then(res => res.json())
+      .catch(error => console.error('Error:', error))
+      .then(response => console.log('Success:', response));
     }
+
     render() {
       const data = this.props.navigation.state.params.info
-      console.log('esto es en el detalle NEWS', data)
+      console.log('DATA EVENT', data)
       return (
         <View style={styles.container}>
           <HeaderEntry />

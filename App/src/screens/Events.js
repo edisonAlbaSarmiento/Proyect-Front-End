@@ -1,14 +1,28 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, ScrollView, ActivityIndicator, Image } from 'react-native';
-import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right, Footer, FooterTab} from 'native-base'
+import { StyleSheet, Text, View, ScrollView, ActivityIndicator, Image, ToastAndroid } from 'react-native';
+import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right, Footer, FooterTab, Badge} from 'native-base'
 import HeaderEntry from '../Components/Header'
 import moment from 'moment'
+
+const Toast = (props) => {
+  if (props.visible) {
+    ToastAndroid.showWithGravityAndOffset(
+      props.message,
+      ToastAndroid.LONG,
+      ToastAndroid.CENTER,
+      25,
+      50,
+    );
+    return null;
+  }
+  return null;
+};
 
 class Events extends Component {
     constructor(props){
       super(props);
       this.state ={ 
-        data: '',
+        data: [],
         isLoading: true
       }
     }
@@ -21,7 +35,7 @@ class Events extends Component {
         )
     }
     componentDidMount = async () => {
-      return fetch('http://192.168.20.60:8003/api/events/', {
+      return fetch('http://10.10.5.183:8003/api/events/', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -40,7 +54,10 @@ class Events extends Component {
     }
   render() {
     const { data, isLoading } = this.state
+    const dataNew = data.filter(data => (data.status === 0))
+
     console.log('data render', data)
+    console.log('dataNew', dataNew.length)
     if(isLoading){
       return(
         <View style={{flex: 1, padding: 50}}>
@@ -62,13 +79,20 @@ class Events extends Component {
         <ScrollView>
           {data.map((item, i) => (
             <View key={i}>
-               {console.log('item', item.name)}
                 <Card style={{flex: 0}}>
                 <CardItem>
                   <Left>
                     <Thumbnail source={require('../../assets/logoPoli.png')} style={{resizeMode: 'contain'}} />
                     <Body>
+                    {item.status === 0 ?
+                      <View>
+                      <Text style={{color: "red"}}>Nuevo Evento </Text>
                       <Text>{item.name}</Text>
+                      <Toast visible={true} message="EVENTOS NUEVOS" />
+                    </View>
+                    :
+                    <Text>{item.name}</Text>
+                    }
                       <Text note>{moment(item.created_at).format("YYYY-MM-DD")}</Text>
                     </Body>
                   </Left>
@@ -107,6 +131,7 @@ class Events extends Component {
               style={{backgroundColor: '#0F385A'}}
               onPress = {() => this.props.navigation.navigate('Eventos')}
             >
+              {dataNew.length === 0 ? null : <Badge ><Text style={{color: "white"}}>{dataNew.length}</Text></Badge> }
               <Icon name="calendar" />
               <Text style={{color: 'white'}}>Eventos</Text>
             </Button>

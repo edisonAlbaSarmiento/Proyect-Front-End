@@ -4,7 +4,7 @@ import './App.css';
 import { Admin, Resource } from 'react-admin';
 import News from './resources/news'
 import Events from './resources/events'
-
+import User from './resources/users'
 import loopbackRestClient from './services/Provider';
 import authProvider from './Auth/authProvider'
 import Login from './Auth/Login'
@@ -32,7 +32,11 @@ class App extends Component   {
         edit={Events.Edit}
         show={Events.show}
         icon={Events.PostIcon}
-    /> 
+    />
+      <Resource name="users"
+        list={User.List} 
+        icon={User.UserIcon}
+    />  
 </Admin>
     )
 }

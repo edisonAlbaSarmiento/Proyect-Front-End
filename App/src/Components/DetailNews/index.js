@@ -6,6 +6,7 @@ import moment from 'moment'
 
 class detailNews extends Component {
     static navigationOptions = {
+        headerTitle : null,
         drawerIcon : ({tintColor}) =>(
             <Icon name='person'  style={{
                 fontSize:24, color: tintColor
@@ -13,22 +14,20 @@ class detailNews extends Component {
         )
     }
     componentDidMount = async () => {
-      let formData = [{name : 'nnnn', status : 1}]
+      let formData = {status : 1}
       const dataUpdate = this.props.navigation.state.params.info
-console.log('DATA EN DISO', dataUpdate)
-
-      console.log('formDataO', formData)
-
       const id = dataUpdate.id
-      await fetch(`http://192.168.20.60:8003/api/news/${id}`, {
-        method: 'put',
+      await fetch(`http://10.10.5.183:8003/api/news/${id}`, {
+        method: 'PATCH',
         body: JSON.stringify(formData),
-      }).then((response) => response.json())
-      .then((responseJson) => {
-        console.log('responseJson',responseJson)
-      }).catch((error) =>{
-        console.error(error);
-      });
+        headers:{
+          'Content-Type': 'application/json'
+        }
+      }).then(res => res.json())
+      .catch(error => console.error('Error:', error))
+      .then(response => console.log('Success:', response));
+
+
     }
   render() {
     const data = this.props.navigation.state.params.info
