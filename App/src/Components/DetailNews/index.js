@@ -6,14 +6,14 @@ import moment from 'moment'
 import urlApi from '../../../ConstIP'
 
 class detailNews extends Component {
-    static navigationOptions = {
-        headerTitle : null,
-        drawerIcon : ({tintColor}) =>(
-            <Icon name='person'  style={{
-                fontSize:24, color: tintColor
-            }}/>
-        )
-    }
+    // static navigationOptions = {
+    //     headerTitle : null,
+    //     drawerIcon : ({tintColor}) =>(
+    //         <Icon name='person'  style={{
+    //             fontSize:24, color: tintColor
+    //         }}/>
+    //     )
+    // }
     componentDidMount = async () => {
       let formData = {status : 1}
       const dataUpdate = this.props.navigation.state.params.info

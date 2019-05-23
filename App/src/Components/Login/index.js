@@ -3,6 +3,8 @@ import { StyleSheet, Text, View, TextInput, TouchableHighlight, Dimensions, Scro
 import { Button } from 'react-native-material-ui';
 import { Container, Header, Content, Item, Input, Icon, CardItem } from 'native-base';
 import HeaderEntry from '../Header'
+import urlApi from '../../../ConstIP'
+
 class Login extends React.Component{
     constructor(props) {
         super(props);
@@ -15,15 +17,30 @@ class Login extends React.Component{
               }}/>
           )
       }
-      onLogin(){
+      onLogin = async () =>{
         const { textUserName, textPassword } = this.state;
+        console.log('textUserName', textUserName)
+        console.log('textUserName', textPassword)
 
-        if(textUserName === 'Admin' && textPassword === 'edison01'){
-          this.props.navigation.navigate('Noticias')
-        }else {
-          Alert.alert('Error');
+       await fetch(`${urlApi}/users?filter{"where":{"or":[{"firstName":'EEEE'},{"password":'wwww'}]}}`, {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
         }
-      }
+      }).then((response) => response.json())
+      .then((responseJson) => {
+       console.log('response login', responseJson)
+      }).catch((error) =>{
+        console.error(error);
+      });
+    }
+      //   if(textUserName === 'Admin' && textPassword === 'edison01'){
+      //     this.props.navigation.navigate('Noticias')
+      //   }else {
+      //     Alert.alert('Error');
+      //   }
+      // }
         setModalVisible(visible) {
           this.setState({modalVisible: visible});
         }
