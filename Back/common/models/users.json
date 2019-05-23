@@ -1,0 +1,53 @@
+{
+  "name": "users",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "created_at"
+    }
+  },
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "secondName": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "number"
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string"
+    },
+    "idProgram": {
+      "type": "number"
+    },
+    "imageUrl": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "program": {
+      "type": "belongsTo",
+      "model": "Dusersprograms",
+      "foreignKey": "idProgram"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

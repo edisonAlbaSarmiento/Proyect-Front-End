@@ -5,24 +5,27 @@ import ImageF from '../Images/fondoHeader.jpg'
 import HeaderEntry from '../Components/Header'
 import FooterVertical from '../Components/Footer'
 import moment from 'moment'
+import urlApi from '../../ConstIP'
 
 class Profile extends Component {
     constructor(props){
       super(props);
       this.state ={ 
         data: '',
+        dataCarrers: [],
         isLoading: true
       }
     }
     static navigationOptions = {
         drawerIcon : ({tintColor}) =>(
-            <Icon name='paper'  style={{
+            <Icon name='contact'  style={{
                 fontSize:24, color: tintColor
             }}/>
         )
     }
     componentDidMount = async () => {
-      return fetch('http://192.168.88.9:8003/api/news/', {
+      
+     fetch(`${urlApi}/users/1`, {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -32,14 +35,16 @@ class Profile extends Component {
       .then((responseJson) => {
         this.setState({
           isLoading: false,
-          data: responseJson.reverse()
+          data: responseJson
         })
       }).catch((error) =>{
         console.error(error);
       });
     }
   render() {
-    const { data, isLoading } = this.state
+    const { data,dataCarrers, isLoading } = this.state
+
+    console.log('imagen antes https://bootdey.com/img/Content/avatar/avatar6.png', data)
     if(isLoading){
       return(
         <View style={{flex: 1, padding: 50}}>
@@ -48,11 +53,11 @@ class Profile extends Component {
       )
     }
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
       <View  style={{backgroundImage: 'url(./Images/fondoHeader.jpg)'}}>
         <View style={styles.headerContent}>
             <Image style={styles.avatar}
-              source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
+              source={{uri: data.imageUrl}}/>
         </View>
       </View>
       <Header style={{display: 'flex', alignItems:'center', backgroundColor: '#0F385A'}}>
@@ -63,56 +68,50 @@ class Profile extends Component {
             <Text style={{color: 'white'}}> Perfil </Text>
           </View>
         </Header>
-        <ScrollView>
-        {data.map((item, i) => (
-            <View key={i}>
                 <Card style={{flex: 0}}>
                 <CardItem header bordered>
                   <Text>Datos Personales</Text>
                 </CardItem>
                 <CardItem bordered>
                   <Body>
+                  <Text>Nombre</Text>
                   <Item disabled>
-                    <Icon name='information-circle' />
-                    <Input disabled placeholder='Disabled Textbox'/>
+                    <Icon name='home' />
+                    <Input disabled placeholder='Nombres' value={data.firstName}/>
                   </Item>
+                  <Text>Apellidos</Text>
                   <Item disabled>
-                     <Icon name='information-circle' />
-                    <Input disabled placeholder='Disabled Textbox'/>
+                    <Icon name='home' />
+                    <Input disabled placeholder='Apellidos' value={data.secondName}/>
                   </Item>
+                  {/* <Text>Telefono</Text>
                   <Item disabled>
-                     <Icon name='information-circle' />
-                    <Input disabled placeholder='Disabled Textbox'/>
+                     <Icon name='home' />
+                    <Input disabled keyboardType="numeric" placeholder='Telefono' value={data.phone}/>
+                  </Item> */}
+                  <Text>Email</Text>
+                  <Item disabled>
+                     <Icon name='home' />
+                    <Input disabled placeholder='email' value={data.email}/>
                   </Item>
+                  <Text>Direccion</Text>
                   <Item disabled>
-                     <Icon name='information-circle' />
-                    <Input disabled placeholder='Disabled Textbox'/>
-                  </Item>
-                  <Item disabled>
-                     <Icon name='information-circle' />
-                    <Input disabled placeholder='Disabled Textbox'/>
-                  </Item>
-                  <Item disabled>
-                     <Icon name='information-circle' />
-                    <Input disabled placeholder='Disabled Textbox'/>
+                     <Icon name='home' />
+                    <Input disabled placeholder='Direccion' value={data.address}/>
                   </Item>
                   </Body>
                 </CardItem>
                 <CardItem footer bordered>
                 <Text>Titulos Obtenidos</Text>
-              </CardItem>
+                </CardItem>
                 <CardItem>
                   <Item disabled>
+                    <Icon name='home' />
                     <Input disabled placeholder='Disabled Textbox'/>
-                    <Icon name='information-circle' />
                   </Item>
                 </CardItem>
- 
               </Card>
-            </View>
-          ))}
-        </ScrollView> 
-  </View>
+      </ScrollView>
     );
   }
 }

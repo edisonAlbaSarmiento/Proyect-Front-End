@@ -1,17 +1,31 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, ScrollView, Image, ActivityIndicator  } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image, ActivityIndicator,ToastAndroid  } from 'react-native';
 import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right, Footer, FooterTab, Badge } from 'native-base'
-import ImageF from '../Images/fondoHeader.jpg'
 import HeaderEntry from '../Components/Header'
-import FooterVertical from '../Components/Footer'
 import moment from 'moment'
+import urlApi from '../../ConstIP'
+
+const Toast = (props) => {
+  if (props.visible) {
+    ToastAndroid.showWithGravityAndOffset(
+      props.message,
+      ToastAndroid.LONG,
+      ToastAndroid.CENTER,
+      25,
+      50,
+    );
+    return null;
+  }
+  return null;
+};
 
 class News extends Component {
     constructor(props){
       super(props);
       this.state ={ 
-        data: '',
-        isLoading: true
+        data: [],
+        isLoading: true,
+        visible: false
       }
     }
     static navigationOptions = {
@@ -22,7 +36,7 @@ class News extends Component {
         )
     }
     componentDidMount = async () => {
-      return fetch('http://192.168.88.9:8003/api/news/', {
+      return fetch(`${urlApi}/news/`, {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -38,8 +52,15 @@ class News extends Component {
         console.error(error);
       });
     }
+
+    hideToast = () => {
+      this.setState({
+        visible: false,
+      });
+    };
   render() {
     const { data, isLoading } = this.state
+    const news = data.filter(data => (data.status === 0))
     if(isLoading){
       return(
         <View style={{flex: 1, padding: 50}}>
@@ -59,6 +80,8 @@ class News extends Component {
           </View>
         </Header>
         <ScrollView>
+       
+   
         {data.map((item, i) => (
             <View key={i}>
                 <Card style={{flex: 0}}>
@@ -66,7 +89,15 @@ class News extends Component {
                   <Left>
                     <Thumbnail source={require('../../assets/logoPoli.png')} style={{resizeMode: 'contain'}} />
                     <Body>
+                      {item.status === 0 ?
+                      <View>
+                        <Text style={{color: "red"}}>Nuevo Noticia </Text>
+                        <Text>{item.name}</Text>
+                        <Toast visible={true} message="NOTICIAS NUEVAS" />
+                      </View>
+                      :
                       <Text>{item.name}</Text>
+                      }
                       <Text note>{moment(item.created_at).format("YYYY-MM-DD")}</Text>
                     </Body>
                   </Left>
@@ -83,7 +114,7 @@ class News extends Component {
                 </CardItem>
                 <CardItem>
                   <Right style={{flex: 1}}>
-                    <Button style={{backgroundColor: '#0F385A', width: 100, justifyContent: 'center'}} onPress = {() => this.props.navigation.navigate('Perfil',{ info: item })}>
+                    <Button style={{backgroundColor: '#0F385A', width: 100, justifyContent: 'center'}} onPress = {() => this.props.navigation.navigate('PoliU',{ info: item })}>
                       <Text style={{color: 'white'}}>Ver más</Text>
                     </Button>
                   </Right>
@@ -98,7 +129,7 @@ class News extends Component {
               onPress = {() => this.props.navigation.navigate('Noticias')}
               style={{backgroundColor: '#0F385A'}}
             >
-               <Badge ><Text>{data.length >= 0 ? data.length : ''}</Text></Badge>
+              {news.length === 0 ? null : <Badge ><Text style={{color: "white"}}>{news.length}</Text></Badge> }
               <Icon active name="paper" />
               <Text style={{color: 'white'}}>Noticias</Text>
             </Button>

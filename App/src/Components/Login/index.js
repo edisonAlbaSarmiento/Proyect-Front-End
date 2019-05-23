@@ -1,14 +1,50 @@
 import React from 'react'
-import { StyleSheet, Text, View, TextInput, TouchableHighlight, Dimensions, ScrollView,Image } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableHighlight, Dimensions, ScrollView,Image, Modal, Alert } from 'react-native'
 import { Button } from 'react-native-material-ui';
 import { Container, Header, Content, Item, Input, Icon, CardItem } from 'native-base';
 import HeaderEntry from '../Header'
+import urlApi from '../../../ConstIP'
+
 class Login extends React.Component{
     constructor(props) {
         super(props);
-        this.state = { textUserName: '', textPassword: '' };
+        this.state = { textUserName: '', textPassword: '', modalVisible: false };
         }
-        
+        static navigationOptions = {
+          drawerIcon : ({tintColor}) =>(
+              <Icon name='close'  style={{
+                  fontSize:24, color: tintColor
+              }}/>
+          )
+      }
+      onLogin = async () =>{
+        const { textUserName, textPassword } = this.state;
+        console.log('textUserName', textUserName)
+        console.log('textUserName', textPassword)
+
+       await fetch(`${urlApi}/users?filter{"where":{"or":[{"firstName":'EEEE'},{"password":'wwww'}]}}`, {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        }
+      }).then((response) => response.json())
+      .then((responseJson) => {
+       console.log('response login', responseJson)
+      }).catch((error) =>{
+        console.error(error);
+      });
+    }
+      //   if(textUserName === 'Admin' && textPassword === 'edison01'){
+      //     this.props.navigation.navigate('Noticias')
+      //   }else {
+      //     Alert.alert('Error');
+      //   }
+      // }
+        setModalVisible(visible) {
+          this.setState({modalVisible: visible});
+        }
+      
 render(){
     return(
     <ScrollView>
@@ -51,7 +87,7 @@ render(){
                   </Item>
                 </View>
                 <View>
-                  <Button raised primary text="Ingresar" onPress = {() => this.props.navigation.navigate('Noticias')} />
+                  <Button raised primary text="Ingresar" onPress ={this.onLogin.bind(this)} />
                 </View>
 
                 <View style={{flex: 1}}>
@@ -61,7 +97,9 @@ render(){
                   </View>
           <View style={{flex: 1, flexDirection:'row',justifyContent: 'space-between'}}>
             <View style={{padding: 5}}>
-              <CardItem button onPress={() => alert("Terminos y Condiciones")}>
+              <CardItem button  onPress={() => {
+                  this.setModalVisible(true);
+                }}>
                 <Text>Terminos y Condiciones</Text>
               </CardItem>
             </View >
@@ -69,6 +107,28 @@ render(){
               <CardItem button onPress={() => alert("Politicas de Privacidad")}>
                 <Text>Politicas de Privacidad</Text>
               </CardItem>
+              <View style={{marginTop: 22}}>
+            <Modal
+              animationType="slide"
+              transparent={false}
+              visible={this.state.modalVisible}
+              onRequestClose={() => {
+                Alert.alert('Modal has been closed.');
+              }}>
+              <View style={{marginTop: 22}}>
+                <View>
+                  <Text>Terminos</Text>
+
+                  <TouchableHighlight
+                    onPress={() => {
+                      this.setModalVisible(!this.state.modalVisible);
+                    }}>
+                    <Text>Cerrar</Text>
+                  </TouchableHighlight>
+                </View>
+              </View>
+            </Modal>
+          </View>
           </View>
             </View>
           </View>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, SafeAreaView, Image } from 'react-native';
 import Login from './src/Components/Login'
-import { createDrawerNavigator, DrawerItems } from 'react-navigation'
+import { createDrawerNavigator, DrawerItems , createStackNavigator} from 'react-navigation'
 import News from './src/screens/News'
 import Events from './src/screens/Events'
 import Profile from './src/screens/Profile'
@@ -31,13 +31,17 @@ const CustomDrawerComponent  = (props) => (
     </ScrollView>
   </SafeAreaView>
 )
+// const NavigationStack = createStackNavigator({
+//   Profile: detailNews
+// })
 const AppDrawerNavigator = createDrawerNavigator({
-  Profile: Profile,
-  Login: Login,
+  Salir: Login,
   Eventos: Events,
   Noticias: News,
-  Perfil: detailNews,
+  Perfil: Profile,
+  PoliU:detailNews,
   Terminos: detailEvents
+
 },{
   contentComponent: CustomDrawerComponent,
   contentOptions: {

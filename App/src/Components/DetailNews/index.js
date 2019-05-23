@@ -1,35 +1,35 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, ScrollView, Image  } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image,Linking  } from 'react-native';
 import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right } from 'native-base'
 import HeaderEntry from '../Header'
 import moment from 'moment'
+import urlApi from '../../../ConstIP'
 
 class detailNews extends Component {
-    static navigationOptions = {
-        drawerIcon : ({tintColor}) =>(
-            <Icon name='person'  style={{
-                fontSize:24, color: tintColor
-            }}/>
-        )
-    }
+    // static navigationOptions = {
+    //     headerTitle : null,
+    //     drawerIcon : ({tintColor}) =>(
+    //         <Icon name='person'  style={{
+    //             fontSize:24, color: tintColor
+    //         }}/>
+    //     )
+    // }
     componentDidMount = async () => {
-      let formData = [{name : 'nnnn', status : 1}]
+      let formData = {status : 1}
       const dataUpdate = this.props.navigation.state.params.info
-console.log('DATA EN DISO', dataUpdate)
-
-      console.log('formDataO', formData)
-
       const id = dataUpdate.id
-      await fetch(`http://192.168.88.9:8003/api/news/${id}`, {
-        method: 'put',
+      console.log('urlApi', urlApi)
+      await fetch(`${urlApi}/news/${id}`, {
+        method: 'PATCH',
         body: JSON.stringify(formData),
+        headers:{
+          'Content-Type': 'application/json'
+        }
+      }).then(res => res.json())
+      .catch(error => console.error('Error:', error))
+      .then(response => console.log('Success:', response));
 
-      }).then((response) => response.json())
-      .then((responseJson) => {
-        console.log('responseJson',responseJson)
-      }).catch((error) =>{
-        console.error(error);
-      });
+
     }
   render() {
     const data = this.props.navigation.state.params.info
@@ -76,7 +76,7 @@ console.log('DATA EN DISO', dataUpdate)
               </CardItem>
               <CardItem>
                 <Right style={{flex: 1}}>
-                  <Button style={{backgroundColor: '#0F385A', width: 100, justifyContent: 'center'}} onPress = {() => data.linkPage}>
+                  <Button style={{backgroundColor: '#0F385A', width: 100, justifyContent: 'center'}} onPress = {() => Linking.openURL(`${data.linkPage !== "" ?data.linkPage : 'https://www.poli.edu.co/'}`).catch((err) => console.error('An error occurred', err))}>
                     <Text style={{color: 'white'}} >Ir a web</Text>
                   </Button>
                 </Right>

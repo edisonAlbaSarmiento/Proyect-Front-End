@@ -1,0 +1,36 @@
+{
+  "name": "formationprograms",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "created_at"
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "idUser" : {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "program": {
+      "type": "belongsTo",
+      "model": "Dusersprograms",
+      "foreignKey": "idUser"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
