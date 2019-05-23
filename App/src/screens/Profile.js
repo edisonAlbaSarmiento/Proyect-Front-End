@@ -5,6 +5,7 @@ import ImageF from '../Images/fondoHeader.jpg'
 import HeaderEntry from '../Components/Header'
 import FooterVertical from '../Components/Footer'
 import moment from 'moment'
+import urlApi from '../../ConstIP'
 
 class Profile extends Component {
     constructor(props){
@@ -24,7 +25,7 @@ class Profile extends Component {
     }
     componentDidMount = async () => {
       
-     fetch(`http://10.10.5.183:8003/api/users/1`, {
+     fetch(`${urlApi}/users/1`, {
         method: 'GET',
         headers: {
           Accept: 'application/json',

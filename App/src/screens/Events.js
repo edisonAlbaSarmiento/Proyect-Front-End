@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, ScrollView, ActivityIndicator, Image, ToastAndr
 import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right, Footer, FooterTab, Badge} from 'native-base'
 import HeaderEntry from '../Components/Header'
 import moment from 'moment'
+import urlApi from '../../ConstIP'
 
 const Toast = (props) => {
   if (props.visible) {
@@ -35,7 +36,7 @@ class Events extends Component {
         )
     }
     componentDidMount = async () => {
-      return fetch('http://10.10.5.183:8003/api/events/', {
+      return fetch(`${urlApi}/events/`, {
         method: 'GET',
         headers: {
           Accept: 'application/json',

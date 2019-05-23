@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, ScrollView, Image  } from 'react-native';
 import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right } from 'native-base'
 import HeaderEntry from '../Header'
 import moment from 'moment'
+import urlApi from '../../../ConstIP'
 
 class detailEvents extends Component {
     // static navigationOptions = {
@@ -17,7 +18,7 @@ class detailEvents extends Component {
       const dataUpdate = this.props.navigation.state.params.info
       const id = dataUpdate.id
       console.log('ENTRO EVENTO', id)
-      await fetch(`http://10.10.5.183:8003/api/events/${id}`, {
+      await fetch(`${urlApi}/events/${id}`, {
         method: 'PATCH',
         body: JSON.stringify(formData),
         headers:{

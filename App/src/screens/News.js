@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, ScrollView, Image, ActivityIndicator,ToastAndroid  } from 'react-native';
 import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right, Footer, FooterTab, Badge } from 'native-base'
-import ImageF from '../Images/fondoHeader.jpg'
 import HeaderEntry from '../Components/Header'
-import FooterVertical from '../Components/Footer'
 import moment from 'moment'
+import urlApi from '../../ConstIP'
 
 const Toast = (props) => {
   if (props.visible) {
@@ -37,7 +36,7 @@ class News extends Component {
         )
     }
     componentDidMount = async () => {
-      return fetch('http://10.10.5.183:8003/api/news/', {
+      return fetch(`${urlApi}/news/`, {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -115,7 +114,7 @@ class News extends Component {
                 </CardItem>
                 <CardItem>
                   <Right style={{flex: 1}}>
-                    <Button style={{backgroundColor: '#0F385A', width: 100, justifyContent: 'center'}} onPress = {() => this.props.navigation.navigate('Profile',{ info: item })}>
+                    <Button style={{backgroundColor: '#0F385A', width: 100, justifyContent: 'center'}} onPress = {() => this.props.navigation.navigate('PoliU',{ info: item })}>
                       <Text style={{color: 'white'}}>Ver más</Text>
                     </Button>
                   </Right>

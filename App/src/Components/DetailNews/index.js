@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, ScrollView, Image,Linking  } from 'react-native
 import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right } from 'native-base'
 import HeaderEntry from '../Header'
 import moment from 'moment'
+import urlApi from '../../../ConstIP'
 
 class detailNews extends Component {
     static navigationOptions = {
@@ -17,7 +18,8 @@ class detailNews extends Component {
       let formData = {status : 1}
       const dataUpdate = this.props.navigation.state.params.info
       const id = dataUpdate.id
-      await fetch(`http://10.10.5.183:8003/api/news/${id}`, {
+      console.log('urlApi', urlApi)
+      await fetch(`${urlApi}/news/${id}`, {
         method: 'PATCH',
         body: JSON.stringify(formData),
         headers:{

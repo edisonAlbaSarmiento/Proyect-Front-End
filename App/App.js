@@ -31,15 +31,15 @@ const CustomDrawerComponent  = (props) => (
     </ScrollView>
   </SafeAreaView>
 )
-const NavigationStack = createStackNavigator({
-  Profile: detailNews
-})
+// const NavigationStack = createStackNavigator({
+//   Profile: detailNews
+// })
 const AppDrawerNavigator = createDrawerNavigator({
   Salir: Login,
   Eventos: Events,
   Noticias: News,
   Perfil: Profile,
-  PoliU:NavigationStack,
+  PoliU:detailNews,
   Terminos: detailEvents
 
 },{
