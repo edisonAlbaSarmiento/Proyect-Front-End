@@ -20,14 +20,14 @@
       "required": true
     },
     "idUser" : {
-      "type": "string"
+      "type": "number"
     }
   },
   "validations": [],
   "relations": {
-    "program": {
+    "users": {
       "type": "belongsTo",
-      "model": "Dusersprograms",
+      "model": "users",
       "foreignKey": "idUser"
     }
   },

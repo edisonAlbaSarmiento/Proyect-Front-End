@@ -44,7 +44,7 @@
   "relations": {
     "program": {
       "type": "belongsTo",
-      "model": "Dusersprograms",
+      "model": "formationprograms",
       "foreignKey": "idProgram"
     }
   },

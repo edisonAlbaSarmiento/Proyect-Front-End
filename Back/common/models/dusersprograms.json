@@ -22,14 +22,14 @@
   },
   "validations": [],
   "relations": {
-    "user": {
+    "users": {
       "type": "belongsTo",
-      "model": "Users",
+      "model": "users",
       "foreignKey": "idUser"
     },
     "program": {
       "type": "belongsTo",
-      "model": "Formationprograms",
+      "model": "formationprograms",
       "foreignKey": "idProgram"
     }
   },

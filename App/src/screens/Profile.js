@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, ScrollView, Image, ActivityIndicator  } from 'react-native';
-import { Header, Icon, Left, Card, CardItem, Item, Body, Input,Content} from 'native-base'
+import { Header, Icon, Left, Card, CardItem, Item, Body, Input,Accordion } from 'native-base'
 import ImageF from '../Images/fondoHeader.jpg'
 import HeaderEntry from '../Components/Header'
 import FooterVertical from '../Components/Footer'
@@ -12,7 +12,7 @@ class Profile extends Component {
       super(props);
       this.state ={ 
         data: '',
-        dataCarrers: [],
+        dataProgram: '',
         isLoading: true
       }
     }
@@ -40,10 +40,30 @@ class Profile extends Component {
       }).catch((error) =>{
         console.error(error);
       });
+           
+     fetch(`${urlApi}/dusersprograms?filter={"where":{"idUser":"1"}, "include":"program"}`, {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }
+    }).then((response) => response.json())
+    .then((responseJson) => {
+      this.setState({
+        isLoading: false,
+        dataProgram: responseJson.map(item => (
+          {
+            title: item.program.name,
+            content: item.program.description
+          }
+        ))
+      })
+    }).catch((error) =>{
+      console.error(error);
+    });
     }
   render() {
-    const { data,dataCarrers, isLoading } = this.state
-
+    const { data,dataProgram, isLoading } = this.state
     console.log('imagen antes https://bootdey.com/img/Content/avatar/avatar6.png', data)
     if(isLoading){
       return(
@@ -76,12 +96,12 @@ class Profile extends Component {
                   <Body>
                   <Text>Nombre</Text>
                   <Item disabled>
-                    <Icon name='home' />
+                    <Icon name='person' />
                     <Input disabled placeholder='Nombres' value={data.firstName}/>
                   </Item>
                   <Text>Apellidos</Text>
                   <Item disabled>
-                    <Icon name='home' />
+                    <Icon name='person' />
                     <Input disabled placeholder='Apellidos' value={data.secondName}/>
                   </Item>
                   {/* <Text>Telefono</Text>
@@ -91,7 +111,7 @@ class Profile extends Component {
                   </Item> */}
                   <Text>Email</Text>
                   <Item disabled>
-                     <Icon name='home' />
+                     <Icon name='mail' />
                     <Input disabled placeholder='email' value={data.email}/>
                   </Item>
                   <Text>Direccion</Text>
@@ -105,10 +125,7 @@ class Profile extends Component {
                 <Text>Titulos Obtenidos</Text>
                 </CardItem>
                 <CardItem>
-                  <Item disabled>
-                    <Icon name='home' />
-                    <Input disabled placeholder='Disabled Textbox'/>
-                  </Item>
+                  <Accordion dataArray={dataProgram} animation={true} icon="add" expandedIcon="remove" />
                 </CardItem>
               </Card>
       </ScrollView>
