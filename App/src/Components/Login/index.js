@@ -22,25 +22,27 @@ class Login extends React.Component{
         console.log('textUserName', textUserName)
         console.log('textUserName', textPassword)
 
-       await fetch(`${urlApi}/users?filter{"where":{"or":[{"firstName":'EEEE'},{"password":'wwww'}]}}`, {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
+    //    await fetch(`${urlApi}/users?filter{"where":{"or":[{"firstName":'EEEE'},{"password":'wwww'}]}}`, {
+    //     method: 'GET',
+    //     headers: {
+    //       Accept: 'application/json',
+    //       'Content-Type': 'application/json',
+    //     }
+    //   }).then((response) => response.json())
+    //   .then((responseJson) => {
+    //    console.log('response login', responseJson)
+    //   }).catch((error) =>{
+    //     console.error(error);
+    //   });
+    // }
+        if(textUserName === 'Admin' && textPassword === 'edison01' || 
+        textUserName === 'Admin2' && textPassword === 'edison02'
+        ){
+          this.props.navigation.navigate('Noticias')
+        }else {
+          Alert.alert('Error');
         }
-      }).then((response) => response.json())
-      .then((responseJson) => {
-       console.log('response login', responseJson)
-      }).catch((error) =>{
-        console.error(error);
-      });
-    }
-      //   if(textUserName === 'Admin' && textPassword === 'edison01'){
-      //     this.props.navigation.navigate('Noticias')
-      //   }else {
-      //     Alert.alert('Error');
-      //   }
-      // }
+      }
         setModalVisible(visible) {
           this.setState({modalVisible: visible});
         }
