@@ -5,6 +5,7 @@ import { Admin, Resource } from 'react-admin';
 import News from './resources/news'
 import Events from './resources/events'
 import User from './resources/users'
+import DusersPrograms from './resources/addPrograms'
 import loopbackRestClient from './services/Provider';
 import authProvider from './Auth/authProvider'
 import Login from './Auth/Login'
@@ -19,6 +20,7 @@ class App extends Component   {
     dataProvider={dataProvider}
     // loginPage={Login}
     >
+    <Resource name="formationprograms" />
     <Resource name="news"
         create={News.Create}
         list={News.List} 
@@ -36,7 +38,15 @@ class App extends Component   {
       <Resource name="users"
         list={User.List} 
         icon={User.UserIcon}
-    />  
+    />
+    <Resource name="dusersprograms"
+        create={DusersPrograms.Create}
+        edit={DusersPrograms.Edit}
+        show={DusersPrograms.show}
+        list={DusersPrograms.List} 
+        icon={DusersPrograms.DusersProgramsIcon}
+    />    
+    
 </Admin>
     )
 }
