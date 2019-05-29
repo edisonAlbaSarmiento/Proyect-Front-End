@@ -6,6 +6,7 @@ import News from './resources/news'
 import Events from './resources/events'
 import User from './resources/users'
 import DusersPrograms from './resources/addPrograms'
+import Programs from './resources/programs'
 import loopbackRestClient from './services/Provider';
 import authProvider from './Auth/authProvider'
 import Login from './Auth/Login'
@@ -20,7 +21,13 @@ class App extends Component   {
     dataProvider={dataProvider}
     // loginPage={Login}
     >
-    <Resource name="formationprograms" />
+    <Resource name="formationprograms"  options={{ label: 'Create programs' }}
+        create={Programs.Create}
+        list={Programs.List} 
+        edit={Programs.Edit}
+        show={Programs.show}
+        icon={Programs.PostIcon} 
+    />
     <Resource name="news"
         create={News.Create}
         list={News.List} 
@@ -36,10 +43,11 @@ class App extends Component   {
         icon={Events.PostIcon}
     />
       <Resource name="users"
-        list={User.List} 
+        list={User.List}
+        edit={User.Edit} 
         icon={User.UserIcon}
     />
-    <Resource name="dusersprograms"
+    <Resource name="dusersprograms" options={{ label: 'Assign programs' }}
         create={DusersPrograms.Create}
         edit={DusersPrograms.Edit}
         show={DusersPrograms.show}

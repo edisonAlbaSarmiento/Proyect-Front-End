@@ -6,14 +6,10 @@ import moment from 'moment'
 import urlApi from '../../../ConstIP'
 
 class detailNews extends Component {
-    // static navigationOptions = {
-    //     headerTitle : null,
-    //     drawerIcon : ({tintColor}) =>(
-    //         <Icon name='person'  style={{
-    //             fontSize:24, color: tintColor
-    //         }}/>
-    //     )
-    // }
+    static navigationOptions = {
+      drawerIcon : ({tintColor}) => console.log('e'),
+      drawerLabel :  ({tintColor}) =>console.log('e') 
+    }
     componentDidMount = async () => {
       let formData = {status : 1}
       const dataUpdate = this.props.navigation.state.params.info
@@ -62,9 +58,6 @@ class detailNews extends Component {
                   <Text>
                     {data.short_description}
                   </Text>
-                  <Text>
-                    {data.description}
-                  </Text>
                 </Body>
               </CardItem>
               <CardItem>
@@ -76,7 +69,7 @@ class detailNews extends Component {
               </CardItem>
               <CardItem>
                 <Right style={{flex: 1}}>
-                  <Button style={{backgroundColor: '#0F385A', width: 100, justifyContent: 'center'}} onPress = {() => Linking.openURL(`${data.linkPage !== "" ?data.linkPage : 'https://www.poli.edu.co/'}`).catch((err) => console.error('An error occurred', err))}>
+                  <Button style={{backgroundColor: '#0F385A', width: 100, justifyContent: 'center'}} onPress = {() => Linking.openURL(`${data.linkPage !== "" ? data.linkPage : 'https://www.poli.edu.co/'}`).catch((err) => console.error('An error occurred', err))}>
                     <Text style={{color: 'white'}} >Ir a web</Text>
                   </Button>
                 </Right>

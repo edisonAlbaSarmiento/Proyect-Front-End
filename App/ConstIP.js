@@ -1,3 +1,3 @@
 
-const urlApi = 'http://192.168.20.60:8003/api/'
+const urlApi = 'http://192.168.88.9:8003/api/'
 export default urlApi

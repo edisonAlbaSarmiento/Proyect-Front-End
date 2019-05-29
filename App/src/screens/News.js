@@ -33,7 +33,8 @@ class News extends Component {
             <Icon name='paper'  style={{
                 fontSize:24, color: tintColor
             }}/>
-        )
+        ),
+        swipeEnabled: false
     }
     componentDidMount = async () => {
       return fetch(`${urlApi}/news/`, {

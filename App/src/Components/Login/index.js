@@ -15,7 +15,8 @@ class Login extends React.Component{
               <Icon name='close'  style={{
                   fontSize:24, color: tintColor
               }}/>
-          )
+          ),
+          drawerLockMode: 'locked-closed'
       }
       onLogin = async () =>{
         const { textUserName, textPassword } = this.state;

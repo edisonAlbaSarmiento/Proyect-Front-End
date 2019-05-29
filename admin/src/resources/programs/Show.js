@@ -1,18 +1,18 @@
 import React from 'react';
-import { List, Datagrid, TextField, EditButton, ImageField } from 'react-admin';
+import { Show, SimpleShowLayout, TextField, DateField } from 'react-admin';
 
 const Component = props => (
-    <List {...props}>
-        <Datagrid>
+    <Show {...props}>
+        <SimpleShowLayout>
             <TextField source="id" />
             <TextField source="name" />
             <TextField source="short_description" />
             <TextField source="description" />
             <TextField source="linkPage" />
-            <ImageField source="imagenUrl" title="title" />
-            <EditButton />
-        </Datagrid>
-    </List>
+            <TextField source="imagenUrl" />
+            <DateField label="Publication date" source="created_at" />
+        </SimpleShowLayout>
+    </Show>
 )
 
 export default Component

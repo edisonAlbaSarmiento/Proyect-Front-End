@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Datagrid, TextField, EditButton } from 'react-admin';
+import { List, Datagrid, TextField, EditButton, ImageField } from 'react-admin';
 
 const Component = props => (
     <List {...props}>
@@ -9,7 +9,7 @@ const Component = props => (
             <TextField source="short_description" />
             <TextField source="description" />
             <TextField source="linkPage" />
-            <TextField source="imagenUrl" />
+            <ImageField source="imagenUrl" title="title" />
             <EditButton />
         </Datagrid>
     </List>
