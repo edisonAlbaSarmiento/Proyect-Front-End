@@ -8,9 +8,6 @@ const Component = props => (
             <DisabledInput label="Id" source="id" />
             <TextInput source="name" />
             <RichTextInput source="description" />
-            <SelectInput label="users" source="idUser" reference="users">
-                <TextField optionText="firstName" />
-            </SelectInput>
             <DateInput label="Publication date" source="published_at" />
         </SimpleForm>
     </Edit>
