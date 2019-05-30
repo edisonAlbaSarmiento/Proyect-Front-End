@@ -7,7 +7,7 @@ const Component = props => (
         <SimpleForm>
             <DisabledInput label="Id" source="id" />
             <TextInput source="name" />
-            <RichTextInput source="description" />
+            <TextInput source="description" />
             <DateInput label="Publication date" source="published_at" />
         </SimpleForm>
     </Edit>

@@ -6,7 +6,7 @@ const Component = props => (
     <Create {...props}>
         <SimpleForm>
             <TextInput source="name" />
-            <RichTextInput source="description" />
+            <TextInput source="description" />
         </SimpleForm>
     </Create>
 )

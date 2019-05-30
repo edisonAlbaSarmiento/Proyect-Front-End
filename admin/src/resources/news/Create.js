@@ -6,7 +6,7 @@ const Component = props => (
     <Create {...props}>
         <SimpleForm>
             <TextInput source="name" />
-            <LongTextInput source="short_description" />
+            <LongTextInput source="short_description"/>
             <RichTextInput source="description" />
             <TextInput source="linkPage" />
             <TextInput source="imagenUrl" />
