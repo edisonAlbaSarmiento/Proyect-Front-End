@@ -17,5 +17,7 @@ Se Realizara la pagina web
 La app enviara notificaciones al usuario
 <br>
 se realizara la modificacion de cada vista en el app
+<br>
 Se utilizan los iconos
+<br>
 https://ionicons.com/
