@@ -11,7 +11,10 @@ instalar el proyecto con npm i
 ejecutarlo npm start
 <br>
 Se realizara modificacion de la aplicacion
-
+<br>
+Se Realizara la pagina web
+<br>
+La app enviara notificaciones al usuario
 
 Se utilizan los iconos
 https://ionicons.com/
