@@ -1,23 +1,23 @@
 # ProyectUniversityFrontend
 Proyecto red social para engrasados React native 
 <br>
-instalar npm 
+# instalar npm 
 <br>
 <br>
-instalar node 
+# instalar node 
 <br>
-instalar el proyecto con npm i
+# instalar el proyecto con npm i
 <br>
-ejecutarlo npm start
+# ejecutarlo npm start
 <br>
-Se realizara modificacion de la aplicacion
+# Se realizara modificacion de la aplicacion
 <br>
-Se Realizara la pagina web
+# Se Realizara la pagina web
 <br>
-La app enviara notificaciones al usuario
+# La app enviara notificaciones al usuario
 <br>
-se realizara la modificacion de cada vista en el app
+# se realizara la modificacion de cada vista en el app
 <br>
-Se utilizan los iconos
+# Se utilizan los iconos
 <br>
 https://ionicons.com/
