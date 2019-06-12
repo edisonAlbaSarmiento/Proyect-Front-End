@@ -19,5 +19,7 @@ Proyecto red social para engrasados React native
 # se realizara la modificacion de cada vista en el app
 <br>
 # Se utilizan los iconos
+
+Esta aplicacion esta en mantenimiento
 <br>
 https://ionicons.com/
