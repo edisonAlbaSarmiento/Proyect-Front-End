@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, ScrollView, Image, ActivityIndicator,ToastAndroid  } from 'react-native';
+import { RefreshControl, StyleSheet, Text, View, ScrollView, Image, ActivityIndicator,ToastAndroid  } from 'react-native';
 import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right, Footer, FooterTab, Badge } from 'native-base'
 import HeaderEntry from '../Components/Header'
 import moment from 'moment'
@@ -25,7 +25,8 @@ class News extends Component {
       this.state ={ 
         data: [],
         isLoading: true,
-        visible: false
+        visible: false,
+        refreshing: false
       }
     }
     static navigationOptions = {
@@ -37,6 +38,7 @@ class News extends Component {
         swipeEnabled: false
     }
     componentDidMount = async () => {
+      console.log('ENTRO11')
       return fetch(`${urlApi}/news/`, {
         method: 'GET',
         headers: {
@@ -45,7 +47,7 @@ class News extends Component {
         }
       }).then((response) => response.json())
       .then((responseJson) => {
-        this.setState({
+       this.setState({
           isLoading: false,
           data: responseJson.reverse()
         })
@@ -59,6 +61,26 @@ class News extends Component {
         visible: false,
       });
     };
+  _onRefresh = () => {
+    this.setState({refreshing: true})
+    fetch(`${urlApi}/news/`, {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }
+    }).then((response) => response.json())
+    .then((responseJson) => {
+     this.setState({
+        isLoading: false,
+        data: responseJson.reverse()
+      })
+    }).then(() => {
+      this.setState({
+        refreshing: false
+      })
+    })
+  }
   render() {
     const { data, isLoading } = this.state
     const news = data.filter(data => (data.status === 0))
@@ -80,7 +102,14 @@ class News extends Component {
             <Text style={{color: 'white'}}> Noticias </Text>
           </View>
         </Header>
-        <ScrollView>
+        <ScrollView
+          refreshControl={
+            <RefreshControl 
+              refreshing={this.state.refreshing}
+              onRefresh={this._onRefresh}
+            />
+          }
+        >
        
    
         {data.map((item, i) => (

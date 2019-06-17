@@ -1,10 +1,10 @@
 {
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 9568,
-  "expoServerNgrokUrl": "https://xw-367.anonymous.app.exp.direct",
-  "packagerNgrokUrl": "https://packager.xw-367.anonymous.app.exp.direct",
-  "ngrokPid": 4268,
+  "packagerPid": 13840,
+  "expoServerNgrokUrl": "https://pf-nts.anonymous.app.exp.direct",
+  "packagerNgrokUrl": "https://packager.pf-nts.anonymous.app.exp.direct",
+  "ngrokPid": 12712,
   "webpackServerPort": null,
   "devToolsPort": 19002
 }

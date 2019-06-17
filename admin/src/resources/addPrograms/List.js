@@ -5,11 +5,11 @@ const Component = props => (
     <List {...props}>
         <Datagrid>
             <TextField source="id" />
-            <ReferenceField label="users" source="idUser" reference="users">
-                <TextField optionText="firstName" />
+            <ReferenceField label="Usuario" source='idUser' reference='users'>
+                <TextField source='firstName' />
             </ReferenceField>
-            <ReferenceField label="program" source="idProgram" reference="formationprograms">
-                <TextField optionText="name" />
+            <ReferenceField label="Nombre Pograma" source='idProgram' reference='formationprograms'>
+                <TextField source='name' />
             </ReferenceField>
             <EditButton />
         </Datagrid>

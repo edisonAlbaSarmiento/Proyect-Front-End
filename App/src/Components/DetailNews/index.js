@@ -4,6 +4,7 @@ import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right } fr
 import HeaderEntry from '../Header'
 import moment from 'moment'
 import urlApi from '../../../ConstIP'
+import HTML from 'react-native-render-html';
 
 class detailNews extends Component {
     static navigationOptions = {
@@ -62,9 +63,7 @@ class detailNews extends Component {
               </CardItem>
               <CardItem>
                 <Body style={{display: 'flex', alignItems:'center' }}>
-                  <Text>
-                    {data.description}
-                  </Text>
+                  <HTML html={data.description} />
                 </Body>
               </CardItem>
               <CardItem>
