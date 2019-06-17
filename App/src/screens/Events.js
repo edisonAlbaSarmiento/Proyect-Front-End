@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, ScrollView, ActivityIndicator, Image, ToastAndroid } from 'react-native';
+import { RefreshControl, StyleSheet, Text, View, ScrollView, ActivityIndicator, Image, ToastAndroid } from 'react-native';
 import { Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right, Footer, FooterTab, Badge} from 'native-base'
 import HeaderEntry from '../Components/Header'
 import moment from 'moment'
@@ -24,7 +24,8 @@ class Events extends Component {
       super(props);
       this.state ={ 
         data: [],
-        isLoading: true
+        isLoading: true,
+        refreshing: false
       }
     }
 
@@ -53,12 +54,30 @@ class Events extends Component {
         console.error(error);
       });
     }
+  _onRefresh = () => {
+    this.setState({refreshing: true})
+    fetch(`${urlApi}/events/`, {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }
+    }).then((response) => response.json())
+    .then((responseJson) => {
+      console.log('responseJson',responseJson)
+      this.setState({
+        isLoading: false,
+        data: responseJson.reverse()
+      })
+    }).then(() => {
+      this.setState({
+        refreshing: false
+      })
+    })
+  }
   render() {
     const { data, isLoading } = this.state
     const dataNew = data.filter(data => (data.status === 0))
-
-    console.log('data render', data)
-    console.log('dataNew', dataNew.length)
     if(isLoading){
       return(
         <View style={{flex: 1, padding: 50}}>
@@ -77,7 +96,14 @@ class Events extends Component {
             <Text style={{color: 'white'}}> Eventos </Text>
           </View>
         </Header>
-        <ScrollView>
+        <ScrollView
+          refreshControl={
+            <RefreshControl 
+              refreshing={this.state.refreshing}
+              onRefresh={this._onRefresh}
+            />
+          }
+        >
           {data.map((item, i) => (
             <View key={i}>
                 <Card style={{flex: 0}}>
