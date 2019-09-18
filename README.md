@@ -23,6 +23,8 @@ Proyecto red social para engrasados React native
 Esta aplicacion esta en mantenimiento
 <br>
 
-La aplicacion se modificara a nativo y se eliminara la utilizacion de expo 
-
 https://ionicons.com/
+
+
+<br>
+Se refactoriza la app en forma nativa 
