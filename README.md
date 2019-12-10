@@ -28,3 +28,5 @@ https://ionicons.com/
 
 <br>
 Se refactoriza la app en forma nativa 
+
+Se esta ajustando versionamiento y refactorizando
