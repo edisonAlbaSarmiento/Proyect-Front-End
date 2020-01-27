@@ -7,12 +7,12 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "expo": "^32.0.0",
     "materialize-css": "^1.0.0-rc.2",
     "moment": "^2.24.0",
-    "native-base": "^2.12.1",
-    "npm": "^6.9.0",
+    "native-base": "^2.13.8",
+    "npm": "^6.13.6",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-material-ui": "^1.30.1",
