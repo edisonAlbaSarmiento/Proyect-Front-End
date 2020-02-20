@@ -1,6 +1,10 @@
 # ProyectUniversityFrontend
 Proyecto red social para engrasados React native 
 <br>
+
+<img src="/App/assets/app.png"  width=400>
+<br>
+
 # instalar npm 
 <br>
 <br>
