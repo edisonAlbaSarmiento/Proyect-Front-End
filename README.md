@@ -5,6 +5,15 @@ Proyecto red social para engrasados React native
 <img src="/App/assets/app.png"  width=400>
 <br>
 
+# instalar mysql para el backend
+
+https://dev.mysql.com/downloads/mysql/
+
+https://dev.mysql.com/downloads/workbench/
+
+# realizar la importacion de la base de datos
+ruta /datatabases
+
 # instalar npm 
 <br>
 <br>
