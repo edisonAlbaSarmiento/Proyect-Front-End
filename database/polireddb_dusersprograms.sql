@@ -26,7 +26,9 @@ CREATE TABLE `dusersprograms` (
   `idProgram` varchar(45) DEFAULT NULL,
   `imagenUrl` varchar(45) DEFAULT NULL,
   `idUser` varchar(45) DEFAULT NULL,
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `updatedAt` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -49,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-30 15:48:43
+-- Dump completed on 2020-05-30 16:31:25

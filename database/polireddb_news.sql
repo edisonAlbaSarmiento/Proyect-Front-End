@@ -23,16 +23,17 @@ DROP TABLE IF EXISTS `news`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `news` (
-  `created_a` datetime NOT NULL,
+  `created_at` datetime NOT NULL,
   `name` varchar(45) DEFAULT NULL,
   `short_description` varchar(45) DEFAULT NULL,
   `description` varchar(45) DEFAULT NULL,
   `linkPage` varchar(45) DEFAULT NULL,
   `imagenUrl` varchar(45) DEFAULT NULL,
   `status` varchar(45) DEFAULT NULL,
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,6 +42,7 @@ CREATE TABLE `news` (
 
 LOCK TABLES `news` WRITE;
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
+INSERT INTO `news` VALUES ('2020-05-30 21:30:25','streeeing','strieeeng','steeering','strieeeng','steeering','0',1,'2020-05-30 21:30:25');
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-30 15:48:42
+-- Dump completed on 2020-05-30 16:31:24
