@@ -1,5 +1,5 @@
 import React from 'react';
-import { Edit, SimpleForm, DisabledInput, TextInput, DateInput, ImageInput, ImageField} from 'react-admin';
+import { Edit, SimpleForm, DisabledInput, TextInput, DateInput, ImageField} from 'react-admin';
 
 const Component = props => (
     <Edit {...props}>

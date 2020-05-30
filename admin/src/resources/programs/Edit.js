@@ -1,7 +1,5 @@
 import React from 'react';
-import { Edit, SimpleForm, DisabledInput, TextInput, DateInput, SelectInput, TextField} from 'react-admin';
-import RichTextInput from 'ra-input-rich-text';
-
+import { Edit, SimpleForm, DisabledInput, TextInput, DateInput } from 'react-admin';
 const Component = props => (
     <Edit {...props}>
         <SimpleForm>

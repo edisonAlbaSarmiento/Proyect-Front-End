@@ -1,6 +1,5 @@
 import React from 'react';
-import { Create, SimpleForm, TextInput, ReferenceInput, SelectInput} from 'react-admin';
-import RichTextInput from 'ra-input-rich-text';
+import { Create, SimpleForm, TextInput } from 'react-admin';
 
 const Component = props => (
     <Create {...props}>

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Admin, Resource } from 'react-admin';
 import News from './resources/news'
@@ -9,7 +8,6 @@ import DusersPrograms from './resources/addPrograms'
 import Programs from './resources/programs'
 import loopbackRestClient from './services/Provider';
 import authProvider from './Auth/authProvider'
-import Login from './Auth/Login'
 
 const dataProvider = loopbackRestClient('http://localhost:8003/api')
 
