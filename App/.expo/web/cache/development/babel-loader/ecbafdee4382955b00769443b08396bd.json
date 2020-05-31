@@ -1,0 +1,1 @@
+{"ast":null,"code":"export { default } from \"./Subheader.react\";","map":{"version":3,"sources":["/Users/edisonalba/Desktop/Proyect-University/App/node_modules/react-native-material-ui/src/Subheader/index.js"],"names":["default"],"mappings":"AAAA,SAASA,OAAT","sourcesContent":["export { default } from './Subheader.react';\n"]},"metadata":{},"sourceType":"module"}

@@ -24,8 +24,7 @@ class Profile extends Component {
         )
     }
     componentDidMount = async () => {
-      
-     fetch(`${urlApi}/users/1`, {
+     await fetch(`${urlApi}/users/1`, {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -64,6 +63,7 @@ class Profile extends Component {
     }
   render() {
     const { data,dataProgram, isLoading } = this.state
+    const imageDefault = 'https://bootdey.com/img/Content/avatar/avatar6.png'
     console.log('imagen antes https://bootdey.com/img/Content/avatar/avatar6.png', data)
     if(isLoading){
       return(
@@ -77,7 +77,7 @@ class Profile extends Component {
       <View  style={{backgroundImage: 'url(./Images/fondoHeader.jpg)'}}>
         <View style={styles.headerContent}>
             <Image style={styles.avatar}
-              source={{uri: data.imageUrl}}/>
+              source={{uri: data.imageUrl !== null ? data.imageUrl : imageDefault}}/>
         </View>
       </View>
       <Header style={{display: 'flex', alignItems:'center', backgroundColor: '#0F385A'}}>

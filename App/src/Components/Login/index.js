@@ -22,28 +22,40 @@ class Login extends React.Component{
         const { textUserName, textPassword } = this.state;
         console.log('textUserName', textUserName)
         console.log('textUserName', textPassword)
-
-    //    await fetch(`${urlApi}/users?filter{"where":{"or":[{"firstName":'EEEE'},{"password":'wwww'}]}}`, {
-    //     method: 'GET',
-    //     headers: {
-    //       Accept: 'application/json',
-    //       'Content-Type': 'application/json',
-    //     }
-    //   }).then((response) => response.json())
-    //   .then((responseJson) => {
-    //    console.log('response login', responseJson)
-    //   }).catch((error) =>{
-    //     console.error(error);
-    //   });
-    // }
-        if(textUserName === 'Admin' && textPassword === 'edison01' || 
-        textUserName === 'Admin2' && textPassword === 'edison02'
-        ){
-          this.props.navigation.navigate('Noticias')
-        }else {
-          Alert.alert('Error');
+        if(textUserName && textPassword){
+          const filter = JSON.stringify({
+            where: {
+              firstName: textUserName,
+              password: textPassword
+            }
+          })
+        await fetch(`${urlApi}/users?filter=${filter}`, {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
         }
-      }
+      }).then((response) => response.json())
+      .then((responseJson) => {
+       console.log('response login', responseJson)
+       if(responseJson.length > 0){
+        // const userId = responseJson[0].id
+        // saveIdUser(userId)
+        this.props.navigation.navigate('Noticias')
+       }else {
+          Alert.alert('Error usuario no encontrado');
+        }
+      }).catch((error) =>{
+        console.log('response error', error)
+        console.error(error);
+      });
+    }else {
+      Alert.alert('Campos vacios');
+    }
+  
+    }
+        
+ 
         setModalVisible(visible) {
           this.setState({modalVisible: visible});
         }

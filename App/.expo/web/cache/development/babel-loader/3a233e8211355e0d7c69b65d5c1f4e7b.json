@@ -1,0 +1,1 @@
+{"ast":null,"code":"export { default } from \"./Drawer.react\";","map":{"version":3,"sources":["/Users/edisonalba/Desktop/Proyect-University/App/node_modules/react-native-material-ui/src/Drawer/index.js"],"names":["default"],"mappings":"AAAA,SAASA,OAAT","sourcesContent":["export { default } from './Drawer.react';\n"]},"metadata":{},"sourceType":"module"}

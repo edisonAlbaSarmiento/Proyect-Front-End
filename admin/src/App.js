@@ -41,6 +41,7 @@ class App extends Component   {
         icon={Events.PostIcon}
     />
       <Resource name="users"
+        create={User.Create}
         list={User.List}
         edit={User.Edit} 
         icon={User.UserIcon}

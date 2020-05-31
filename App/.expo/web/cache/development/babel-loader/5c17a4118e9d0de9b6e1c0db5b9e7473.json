@@ -1,0 +1,1 @@
+{"ast":null,"code":"export * from \"./src/index\";","map":{"version":3,"sources":["/Users/edisonalba/Desktop/Proyect-University/App/node_modules/react-native-material-ui/index.js"],"names":[],"mappings":"AAAA","sourcesContent":["export * from './src/index';\n"]},"metadata":{},"sourceType":"module"}
