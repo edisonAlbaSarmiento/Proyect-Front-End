@@ -4,7 +4,8 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "lint": "eslint --fix --ext .js src"
   },
   "dependencies": {
     "axios": "^0.18.1",
@@ -24,7 +25,13 @@
     "validate.js": "^0.12.0"
   },
   "devDependencies": {
-    "babel-preset-expo": "^8.0.0"
+    "babel-eslint": "^10.1.0",
+    "babel-preset-expo": "^8.0.0",
+    "eslint": "^7.1.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.20.0"
   },
   "private": true
 }
