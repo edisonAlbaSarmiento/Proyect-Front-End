@@ -24,6 +24,18 @@ const Toast = (props) => {
 };
 
 class News extends Component {
+  static navigationOptions = {
+    drawerIcon: ({ tintColor }) => (
+      <Icon
+        name="paper"
+        style={{
+          fontSize: 24, color: tintColor
+        }}
+      />
+    ),
+    swipeEnabled: false
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -34,17 +46,6 @@ class News extends Component {
     };
   }
 
-    static navigationOptions = {
-      drawerIcon: ({ tintColor }) => (
-        <Icon
-          name="paper"
-          style={{
-            fontSize: 24, color: tintColor
-          }}
-        />
-      ),
-      swipeEnabled: false
-    }
 
     componentDidMount = async () => {
       console.log('ENTRO11');
