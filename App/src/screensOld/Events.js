@@ -6,7 +6,7 @@ import {
   Header, Icon, Left, Card, CardItem, Thumbnail, Body, Button, Right, Footer, FooterTab, Badge
 } from 'native-base';
 import moment from 'moment';
-import HeaderEntry from '../Components/Header';
+import HeaderEntry from '../ComponentsOld/Header';
 import urlApi from '../../ConstIP';
 
 const Toast = (props) => {

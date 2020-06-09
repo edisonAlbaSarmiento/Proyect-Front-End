@@ -1,14 +1,14 @@
 import React from 'react';
 import {
-  StyleSheet, Text, View, ScrollView, SafeAreaView, Image
+  StyleSheet, View, ScrollView, SafeAreaView, Image
 } from 'react-native';
 import { createDrawerNavigator, DrawerItems, createStackNavigator } from 'react-navigation';
-import Login from './src/Components/Login';
-import News from './src/screens/News';
-import Events from './src/screens/Events';
-import Profile from './src/screens/Profile';
-import detailNews from './src/Components/DetailNews';
-import detailEvents from './src/Components/DetailEvents';
+import Login from './src/ComponentsOld/Login';
+import News from './src/screensOld/News';
+import Events from './src/screensOld/Events';
+import Profile from './src/screensOld/Profile';
+import detailNews from './src/ComponentsOld/DetailNews';
+import detailEvents from './src/ComponentsOld/DetailEvents';
 
 export default class App extends React.Component {
   render() {
