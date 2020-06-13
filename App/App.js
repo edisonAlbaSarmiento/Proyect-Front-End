@@ -9,7 +9,7 @@ import Events from './src/screensOld/Events';
 import Profile from './src/screensOld/Profile';
 import detailNews from './src/ComponentsOld/DetailNews';
 import detailEvents from './src/ComponentsOld/DetailEvents';
-
+import {SplashScreen} from './src/screens';
 export default class App extends React.Component {
   render() {
     return (
@@ -38,7 +38,7 @@ const CustomDrawerComponent = (props) => (
 //   Profile: detailNews
 // })
 const AppDrawerNavigator = createDrawerNavigator({
-  Salir: Login,
+  Salir: SplashScreen,
   Eventos: Events,
   Noticias: News,
   Perfil: Profile,
