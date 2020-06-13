@@ -1,14 +1,19 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
 
- class Login extends Component {
+class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     return (
       <View>
-        <Text> textInComponent </Text>
+        <Text> LOGIn </Text>
       </View>
-    )
+    );
   }
 }
 
-export default Login
+export default Login;

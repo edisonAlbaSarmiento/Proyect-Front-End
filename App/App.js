@@ -1,16 +1,20 @@
 import React from 'react';
-import {
-  StyleSheet, View, ScrollView, SafeAreaView, Image
-} from 'react-native';
-import { createDrawerNavigator, DrawerItems, createStackNavigator } from 'react-navigation';
+import { createDrawerNavigator } from 'react-navigation';
 import Login from './src/ComponentsOld/Login';
 import News from './src/screensOld/News';
 import Events from './src/screensOld/Events';
 import Profile from './src/screensOld/Profile';
 import detailNews from './src/ComponentsOld/DetailNews';
 import detailEvents from './src/ComponentsOld/DetailEvents';
-import {SplashScreen} from './src/screens';
-export default class App extends React.Component {
+import { SplashScreen, LoginScreen } from './src/screens';
+import CustomDrawerComponent from './src/components/side-menu';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     return (
       <AppDrawerNavigator />
@@ -18,44 +22,24 @@ export default class App extends React.Component {
   }
 }
 
-const CustomDrawerComponent = (props) => (
-  <SafeAreaView styles={{
-    flex: 1
-  }}
-  >
-    <View style={{
-      height: 150, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center'
-    }}
-    >
-      <Image source={require('./assets/logoPoli.png')} />
-    </View>
-    <ScrollView>
-      <DrawerItems {...props} />
-    </ScrollView>
-  </SafeAreaView>
-);
-// const NavigationStack = createStackNavigator({
-//   Profile: detailNews
-// })
 const AppDrawerNavigator = createDrawerNavigator({
-  Salir: SplashScreen,
+  Splash: SplashScreen,
+  Login: LoginScreen,
   Eventos: Events,
   Noticias: News,
   Perfil: Profile,
   PoliU: detailNews,
-  Terminos: detailEvents
-
-}, {
+  Terminos: detailEvents,
+  Salir: Login,
+},
+{
+  initialRoute: 'Splash'
+},
+{
   contentComponent: CustomDrawerComponent,
   contentOptions: {
     activeTintColor: 'orange'
   }
 });
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+export default App;

@@ -5,23 +5,39 @@ import LottieView from 'lottie-react-native';
 const loading = require('../../assets/loading.json');
 
 class Splash extends Component {
+  static navigationOptions = {
+    drawerLockMode: 'locked-closed'
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoggedIn: false,
+    };
+  }
+
   componentDidMount() {
+    this.changeState();
     setTimeout(() => {
       this.processNavigation();
     }, 3000);
   }
 
+  changeState = () => {
+    this.setState({
+      isLoggedIn: true
+    });
+  }
+
   processNavigation = async () => {
     const {
       navigation,
-      isLoggedIn,
     } = this.props;
-
+    const { isLoggedIn } = this.state;
     if (isLoggedIn) {
       navigation.navigate('Login');
     }
   };
-
 
   render() {
     return (
@@ -38,9 +54,6 @@ class Splash extends Component {
           source={loading}
           autoPlay
         />
-        <View style={styles.buttonContainer}>
-          <Button title="Restart Animation" />
-        </View>
       </View>
     );
   }
