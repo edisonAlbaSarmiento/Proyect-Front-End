@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import {
+  Container, ContainerImage, Title, ContainerForm, Animation
+} from './styles';
 
 class Login extends Component {
   constructor(props) {
@@ -9,9 +11,21 @@ class Login extends Component {
 
   render() {
     return (
-      <View>
-        <Text> LOGIn </Text>
-      </View>
+      <Container>
+        <ContainerImage>
+          <Animation />
+        </ContainerImage>
+        <ContainerForm>
+          <Title> LOGIN </Title>
+          <ContainerImage>
+            <Title> LOGIn </Title>
+          </ContainerImage>
+          <ContainerImage>
+            <Title> LOGIn </Title>
+          </ContainerImage>
+
+        </ContainerForm>
+      </Container>
     );
   }
 }
