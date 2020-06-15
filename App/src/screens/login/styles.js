@@ -17,9 +17,17 @@ export const ContainerImage = styled.View`
   height: auto;
 `;
 
-export const Title = styled.Text``;
+export const Title = styled.Text`
+  font-size: 30;
+  font-weight: bold;
+  `;
 
 export const ContainerForm = styled.View``;
+
+export const ContainerInputs = styled.View`
+  width: 80%;
+  height: auto;
+`;
 
 export const Animation = styled(LottieView).attrs({
   source: lottieAnimation,
@@ -29,3 +37,5 @@ export const Animation = styled(LottieView).attrs({
   height: 200;
   width: 200;
 `;
+
+export const TextInput = styled.TextInput``;

@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import {
-  Container, ContainerImage, Title, ContainerForm, Animation
+  Container,
+  ContainerImage,
+  Title,
+  ContainerForm,
+  Animation,
+  ContainerInputs,
+  TextInput
 } from './styles';
 
 class Login extends Component {
@@ -17,12 +23,14 @@ class Login extends Component {
         </ContainerImage>
         <ContainerForm>
           <Title> LOGIN </Title>
-          <ContainerImage>
-            <Title> LOGIn </Title>
-          </ContainerImage>
-          <ContainerImage>
-            <Title> LOGIn </Title>
-          </ContainerImage>
+          <ContainerInputs>
+            <TextInput
+              style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+            />
+            <TextInput
+              style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+            />
+          </ContainerInputs>
 
         </ContainerForm>
       </Container>
