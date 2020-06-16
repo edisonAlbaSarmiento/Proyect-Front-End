@@ -7,7 +7,7 @@ export const Container = styled.View`
   width: 100%;
   height: 100%;
   align-items: center;
-  padding-top: 30%;
+  padding-top: 10%;
   background-color: #f5f6f8;
 `;
 
@@ -80,13 +80,12 @@ export const ContainerCheck = styled.View`
 
 export const SubText = styled.Text`
   font-size: 12;
-  color: ${(props) => (props.colorText ? `${props.colorText}` : '#afafb1' )}
+  color: ${(props) => (props.colorText ? `${props.colorText}` : '#afafb1')}
 `;
 
 export const ContainerButton = styled.View`
   width: 80%;
   height: 50;
-
 `;
 
 export const Button = styled.TouchableOpacity.attrs({
@@ -98,9 +97,10 @@ export const Button = styled.TouchableOpacity.attrs({
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: ${(props) => (props.marginLeft ? `${props.marginLeft}` : 0)}
   margin-bottom: 15px;
   flex-direction: row;
-  background-color: #00b075;
+  background-color: ${(props) => (props.backgroundColor ? `${props.backgroundColor}` : '#00b075')};
   /* Shadow */
   shadow-color: #000;
   shadow-offset: {
@@ -125,4 +125,20 @@ export const ContainerThree = styled.View`
   flex-direction: row;
   margin-top: 2%;
   justify-content: space-between;
+`;
+
+export const ContainerFooter = styled.View`
+  width: 40%;
+  height: 50;
+  flex-direction: row;
+  justify-content: center;
+`;
+
+export const ContainerFour = styled.View`
+  margin: 10%;
+`;
+
+export const ImageIcon = styled.Image`
+  width: 30;
+  height: 30;
 `;

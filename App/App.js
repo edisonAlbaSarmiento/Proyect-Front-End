@@ -6,7 +6,7 @@ import Events from './src/screensOld/Events';
 import Profile from './src/screensOld/Profile';
 import detailNews from './src/ComponentsOld/DetailNews';
 import detailEvents from './src/ComponentsOld/DetailEvents';
-import { SplashScreen, LoginScreen } from './src/screens';
+import { SplashScreen, LoginScreen, HomeScreen } from './src/screens';
 import CustomDrawerComponent from './src/components/side-menu';
 
 class App extends React.Component {
@@ -25,6 +25,7 @@ class App extends React.Component {
 const AppDrawerNavigator = createDrawerNavigator({
   Splash: SplashScreen,
   Login: LoginScreen,
+  Home: HomeScreen,
   Eventos: Events,
   Noticias: News,
   Perfil: Profile,

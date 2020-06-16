@@ -17,6 +17,8 @@ import {
   ContainerButton,
   TextButton,
   ContainerThree,
+  ContainerFour,
+  ContainerFooter,
 } from './styles';
 
 class Login extends Component {
@@ -76,7 +78,21 @@ class Login extends Component {
               Create one new account
             </SubText>
           </ContainerThree>
-
+          <ContainerFour>
+            <Title> OR </Title>
+          </ContainerFour>
+          <ContainerFooter>
+            <Button backgroundColor="white">
+              <TextButton>
+                Login
+              </TextButton>
+            </Button>
+            <Button backgroundColor="#3d5a9a" marginLeft="15%">
+              <TextButton>
+                Login
+              </TextButton>
+            </Button>
+          </ContainerFooter>
         </ContainerForm>
       </Container>
     );
