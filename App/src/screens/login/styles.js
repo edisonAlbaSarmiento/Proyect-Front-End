@@ -139,6 +139,6 @@ export const ContainerFour = styled.View`
 `;
 
 export const ImageIcon = styled.Image`
-  width: 30;
-  height: 30;
+  width: ${(props) => (props.widthImage ? `${props.widthImage}` : '30')};
+  height:${(props) => (props.heightImage ? `${props.heightImage}` : '30')};
 `;

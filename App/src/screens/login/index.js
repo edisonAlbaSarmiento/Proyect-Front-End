@@ -19,7 +19,11 @@ import {
   ContainerThree,
   ContainerFour,
   ContainerFooter,
+  ImageIcon
 } from './styles';
+
+const iconFacebook = require('../../assets/facebookIcon.png');
+const iconGoogle = require('../../assets/googleIcon.png');
 
 class Login extends Component {
   constructor(props) {
@@ -83,14 +87,10 @@ class Login extends Component {
           </ContainerFour>
           <ContainerFooter>
             <Button backgroundColor="white">
-              <TextButton>
-                Login
-              </TextButton>
+              <ImageIcon source={iconGoogle} />
             </Button>
             <Button backgroundColor="#3d5a9a" marginLeft="15%">
-              <TextButton>
-                Login
-              </TextButton>
+              <ImageIcon widthImage="15" heightImage="30" source={iconFacebook} />
             </Button>
           </ContainerFooter>
         </ContainerForm>
