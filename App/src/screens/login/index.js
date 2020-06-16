@@ -12,6 +12,9 @@ import {
   ContainerCheck,
   ContainerSecond,
   SubText,
+  Button,
+  ContainerButton,
+  TextButton,
 } from './styles';
 
 class Login extends Component {
@@ -48,10 +51,16 @@ class Login extends Component {
               />
               <SubText> Remember me </SubText>
             </ContainerCheck>
-            <SubText>Forgot Password </SubText>
+            <SubText colorText="#006B48">Forgot Password </SubText>
 
           </ContainerSecond>
-
+          <ContainerButton>
+            <Button>
+              <TextButton>
+                Login
+              </TextButton>
+            </Button>
+          </ContainerButton>
         </ContainerForm>
       </Container>
     );
