@@ -116,7 +116,7 @@ export const Button = styled.TouchableOpacity.attrs({
 
 export const TextButton = styled.Text`
   line-height: 18px;
-  font-size: 14px;
+  font-size: 18px;
   color: white;
 `;
 

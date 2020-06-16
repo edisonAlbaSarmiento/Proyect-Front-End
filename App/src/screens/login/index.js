@@ -40,6 +40,7 @@ class Login extends Component {
 
   render() {
     const { isSelected } = this.state;
+    const { navigation } = this.props;
     return (
       <Container>
         <ContainerImage>
@@ -67,7 +68,7 @@ class Login extends Component {
             </SubText>
           </ContainerSecond>
           <ContainerButton>
-            <Button>
+            <Button onPress={() => navigation.navigate('Home')}>
               <TextButton>
                 Login
               </TextButton>
