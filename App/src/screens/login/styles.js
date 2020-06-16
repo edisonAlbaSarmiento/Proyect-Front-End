@@ -22,7 +22,10 @@ export const Title = styled.Text`
   font-weight: bold;
   `;
 
-export const ContainerForm = styled.View``;
+export const ContainerForm = styled.View`
+  width: 100%;
+  align-items: center;
+`;
 
 export const ContainerInputs = styled.View`
   width: 80%;
@@ -38,4 +41,31 @@ export const Animation = styled(LottieView).attrs({
   width: 200;
 `;
 
-export const TextInput = styled.TextInput``;
+export const TextInput = styled.TextInput`
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  height: 40;
+  border-Color: gray;
+  border-width: 1;
+  color: black;
+  background-color: white;
+  border-radius: 5;
+`;
+export const ContainerSecond = styled.View`
+  width: 80%;
+  margin-top: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const ContainerCheck = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const SubText = styled.Text`
+  font-size: 12;
+  font-weight: bold;
+  `;
