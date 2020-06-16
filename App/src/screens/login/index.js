@@ -1,6 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import React, { Component } from 'react';
 import CheckBox from '@react-native-community/checkbox';
+import { Alert } from 'react-native';
 import {
   Container,
   ContainerImage,
@@ -15,6 +16,7 @@ import {
   Button,
   ContainerButton,
   TextButton,
+  ContainerThree,
 } from './styles';
 
 class Login extends Component {
@@ -51,8 +53,12 @@ class Login extends Component {
               />
               <SubText> Remember me </SubText>
             </ContainerCheck>
-            <SubText colorText="#006B48">Forgot Password </SubText>
-
+            <SubText
+              colorText="#006B48"
+              onPress={() => Alert.alert('forgot')}
+            >
+              Forgot Password
+            </SubText>
           </ContainerSecond>
           <ContainerButton>
             <Button>
@@ -61,6 +67,16 @@ class Login extends Component {
               </TextButton>
             </Button>
           </ContainerButton>
+          <ContainerThree>
+            <SubText> Do not have an account?</SubText>
+            <SubText
+              colorText="#006B48"
+              onPress={() => Alert.alert('New Account')}
+            >
+              Create one new account
+            </SubText>
+          </ContainerThree>
+
         </ContainerForm>
       </Container>
     );

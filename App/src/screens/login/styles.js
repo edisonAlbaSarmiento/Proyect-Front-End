@@ -8,7 +8,7 @@ export const Container = styled.View`
   height: 100%;
   align-items: center;
   padding-top: 30%;
-
+  background-color: #f5f6f8;
 `;
 
 export const ContainerImage = styled.View`
@@ -51,6 +51,18 @@ export const TextInput = styled.TextInput`
   color: black;
   background-color: white;
   border-radius: 5;
+  border-color: white;
+  /* Shadow */
+  shadow-color: #000;
+  shadow-offset: {
+    height: 0;
+    width: 3;
+  }
+  shadow-opacity: 0.29;
+  shadow-radius: 4.65;
+
+  elevation: 3;
+  /* Shadow */
 `;
 export const ContainerSecond = styled.View`
   width: 80%;
@@ -89,10 +101,28 @@ export const Button = styled.TouchableOpacity.attrs({
   margin-bottom: 15px;
   flex-direction: row;
   background-color: #00b075;
+  /* Shadow */
+  shadow-color: #000;
+  shadow-offset: {
+    height: 0;
+    width: 3;
+  }
+  shadow-opacity: 0.29;
+  shadow-radius: 4.65;
+
+  elevation: 3;
+  /* Shadow */
 `;
 
 export const TextButton = styled.Text`
   line-height: 18px;
   font-size: 14px;
   color: white;
+`;
+
+export const ContainerThree = styled.View`
+  width: 75%;
+  flex-direction: row;
+  margin-top: 2%;
+  justify-content: space-between;
 `;
