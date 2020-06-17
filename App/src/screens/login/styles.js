@@ -64,6 +64,7 @@ export const TextInput = styled.TextInput`
   elevation: 3;
   /* Shadow */
 `;
+
 export const ContainerSecond = styled.View`
   width: 80%;
   margin-top: 4%;

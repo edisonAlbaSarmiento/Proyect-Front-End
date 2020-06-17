@@ -16,6 +16,10 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "android": {
+      "package": "com.edisoncompany.socialnetwok",
+      "versionCode": 1
+    },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -23,7 +27,9 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.edisoncompany.socialnetwok",
+      "buildNumber": "1.0.0"
     }
   }
 }

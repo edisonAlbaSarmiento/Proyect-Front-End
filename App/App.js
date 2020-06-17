@@ -23,18 +23,15 @@ class App extends React.Component {
 }
 
 const AppDrawerNavigator = createDrawerNavigator({
+  Home: HomeScreen,
   Splash: SplashScreen,
   Login: LoginScreen,
-  Home: HomeScreen,
   Eventos: Events,
   Noticias: News,
   Perfil: Profile,
   PoliU: detailNews,
   Terminos: detailEvents,
   Salir: Login,
-},
-{
-  initialRoute: 'Splash'
 },
 {
   contentComponent: CustomDrawerComponent,
