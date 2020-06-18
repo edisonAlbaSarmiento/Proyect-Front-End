@@ -11,6 +11,11 @@ import {
   ContainerItems,
   TextInput,
   CardItem,
+  ContainerCategoriesItems,
+  ContainerCardProduct,
+  ContainerCardProductItem,
+  ContainerHeaderCard,
+  ContainerCardIcon
 } from './styles';
 
 const dataCategories = [
@@ -70,6 +75,78 @@ class Home extends Component {
               keyExtractor={(item) => item.id}
             />
           </ContainerCategories>
+          <ContainerCategoriesItems>
+            <ContainerCardProduct>
+              <ContainerHeaderCard>
+                <ContainerCardProductItem>
+                  <Text> IMAGEN </Text>
+
+                </ContainerCardProductItem>
+                <ContainerCardIcon>
+                  <Text> icon </Text>
+
+                </ContainerCardIcon>
+
+              </ContainerHeaderCard>
+
+            </ContainerCardProduct>
+            <ContainerCardProduct>
+              <ContainerHeaderCard>
+                <ContainerCardProductItem>
+                  <Text> IMAGEN </Text>
+
+                </ContainerCardProductItem>
+                <ContainerCardIcon>
+                  <Text> icon </Text>
+
+                </ContainerCardIcon>
+
+              </ContainerHeaderCard>
+
+            </ContainerCardProduct>
+            <ContainerCardProduct>
+              <ContainerHeaderCard>
+                <ContainerCardProductItem>
+                  <Text> IMAGEN </Text>
+
+                </ContainerCardProductItem>
+                <ContainerCardIcon>
+                  <Text> icon </Text>
+
+                </ContainerCardIcon>
+
+              </ContainerHeaderCard>
+
+            </ContainerCardProduct>
+            <ContainerCardProduct>
+              <ContainerHeaderCard>
+                <ContainerCardProductItem>
+                  <Text> IMAGEN </Text>
+
+                </ContainerCardProductItem>
+                <ContainerCardIcon>
+                  <Text> icon </Text>
+
+                </ContainerCardIcon>
+
+              </ContainerHeaderCard>
+
+            </ContainerCardProduct>
+            {/* <ContainerItems
+              data={dataCategories}
+              showsVerticalScrollIndicator={false}
+              renderItem={({ item }) => (
+                <CardItem id={item.id}>
+                  <Text>
+                    {' '}
+                    {item.item}
+                    {' '}
+                  </Text>
+                </CardItem>
+              )}
+              keyExtractor={(item) => item.id}
+            /> */}
+          </ContainerCategoriesItems>
         </ContainerBody>
 
       </Container>

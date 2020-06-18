@@ -52,8 +52,7 @@ background-color: white;
 
 export const ContainerCategories = styled.View`
   width: 100%;
-  height: 100%;
-  flex-direction: row;
+  height: 20%;
   padding-left: 10px;
   padding-top: 10px;
 `;
@@ -61,10 +60,9 @@ export const ContainerCategories = styled.View`
 export const ContainerItems = styled.FlatList``;
 
 export const CardItem = styled.TouchableOpacity`
-  width: 70;
-  height: 12%;
+  width: 60;
+  height: 60%;
   border-radius: 10px;
-  display: flex;
   align-items: center;
   justify-content: center;
   margin: 15px;
@@ -91,4 +89,49 @@ export const TextInput = styled.TextInput`
   border-width: 1;
   color: black;
   background-color: white;
+`;
+
+export const ContainerCategoriesItems = styled.View`
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+`;
+
+export const ContainerCardProduct = styled.TouchableOpacity`
+  width: 45%;
+  height: 20%;
+  margin-top: 20%;
+  background-color: red;
+  border-radius: 24;
+`;
+
+export const ContainerHeaderCard = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const ContainerCardProductItem = styled.View`
+  width: 80px;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  background-color: yellow;
+  border-radius: 50;
+  position: absolute;
+  top: -40;
+  left: 23%;
+`;
+
+export const ContainerCardIcon = styled.View`
+  width: 100%;
+  top: 6%;
+  right: 10%;
+  align-items: flex-end;
+`;
+
+export const ScrollViewContent = styled.ScrollView`
+
 `;
