@@ -15,7 +15,11 @@ import {
   ContainerCardProduct,
   ContainerCardProductItem,
   ContainerHeaderCard,
-  ContainerCardIcon
+  ContainerCardIcon,
+  ContainerCardText,
+  ContainerCardTextSecond,
+  ContainerTitleItems,
+  ScrollViewContent
 } from './styles';
 
 const dataCategories = [
@@ -33,7 +37,8 @@ const dataCategories = [
   },
   {
     item: 'Icon5'
-  }
+  },
+
 ];
 class Home extends Component {
   constructor(props) {
@@ -43,96 +48,75 @@ class Home extends Component {
 
   render() {
     return (
-      <Container>
-        <ContainerHeader>
-          <Text> MENU </Text>
-          <ContainerTitle>
-            <Text> Location </Text>
-            <Text> QUEENS, NYC </Text>
-          </ContainerTitle>
-          <Text> IMAGEN </Text>
-        </ContainerHeader>
-        <ContainerBody>
-          <ContainerSearch>
-            <Text> icon </Text>
-            <TextInput placeholder="Search" />
-            <Text> icon </Text>
-          </ContainerSearch>
-          <ContainerCategories>
-            <ContainerItems
-              data={dataCategories}
-              horizontal
-              showsVerticalScrollIndicator={false}
-              renderItem={({ item }) => (
-                <CardItem id={item.id}>
-                  <Text>
-                    {' '}
-                    {item.item}
-                    {' '}
-                  </Text>
-                </CardItem>
-              )}
-              keyExtractor={(item) => item.id}
-            />
-          </ContainerCategories>
-          <ContainerCategoriesItems>
-            <ContainerCardProduct>
-              <ContainerHeaderCard>
-                <ContainerCardProductItem>
-                  <Text> IMAGEN </Text>
+      <ScrollViewContent>
 
-                </ContainerCardProductItem>
-                <ContainerCardIcon>
-                  <Text> icon </Text>
+        <Container>
+          <ContainerHeader>
+            <Text> MENU </Text>
+            <ContainerTitle>
+              <Text> Location </Text>
+              <Text> QUEENS, NYC </Text>
+            </ContainerTitle>
+            <Text> IMAGEN </Text>
+          </ContainerHeader>
 
-                </ContainerCardIcon>
+          <ContainerBody>
+            <ContainerSearch>
+              <Text> icon </Text>
+              <TextInput placeholder="Search" />
+              <Text> icon </Text>
+            </ContainerSearch>
+            <ContainerCategories>
+              <ContainerItems
+                data={dataCategories}
+                horizontal
+                showsVerticalScrollIndicator={false}
+                renderItem={({ item }) => (
+                  <ContainerTitleItems>
+                    <CardItem id={item.id}>
+                      <Text>
+                        {' '}
+                        {item.item}
+                        {' '}
+                      </Text>
+                    </CardItem>
+                    <Text> Dogs </Text>
 
-              </ContainerHeaderCard>
+                  </ContainerTitleItems>
+                )}
+                keyExtractor={(item) => item.id}
+              />
+            </ContainerCategories>
 
-            </ContainerCardProduct>
-            <ContainerCardProduct>
-              <ContainerHeaderCard>
-                <ContainerCardProductItem>
-                  <Text> IMAGEN </Text>
+            <ContainerCategoriesItems>
+              {dataCategories.map((item) => (
+                <>
+                  <ContainerCardProduct>
+                    <ContainerHeaderCard>
+                      <ContainerCardProductItem>
+                        <Text>
+                          {' '}
+                          {item.item}
+                          {' '}
+                        </Text>
+                      </ContainerCardProductItem>
+                      <ContainerCardIcon>
+                        <Text> icon </Text>
+                      </ContainerCardIcon>
+                    </ContainerHeaderCard>
+                    <ContainerCardText>
+                      <Text> Dexter </Text>
+                      <Text> French Buldog </Text>
+                      <ContainerCardTextSecond>
+                        <Text> Distance</Text>
+                        <Text> 6 Years  </Text>
+                      </ContainerCardTextSecond>
+                    </ContainerCardText>
+                  </ContainerCardProduct>
+                </>
+              ))}
 
-                </ContainerCardProductItem>
-                <ContainerCardIcon>
-                  <Text> icon </Text>
-
-                </ContainerCardIcon>
-
-              </ContainerHeaderCard>
-
-            </ContainerCardProduct>
-            <ContainerCardProduct>
-              <ContainerHeaderCard>
-                <ContainerCardProductItem>
-                  <Text> IMAGEN </Text>
-
-                </ContainerCardProductItem>
-                <ContainerCardIcon>
-                  <Text> icon </Text>
-
-                </ContainerCardIcon>
-
-              </ContainerHeaderCard>
-
-            </ContainerCardProduct>
-            <ContainerCardProduct>
-              <ContainerHeaderCard>
-                <ContainerCardProductItem>
-                  <Text> IMAGEN </Text>
-
-                </ContainerCardProductItem>
-                <ContainerCardIcon>
-                  <Text> icon </Text>
-
-                </ContainerCardIcon>
-
-              </ContainerHeaderCard>
-
-            </ContainerCardProduct>
-            {/* <ContainerItems
+              {/* <ContainerItems
               data={dataCategories}
               showsVerticalScrollIndicator={false}
               renderItem={({ item }) => (
@@ -146,10 +130,13 @@ class Home extends Component {
               )}
               keyExtractor={(item) => item.id}
             /> */}
-          </ContainerCategoriesItems>
-        </ContainerBody>
+            </ContainerCategoriesItems>
 
-      </Container>
+          </ContainerBody>
+
+        </Container>
+      </ScrollViewContent>
+
     );
   }
 }
