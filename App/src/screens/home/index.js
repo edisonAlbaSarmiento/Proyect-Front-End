@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import {
+  Text, SafeAreaView, ScrollView, View
+} from 'react-native';
 
 import {
   Container,
@@ -19,6 +21,8 @@ import {
   ContainerCardText,
   ContainerCardTextSecond,
   ContainerTitleItems,
+  ContainerProducts,
+  ContainerItems2,
   ScrollViewContent
 } from './styles';
 
@@ -38,6 +42,36 @@ const dataCategories = [
   {
     item: 'Icon5'
   },
+  {
+    item: 'Icon1'
+  },
+  {
+    item: 'Icon2'
+  },
+  {
+    item: 'Icon3'
+  },
+  {
+    item: 'Icon4'
+  },
+  {
+    item: 'Icon5'
+  },
+  {
+    item: 'Icon1'
+  },
+  {
+    item: 'Icon2'
+  },
+  {
+    item: 'Icon3'
+  },
+  {
+    item: 'Icon4'
+  },
+  {
+    item: 'Icon9'
+  },
 
 ];
 class Home extends Component {
@@ -48,8 +82,7 @@ class Home extends Component {
 
   render() {
     return (
-      <ScrollViewContent>
-
+      <SafeAreaView>
         <Container>
           <ContainerHeader>
             <Text> MENU </Text>
@@ -70,7 +103,7 @@ class Home extends Component {
               <ContainerItems
                 data={dataCategories}
                 horizontal
-                showsVerticalScrollIndicator={false}
+                showsHorizontalScrollIndicator={false}
                 renderItem={({ item }) => (
                   <ContainerTitleItems>
                     <CardItem id={item.id}>
@@ -88,8 +121,7 @@ class Home extends Component {
               />
             </ContainerCategories>
 
-            <ContainerCategoriesItems>
-              {dataCategories.map((item) => (
+            {/* {dataCategories.map((item) => (
                 <>
                   <ContainerCardProduct>
                     <ContainerHeaderCard>
@@ -114,29 +146,57 @@ class Home extends Component {
                     </ContainerCardText>
                   </ContainerCardProduct>
                 </>
-              ))}
-
-              {/* <ContainerItems
-              data={dataCategories}
-              showsVerticalScrollIndicator={false}
-              renderItem={({ item }) => (
-                <CardItem id={item.id}>
-                  <Text>
-                    {' '}
-                    {item.item}
-                    {' '}
-                  </Text>
-                </CardItem>
-              )}
-              keyExtractor={(item) => item.id}
-            /> */}
-            </ContainerCategoriesItems>
+              ))} */}
 
           </ContainerBody>
+          <ScrollViewContent showsVerticalScrollIndicator={false}>
+            <View style={{
+              paddingTop: 30,
+              width: '100%',
+              height: '100%',
+              flexDirection: 'row',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
 
+            }}
+            >
+              {dataCategories.map((item) => (
+                <View
+                  key={item.item}
+                  style={{
+                    margin: 20, width: 140, height: 130, marginTop: 50
+                  }}
+                >
+                  <ContainerCardProduct>
+                    <ContainerHeaderCard>
+                      <ContainerCardProductItem>
+                        <Text>
+                          {' '}
+                          {item.item}
+                          {' '}
+                        </Text>
+                      </ContainerCardProductItem>
+
+                    </ContainerHeaderCard>
+                    <ContainerCardText>
+                      <Text> Dexter </Text>
+                      <Text> French Buldog </Text>
+                      <ContainerCardTextSecond>
+                        <Text> Distance</Text>
+                        <Text> 6 Years  </Text>
+                      </ContainerCardTextSecond>
+                    </ContainerCardText>
+                  </ContainerCardProduct>
+
+                </View>
+
+              ))}
+
+            </View>
+
+          </ScrollViewContent>
         </Container>
-      </ScrollViewContent>
-
+      </SafeAreaView>
     );
   }
 }
