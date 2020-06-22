@@ -13,18 +13,21 @@ import {
   ContainerItems,
   TextInput,
   CardItem,
-  ContainerCategoriesItems,
   ContainerCardProduct,
   ContainerCardProductItem,
   ContainerHeaderCard,
-  ContainerCardIcon,
   ContainerCardText,
   ContainerCardTextSecond,
   ContainerTitleItems,
-  ContainerProducts,
-  ContainerItems2,
-  ScrollViewContent
+  ScrollViewContent,
+  ImageIcon,
+  TitleCard,
+  SubTitleCard,
+  TitleFooterCard,
 } from './styles';
+
+const iconChaqueta = require('../../assets/chaquetaIcon.png');
+
 
 const dataCategories = [
   {
@@ -120,34 +123,6 @@ class Home extends Component {
                 keyExtractor={(item) => item.id}
               />
             </ContainerCategories>
-
-            {/* {dataCategories.map((item) => (
-                <>
-                  <ContainerCardProduct>
-                    <ContainerHeaderCard>
-                      <ContainerCardProductItem>
-                        <Text>
-                          {' '}
-                          {item.item}
-                          {' '}
-                        </Text>
-                      </ContainerCardProductItem>
-                      <ContainerCardIcon>
-                        <Text> icon </Text>
-                      </ContainerCardIcon>
-                    </ContainerHeaderCard>
-                    <ContainerCardText>
-                      <Text> Dexter </Text>
-                      <Text> French Buldog </Text>
-                      <ContainerCardTextSecond>
-                        <Text> Distance</Text>
-                        <Text> 6 Years  </Text>
-                      </ContainerCardTextSecond>
-                    </ContainerCardText>
-                  </ContainerCardProduct>
-                </>
-              ))} */}
-
           </ContainerBody>
           <ScrollViewContent showsVerticalScrollIndicator={false}>
             <View style={{
@@ -170,26 +145,19 @@ class Home extends Component {
                   <ContainerCardProduct>
                     <ContainerHeaderCard>
                       <ContainerCardProductItem>
-                        <Text>
-                          {' '}
-                          {item.item}
-                          {' '}
-                        </Text>
+                        <ImageIcon source={iconChaqueta} />
                       </ContainerCardProductItem>
-
                     </ContainerHeaderCard>
                     <ContainerCardText>
-                      <Text> Dexter </Text>
-                      <Text> French Buldog </Text>
+                      <TitleCard> Dexter </TitleCard>
+                      <SubTitleCard> French Buldog </SubTitleCard>
                       <ContainerCardTextSecond>
-                        <Text> Distance</Text>
-                        <Text> 6 Years  </Text>
+                        <TitleFooterCard> Distance: 2.7 km</TitleFooterCard>
+                        <TitleFooterCard> 6 Years Old  </TitleFooterCard>
                       </ContainerCardTextSecond>
                     </ContainerCardText>
                   </ContainerCardProduct>
-
                 </View>
-
               ))}
 
             </View>

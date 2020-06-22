@@ -60,7 +60,6 @@ export const ContainerCategories = styled.View`
 
 export const ContainerItems = styled.FlatList``;
 
-
 export const CardItem = styled.TouchableOpacity`
   width: 50;
   height: 50%;
@@ -120,9 +119,9 @@ export const ContainerProducts = styled.View`
 
 export const ContainerCardProduct = styled.TouchableOpacity`
   width: 100%;
-  height: 90%;
+  height: 85%;
   padding-bottom: 100px;
-  background-color: red;
+  background-color: white;
   border-radius: 24;
   /* Shadow */
   shadow-color: #000;
@@ -166,7 +165,6 @@ export const ContainerCardText = styled.View`
   align-items: center;
   bottom: 100%;
   justify-content: center;
-
 `;
 
 export const ContainerCardTextSecond = styled.View`
@@ -174,10 +172,33 @@ export const ContainerCardTextSecond = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-`;
+  padding-top: 10px;
+  padding-bottom: 10px;
 
+`;
 
 export const ScrollViewContent = styled.ScrollView`
   background-color: #f9f9f9;
 
+`;
+
+export const ImageIcon = styled.Image`
+  width: 80px;
+  height: 80px;
+`;
+
+export const TitleCard = styled.Text`
+  font-size: 15px;
+  font-weight: bold;
+`;
+
+export const SubTitleCard = styled.Text`
+  font-size: 10px;
+  font-weight: bold;
+`;
+
+export const TitleFooterCard = styled.Text`
+  font-size: 10px;
+  font-weight: bold;
+  color: #b9bfc9;
 `;
