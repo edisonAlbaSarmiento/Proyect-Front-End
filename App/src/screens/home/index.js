@@ -3,6 +3,7 @@ import {
   Text, SafeAreaView, ScrollView, View
 } from 'react-native';
 
+import { Icon } from 'native-base';
 import {
   Container,
   ContainerHeader,
@@ -24,56 +25,60 @@ import {
   TitleCard,
   SubTitleCard,
   TitleFooterCard,
+  TitleItems,
+  ContainerHeaderTitle,
+  ContainerHeaderSubTitle,
+  ContainerHeaderLeft,
 } from './styles';
 
 const iconChaqueta = require('../../assets/chaquetaIcon.png');
-
+const iconProfile = require('../../assets/goku.jpeg');
 
 const dataCategories = [
   {
-    item: 'Icon1'
+    item: 'search'
   },
   {
-    item: 'Icon2'
+    item: 'search'
   },
   {
-    item: 'Icon3'
+    item: 'search'
   },
   {
-    item: 'Icon4'
+    item: 'search'
   },
   {
-    item: 'Icon5'
+    item: 'search'
   },
   {
-    item: 'Icon1'
+    item: 'search'
   },
   {
-    item: 'Icon2'
+    item: 'search'
   },
   {
-    item: 'Icon3'
+    item: 'search'
   },
   {
-    item: 'Icon4'
+    item: 'search'
   },
   {
-    item: 'Icon5'
+    item: 'search'
   },
   {
-    item: 'Icon1'
+    item: 'search'
   },
   {
-    item: 'Icon2'
+    item: 'search'
   },
   {
-    item: 'Icon3'
+    item: 'search'
   },
   {
-    item: 'Icon4'
+    item: 'search'
   },
   {
-    item: 'Icon9'
+    item: 'search'
   },
 
 ];
@@ -88,19 +93,19 @@ class Home extends Component {
       <SafeAreaView>
         <Container>
           <ContainerHeader>
-            <Text> MENU </Text>
+            <Icon name="menu" style={{ fontSize: 40, color: '#00b075' }} />
             <ContainerTitle>
-              <Text> Location </Text>
-              <Text> QUEENS, NYC </Text>
+              <ContainerHeaderTitle> Location </ContainerHeaderTitle>
+              <ContainerHeaderSubTitle> QUEENS, NYC </ContainerHeaderSubTitle>
             </ContainerTitle>
-            <Text> IMAGEN </Text>
-          </ContainerHeader>
+            <ContainerHeaderLeft source={iconProfile} />
 
+          </ContainerHeader>
           <ContainerBody>
             <ContainerSearch>
-              <Text> icon </Text>
+              <Icon name="search" style={{ fontSize: 30, color: '#cbcbcb' }} />
               <TextInput placeholder="Search" />
-              <Text> icon </Text>
+              <Icon name="keypad" style={{ fontSize: 20, color: '#cbcbcb' }} />
             </ContainerSearch>
             <ContainerCategories>
               <ContainerItems
@@ -110,13 +115,9 @@ class Home extends Component {
                 renderItem={({ item }) => (
                   <ContainerTitleItems>
                     <CardItem id={item.id}>
-                      <Text>
-                        {' '}
-                        {item.item}
-                        {' '}
-                      </Text>
+                      <Icon name={`${item.item}`} style={{ fontSize: 30, color: '#cbcbcb' }} />
                     </CardItem>
-                    <Text> Dogs </Text>
+                    <TitleItems> Dogs </TitleItems>
 
                   </ContainerTitleItems>
                 )}
@@ -126,7 +127,7 @@ class Home extends Component {
           </ContainerBody>
           <ScrollViewContent showsVerticalScrollIndicator={false}>
             <View style={{
-              paddingTop: 30,
+              paddingTop: 20,
               width: '100%',
               height: '100%',
               flexDirection: 'row',

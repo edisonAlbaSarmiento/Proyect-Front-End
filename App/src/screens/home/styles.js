@@ -10,11 +10,30 @@ export const Container = styled.View`
 
 export const ContainerHeader = styled.View`
   width: 90%;
-  height: 10%;
+  height: 13%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   background-color: white;
+`;
+
+export const ContainerHeaderTitle = styled.Text`
+  font-size: 15px;
+  font-weight: bold;
+  color: #b9bfc9;
+`;
+
+export const ContainerHeaderLeft = styled.Image`
+  width: 40px;
+  height: 40px;
+  border-radius: 10;
+  background-color: red;
+
+`;
+
+export const ContainerHeaderSubTitle = styled.Text`
+  font-size: 15px;
+  font-weight: bold;
 `;
 
 export const ContainerTitle = styled.View`
@@ -31,7 +50,7 @@ export const ContainerBody = styled.View`
 export const ContainerSearch = styled.View`
 width: 100%;
 height: 50;
-padding: 10px;
+padding: 20px;
 flex-direction: row;
 justify-content: space-between;
 align-items: center;
@@ -61,7 +80,7 @@ export const ContainerCategories = styled.View`
 export const ContainerItems = styled.FlatList``;
 
 export const CardItem = styled.TouchableOpacity`
-  width: 50;
+  width: 60;
   height: 50%;
   border-radius: 10px;
   align-items: center;
@@ -80,6 +99,13 @@ export const CardItem = styled.TouchableOpacity`
 
   elevation: 3;
   /* Shadow */
+`;
+
+export const TitleItems = styled.Text`
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: -10px;
+  color: #b6b6b6;
 `;
 
 export const TextInput = styled.TextInput`
@@ -202,3 +228,4 @@ export const TitleFooterCard = styled.Text`
   font-weight: bold;
   color: #b9bfc9;
 `;
+
