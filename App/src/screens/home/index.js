@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Text, SafeAreaView, ScrollView, View
+  SafeAreaView, TouchableOpacity, View
 } from 'react-native';
 
 import { Icon } from 'native-base';
@@ -89,17 +89,22 @@ class Home extends Component {
   }
 
   render() {
+    const { navigation } = this.props;
+
     return (
       <SafeAreaView>
         <Container>
           <ContainerHeader>
-            <Icon name="menu" style={{ fontSize: 40, color: '#00b075' }} />
+            <TouchableOpacity onPress={() => console.log('eee')}>
+              <Icon name="menu" style={{ fontSize: 40, color: '#00b075' }} />
+            </TouchableOpacity>
             <ContainerTitle>
               <ContainerHeaderTitle> Location </ContainerHeaderTitle>
               <ContainerHeaderSubTitle> QUEENS, NYC </ContainerHeaderSubTitle>
             </ContainerTitle>
-            <ContainerHeaderLeft source={iconProfile} />
-
+            <TouchableOpacity onPress={() => console.log('eee')}>
+              <ContainerHeaderLeft source={iconProfile} />
+            </TouchableOpacity>
           </ContainerHeader>
           <ContainerBody>
             <ContainerSearch>
@@ -143,7 +148,7 @@ class Home extends Component {
                     margin: 20, width: 140, height: 130, marginTop: 50
                   }}
                 >
-                  <ContainerCardProduct>
+                  <ContainerCardProduct onPress={() => navigation.navigate('DetailDategorie')}>
                     <ContainerHeaderCard>
                       <ContainerCardProductItem>
                         <ImageIcon source={iconChaqueta} />
