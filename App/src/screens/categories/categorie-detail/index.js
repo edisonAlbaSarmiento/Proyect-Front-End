@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native';
 import { Icon } from 'native-base';
+import { AntDesign } from '@expo/vector-icons';
 import {
   Container,
   ImageHeader,
@@ -41,7 +42,7 @@ class DetailDategorie extends Component {
         <ContainerHeader>
           <ImageHeader source={imageHome} />
           <ContainerButton onPress={() => navigation.navigate('Home')}>
-            <Icon name="arrow-back" style={{ fontSize: 25, color: 'white' }} />
+            <AntDesign name="left" size={25} color="white" />
           </ContainerButton>
         </ContainerHeader>
 
