@@ -5,6 +5,12 @@ Proyecto red social para engrasados React native
 <img src="/App/assets/app.png"  width=400>
 <br>
 
+#inspiracion 
+
+https://www.uplabs.com/posts/pet-adoption-donate-app-design-concept
+https://www.uplabs.com/posts/hotel-room-booking-apps
+https://www.uplabs.com/posts/login-4020f7a3-e880-498e-82b7-b6d6f229eecd
+
 # instalar mysql para el backend
 
 https://dev.mysql.com/downloads/mysql/
