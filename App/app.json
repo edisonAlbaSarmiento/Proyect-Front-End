@@ -10,11 +10,11 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logoPoli.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/logoPoli.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ffff"
     },
     "android": {
       "package": "com.edisoncompany.socialnetwok",
