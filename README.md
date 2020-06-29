@@ -2,7 +2,7 @@
 Proyecto para frontend React native 
 <br>
 
-<img src="/App/assets/app.png"  width=400>
+<img src="/App/assets/home.png"  width=300>
 <br>
 
 #inspiracion 
