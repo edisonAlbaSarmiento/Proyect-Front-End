@@ -1,5 +1,5 @@
-# ProyectUniversityFrontend
-Proyecto red social para engrasados React native 
+# Proyect Frontend
+Proyecto para frontend React native 
 <br>
 
 <img src="/App/assets/app.png"  width=400>
