@@ -96,7 +96,7 @@ const App = createDrawerNavigator({
 }, {
   contentComponent: CustomDrawerComponent,
   drawerOpenRoute: 'DrawerOpen',
-  drawerCloseRoute: 'DrawerClose',
+  drawerCloseRoute: 'DrawerClose'
 });
 
 export default App;
