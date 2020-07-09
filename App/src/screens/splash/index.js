@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import LottieView from 'lottie-react-native';
 
-const loading = require('../../assets/home.json');
+const loading = require('../../assets/loading.json');
 
 class Splash extends Component {
   static navigationOptions = {

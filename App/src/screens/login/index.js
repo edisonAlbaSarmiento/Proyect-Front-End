@@ -54,10 +54,10 @@ class Login extends Component {
           </ContainerInputs>
           <ContainerSecond>
             <ContainerCheck>
-              <CheckBox
+              {/* <CheckBox
                 value={isSelected}
                 onValueChange={this.setSelection}
-              />
+              /> */}
               <SubText> Remember me </SubText>
             </ContainerCheck>
             <SubText
