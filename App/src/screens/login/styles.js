@@ -79,6 +79,10 @@ export const ContainerCheck = styled.View`
   align-items: center;
 `;
 
+export const ContainerTextCheck = styled.View`
+  margin-left: 8%;
+`;
+
 export const SubText = styled.Text`
   font-size: 12;
   color: ${(props) => (props.colorText ? `${props.colorText}` : '#afafb1')}

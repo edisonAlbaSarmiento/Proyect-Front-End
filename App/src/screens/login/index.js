@@ -1,6 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import React, { Component } from 'react';
-import CheckBox from '@react-native-community/checkbox';
+import { CheckBox } from 'native-base';
 import { Alert } from 'react-native';
 import {
   Container,
@@ -19,7 +19,8 @@ import {
   ContainerThree,
   ContainerFour,
   ContainerFooter,
-  ImageIcon
+  ImageIcon,
+  ContainerTextCheck,
 } from './styles';
 
 const iconFacebook = require('../../assets/facebookIcon.png');
@@ -54,11 +55,14 @@ class Login extends Component {
           </ContainerInputs>
           <ContainerSecond>
             <ContainerCheck>
-              {/* <CheckBox
-                value={isSelected}
-                onValueChange={this.setSelection}
-              /> */}
-              <SubText> Remember me </SubText>
+              <CheckBox
+                checked={isSelected}
+                color="#006B48"
+                onPress={this.setSelection}
+              />
+              <ContainerTextCheck>
+                <SubText> Remember me </SubText>
+              </ContainerTextCheck>
             </ContainerCheck>
             <SubText
               colorText="#006B48"

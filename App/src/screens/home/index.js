@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 
 import { Icon } from 'native-base';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 import {
   Container,
   ContainerHeader,
@@ -31,7 +31,7 @@ import {
   ContainerHeaderSubTitle,
   ContainerHeaderLeft,
 } from './styles';
-import { Entypo } from '@expo/vector-icons';
+
 const iconChaqueta = require('../../assets/chaquetaIcon.png');
 const iconProfile = require('../../assets/goku.jpeg');
 
@@ -96,7 +96,10 @@ class Home extends Component {
       <SafeAreaView>
         <Container>
           <ContainerHeader>
-            <TouchableOpacity onPress={() => console.log('eee')}>
+            <TouchableOpacity onPress={() => {
+              navigation.toggleDrawer();
+            }}
+            >
               <Entypo name="menu" size={30} color="#00b075" />
             </TouchableOpacity>
             <ContainerTitle>

@@ -14,13 +14,10 @@
 //   contentComponent: CustomDrawerComponent,
 //   drawerWidth: 180
 // });
-
-
+import React from 'react';
 
 
 import {
-  createAppContainer,
-  createSwitchNavigator,
   createStackNavigator,
   createDrawerNavigator
 } from 'react-navigation';
@@ -29,25 +26,12 @@ import {
   SplashScreen,
   LoginScreen,
   HomeScreen,
-  DetailDategorieScreen
+  DetailDategorieScreen,
+  SideMenuScreen,
 } from '../screens';
-import CustomDrawerComponent from '../components/side-menu';
 
 const screens = createStackNavigator(
   {
-    Splash: {
-      screen: SplashScreen,
-      navigationOptions: {
-        header: null
-      },
-    },
-    Login: {
-      screen: LoginScreen,
-      navigationOptions: {
-        header: null,
-        drawerLockMode: 'locked-closed'
-      },
-    },
     Home: {
       screen: HomeScreen,
       navigationOptions: {
@@ -94,9 +78,37 @@ const screens = createStackNavigator(
 const App = createDrawerNavigator({
   screens
 }, {
-  contentComponent: CustomDrawerComponent,
+  // contentComponent: CustomDrawerComponent,
+  contentComponent: ({ navigation }) => <SideMenuScreen navigation={navigation} />,
+  contentOptions: {
+    activeTintColor: '#00b075'
+  },
   drawerOpenRoute: 'DrawerOpen',
   drawerCloseRoute: 'DrawerClose'
 });
 
-export default App;
+
+const AuthNavigator = createStackNavigator(
+  {
+    Splash: {
+      screen: SplashScreen,
+      navigationOptions: {
+        header: null
+      },
+    },
+    Login: {
+      screen: LoginScreen,
+      navigationOptions: {
+        header: null,
+        drawerLockMode: 'locked-closed'
+      },
+    },
+    Home: {
+      screen: App,
+      navigationOptions: {
+        header: null
+      },
+    },
+  }
+);
+export default AuthNavigator;
