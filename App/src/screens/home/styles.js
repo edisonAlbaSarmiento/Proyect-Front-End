@@ -228,4 +228,3 @@ export const TitleFooterCard = styled.Text`
   font-weight: bold;
   color: #b9bfc9;
 `;
-
