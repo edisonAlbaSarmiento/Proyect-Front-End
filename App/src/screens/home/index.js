@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {
-  SafeAreaView, TouchableOpacity, View
+  SafeAreaView,
+  TouchableOpacity,
+  View,
+  RefreshControl
 } from 'react-native';
 
 import { Icon } from 'native-base';
@@ -86,12 +89,22 @@ const dataCategories = [
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      refreshing: false,
+      name: 'Dogs'
+    };
+  }
+
+  onRefresh = () => {
+    this.setState({ refreshing: true });
+    setTimeout(() => {
+      this.setState({ refreshing: false, name: 'Cats' });
+    }, 3000);
   }
 
   render() {
     const { navigation } = this.props;
-
+    const { refreshing, name } = this.state;
     return (
       <SafeAreaView>
         <Container>
@@ -126,15 +139,26 @@ class Home extends Component {
                     <CardItem id={item.id}>
                       <Icon name={`${item.item}`} style={{ fontSize: 30, color: '#cbcbcb' }} />
                     </CardItem>
-                    <TitleItems> Dogs </TitleItems>
-
+                    <TitleItems>
+                      {' '}
+                      {name}
+                      {' '}
+                    </TitleItems>
                   </ContainerTitleItems>
                 )}
                 keyExtractor={(item) => item.id}
               />
             </ContainerCategories>
           </ContainerBody>
-          <ScrollViewContent showsVerticalScrollIndicator={false}>
+          <ScrollViewContent
+            showsVerticalScrollIndicator={false}
+            refreshControl={(
+              <RefreshControl
+                refreshing={refreshing}
+                onRefresh={this.onRefresh}
+              />
+            )}
+          >
             <View style={{
               paddingTop: 20,
               width: '100%',
@@ -142,7 +166,6 @@ class Home extends Component {
               flexDirection: 'row',
               flexWrap: 'wrap',
               justifyContent: 'center',
-
             }}
             >
               {dataCategories.map((item) => (
