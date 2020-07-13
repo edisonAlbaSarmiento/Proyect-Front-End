@@ -28,12 +28,19 @@ import {
   HomeScreen,
   DetailDategorieScreen,
   SideMenuScreen,
+  ProfileScreen,
 } from '../screens';
 
 const screens = createStackNavigator(
   {
     Home: {
       screen: HomeScreen,
+      navigationOptions: {
+        header: null
+      },
+    },
+    Profile: {
+      screen: ProfileScreen,
       navigationOptions: {
         header: null
       },

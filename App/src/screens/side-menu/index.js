@@ -1,10 +1,25 @@
 /* eslint-disable global-require */
 import React from 'react';
 import {
-  View, ScrollView, SafeAreaView, Image
+  View,
+  ScrollView,
+  SafeAreaView,
+  Image
 } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
-import { NavItem, NavItemText, ContainerIcon } from './styles';
+import {
+  AntDesign,
+  MaterialCommunityIcons
+} from '@expo/vector-icons';
+import {
+  NavItem,
+  NavItemText,
+  ContainerIcon,
+  ContainerFooter,
+  ContainerSideMenu,
+  ContainerIcons,
+  ContainerTitleFooter
+} from './styles';
+
 
 const SideMenuScreen = (props) => (
   <SafeAreaView styles={{
@@ -18,17 +33,142 @@ const SideMenuScreen = (props) => (
       <Image source={require('../../../assets/logoPoli.png')} />
 
     </View>
-    <ScrollView>
-      <NavItem
-        onPress={() => props.navigation.navigate('Login')}
-      >
-        <NavItemText>Salir</NavItemText>
+    <ContainerSideMenu>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <NavItem
+          onPress={() => props.navigation.navigate('Home')}
+        >
+          <NavItemText>Home</NavItemText>
+          <ContainerIcon>
+            <AntDesign name="home" size={18} color="#00b075" />
+          </ContainerIcon>
+        </NavItem>
+        <NavItem
+          onPress={() => props.navigation.navigate('Profile')}
+        >
+          <NavItemText>Profile</NavItemText>
+          <ContainerIcon>
+            <MaterialCommunityIcons name="face-profile" size={18} color="#00b075" />
+          </ContainerIcon>
+        </NavItem>
+        <NavItem
+          onPress={() => props.navigation.navigate('Login')}
+        >
+          <NavItemText>Salir</NavItemText>
+          <ContainerIcon>
+            <AntDesign name="logout" size={18} color="#00b075" />
+          </ContainerIcon>
+        </NavItem>
+        <NavItem
+          onPress={() => props.navigation.navigate('Login')}
+        >
+          <NavItemText>Salir</NavItemText>
+          <ContainerIcon>
+            <AntDesign name="logout" size={18} color="#00b075" />
+          </ContainerIcon>
+        </NavItem>
+        <NavItem
+          onPress={() => props.navigation.navigate('Login')}
+        >
+          <NavItemText>Salir</NavItemText>
+          <ContainerIcon>
+            <AntDesign name="logout" size={18} color="#00b075" />
+          </ContainerIcon>
+        </NavItem>
+        <NavItem
+          onPress={() => props.navigation.navigate('Login')}
+        >
+          <NavItemText>Salir</NavItemText>
+          <ContainerIcon>
+            <AntDesign name="logout" size={18} color="#00b075" />
+          </ContainerIcon>
+        </NavItem>
+        <NavItem
+          onPress={() => props.navigation.navigate('Login')}
+        >
+          <NavItemText>Salir</NavItemText>
+          <ContainerIcon>
+            <AntDesign name="logout" size={18} color="#00b075" />
+          </ContainerIcon>
+        </NavItem>
+        <NavItem
+          onPress={() => props.navigation.navigate('Login')}
+        >
+          <NavItemText>Salir</NavItemText>
+          <ContainerIcon>
+            <AntDesign name="logout" size={18} color="#00b075" />
+          </ContainerIcon>
+        </NavItem>
+        <NavItem
+          onPress={() => props.navigation.navigate('Login')}
+        >
+          <NavItemText>Salir</NavItemText>
+          <ContainerIcon>
+            <AntDesign name="logout" size={18} color="#00b075" />
+          </ContainerIcon>
+        </NavItem>
+        <NavItem
+          onPress={() => props.navigation.navigate('Login')}
+        >
+          <NavItemText>Salir</NavItemText>
+          <ContainerIcon>
+            <AntDesign name="logout" size={18} color="#00b075" />
+          </ContainerIcon>
+        </NavItem>
+        <NavItem
+          onPress={() => props.navigation.navigate('Login')}
+        >
+          <NavItemText>Salir</NavItemText>
+          <ContainerIcon>
+            <AntDesign name="logout" size={18} color="#00b075" />
+          </ContainerIcon>
+        </NavItem>
+        <NavItem
+          onPress={() => props.navigation.navigate('Login')}
+        >
+          <NavItemText>Salir</NavItemText>
+          <ContainerIcon>
+            <AntDesign name="logout" size={18} color="#00b075" />
+          </ContainerIcon>
+        </NavItem>
+        <NavItem
+          onPress={() => props.navigation.navigate('Login')}
+        >
+          <NavItemText>Salir</NavItemText>
+          <ContainerIcon>
+            <AntDesign name="logout" size={18} color="#00b075" />
+          </ContainerIcon>
+        </NavItem>
+        <NavItem
+          onPress={() => props.navigation.navigate('Login')}
+        >
+          <NavItemText>Salir</NavItemText>
+          <ContainerIcon>
+            <AntDesign name="logout" size={18} color="#00b075" />
+          </ContainerIcon>
+        </NavItem>
+
+      </ScrollView>
+    </ContainerSideMenu>
+    <ContainerFooter>
+      <ContainerTitleFooter>
+        <NavItemText>Sigueme</NavItemText>
+      </ContainerTitleFooter>
+      <ContainerIcons>
         <ContainerIcon>
-          <AntDesign name="logout" size={24} color="black" />
+          <AntDesign name="logout" size={18} color="#00b075" />
         </ContainerIcon>
-      </NavItem>
-      {/* <DrawerItems {...props} /> */}
-    </ScrollView>
+        <ContainerIcon>
+          <AntDesign name="logout" size={18} color="#00b075" />
+        </ContainerIcon>
+        <ContainerIcon>
+          <AntDesign name="logout" size={18} color="#00b075" />
+        </ContainerIcon>
+        <ContainerIcon>
+          <AntDesign name="logout" size={18} color="#00b075" />
+        </ContainerIcon>
+      </ContainerIcons>
+    </ContainerFooter>
   </SafeAreaView>
 );
 

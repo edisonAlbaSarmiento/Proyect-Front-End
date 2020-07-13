@@ -106,7 +106,7 @@ class Home extends Component {
               <ContainerHeaderTitle> Location </ContainerHeaderTitle>
               <ContainerHeaderSubTitle> QUEENS, NYC </ContainerHeaderSubTitle>
             </ContainerTitle>
-            <TouchableOpacity onPress={() => console.log('eee')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
               <ContainerHeaderLeft source={iconProfile} />
             </TouchableOpacity>
           </ContainerHeader>
