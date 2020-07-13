@@ -18,26 +18,36 @@ export const ContainerIcon = styled.View`
 `;
 
 export const ContainerSideMenu = styled.View`
-  background-color: yellow;
   flex-direction: column;
   height: 70%;
 `;
 
 export const ContainerFooter = styled.View`
-  background-color: red;
+  background-color: #00b075;
   width: 100%;
   height: 12%;
   flex-direction: column;
-  justify-content: center;
+  padding: 5%;
+  border
 `;
 
 export const ContainerTitleFooter = styled.View`
   flex-direction: row;
   justify-content: center;
-  padding: 2%;
+  padding: 4%;
 `;
 
 export const ContainerIcons = styled.View`
   flex-direction: row;
+  justify-content: center;
+`;
+
+export const NavItemTextFooter = styled.Text`
+  color: black;
+  padding-right: 9%;
+`;
+
+export const ContainerIconFooter = styled.TouchableOpacity`
+  padding-right: 8%;
   justify-content: center;
 `;

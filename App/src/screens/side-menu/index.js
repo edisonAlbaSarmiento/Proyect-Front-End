@@ -4,7 +4,8 @@ import {
   View,
   ScrollView,
   SafeAreaView,
-  Image
+  Image,
+  Linking
 } from 'react-native';
 import {
   AntDesign,
@@ -17,7 +18,9 @@ import {
   ContainerFooter,
   ContainerSideMenu,
   ContainerIcons,
-  ContainerTitleFooter
+  ContainerTitleFooter,
+  ContainerIconFooter,
+  NavItemTextFooter
 } from './styles';
 
 
@@ -59,114 +62,25 @@ const SideMenuScreen = (props) => (
             <AntDesign name="logout" size={18} color="#00b075" />
           </ContainerIcon>
         </NavItem>
-        <NavItem
-          onPress={() => props.navigation.navigate('Login')}
-        >
-          <NavItemText>Salir</NavItemText>
-          <ContainerIcon>
-            <AntDesign name="logout" size={18} color="#00b075" />
-          </ContainerIcon>
-        </NavItem>
-        <NavItem
-          onPress={() => props.navigation.navigate('Login')}
-        >
-          <NavItemText>Salir</NavItemText>
-          <ContainerIcon>
-            <AntDesign name="logout" size={18} color="#00b075" />
-          </ContainerIcon>
-        </NavItem>
-        <NavItem
-          onPress={() => props.navigation.navigate('Login')}
-        >
-          <NavItemText>Salir</NavItemText>
-          <ContainerIcon>
-            <AntDesign name="logout" size={18} color="#00b075" />
-          </ContainerIcon>
-        </NavItem>
-        <NavItem
-          onPress={() => props.navigation.navigate('Login')}
-        >
-          <NavItemText>Salir</NavItemText>
-          <ContainerIcon>
-            <AntDesign name="logout" size={18} color="#00b075" />
-          </ContainerIcon>
-        </NavItem>
-        <NavItem
-          onPress={() => props.navigation.navigate('Login')}
-        >
-          <NavItemText>Salir</NavItemText>
-          <ContainerIcon>
-            <AntDesign name="logout" size={18} color="#00b075" />
-          </ContainerIcon>
-        </NavItem>
-        <NavItem
-          onPress={() => props.navigation.navigate('Login')}
-        >
-          <NavItemText>Salir</NavItemText>
-          <ContainerIcon>
-            <AntDesign name="logout" size={18} color="#00b075" />
-          </ContainerIcon>
-        </NavItem>
-        <NavItem
-          onPress={() => props.navigation.navigate('Login')}
-        >
-          <NavItemText>Salir</NavItemText>
-          <ContainerIcon>
-            <AntDesign name="logout" size={18} color="#00b075" />
-          </ContainerIcon>
-        </NavItem>
-        <NavItem
-          onPress={() => props.navigation.navigate('Login')}
-        >
-          <NavItemText>Salir</NavItemText>
-          <ContainerIcon>
-            <AntDesign name="logout" size={18} color="#00b075" />
-          </ContainerIcon>
-        </NavItem>
-        <NavItem
-          onPress={() => props.navigation.navigate('Login')}
-        >
-          <NavItemText>Salir</NavItemText>
-          <ContainerIcon>
-            <AntDesign name="logout" size={18} color="#00b075" />
-          </ContainerIcon>
-        </NavItem>
-        <NavItem
-          onPress={() => props.navigation.navigate('Login')}
-        >
-          <NavItemText>Salir</NavItemText>
-          <ContainerIcon>
-            <AntDesign name="logout" size={18} color="#00b075" />
-          </ContainerIcon>
-        </NavItem>
-        <NavItem
-          onPress={() => props.navigation.navigate('Login')}
-        >
-          <NavItemText>Salir</NavItemText>
-          <ContainerIcon>
-            <AntDesign name="logout" size={18} color="#00b075" />
-          </ContainerIcon>
-        </NavItem>
-
       </ScrollView>
     </ContainerSideMenu>
     <ContainerFooter>
       <ContainerTitleFooter>
-        <NavItemText>Sigueme</NavItemText>
+        <NavItemTextFooter>Por Edison Sigueme</NavItemTextFooter>
       </ContainerTitleFooter>
       <ContainerIcons>
-        <ContainerIcon>
-          <AntDesign name="logout" size={18} color="#00b075" />
-        </ContainerIcon>
-        <ContainerIcon>
-          <AntDesign name="logout" size={18} color="#00b075" />
-        </ContainerIcon>
-        <ContainerIcon>
-          <AntDesign name="logout" size={18} color="#00b075" />
-        </ContainerIcon>
-        <ContainerIcon>
-          <AntDesign name="logout" size={18} color="#00b075" />
-        </ContainerIcon>
+        <ContainerIconFooter onPress={() => Linking.openURL('https://github.com/edisonAlbaSarmiento')}>
+          <AntDesign name="github" size={18} color="white" />
+        </ContainerIconFooter>
+        <ContainerIconFooter onPress={() => Linking.openURL('https://www.instagram.com/edison_alba_s')}>
+          <AntDesign name="instagram" size={18} color="white" />
+        </ContainerIconFooter>
+        <ContainerIconFooter onPress={() => Linking.openURL('https://www.facebook.com/edison.albasarmiento/')}>
+          <AntDesign name="facebook-square" size={18} color="white" />
+        </ContainerIconFooter>
+        <ContainerIconFooter onPress={() => Linking.openURL('https://co.linkedin.com/in/edison-jordan-alba-sarmiento-866799154')}>
+          <AntDesign name="linkedin-square" size={18} color="white" />
+        </ContainerIconFooter>
       </ContainerIcons>
     </ContainerFooter>
   </SafeAreaView>
