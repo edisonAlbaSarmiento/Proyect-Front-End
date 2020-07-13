@@ -28,7 +28,8 @@ export const ContainerFooter = styled.View`
   height: 12%;
   flex-direction: column;
   padding: 5%;
-  border
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 `;
 
 export const ContainerTitleFooter = styled.View`
