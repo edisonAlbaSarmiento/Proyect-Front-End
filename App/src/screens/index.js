@@ -4,6 +4,7 @@ import HomeScreen from './home';
 import DetailDategorieScreen from './categories/categorie-detail';
 import SideMenuScreen from './side-menu';
 import ProfileScreen from './profile';
+import WebViewAutorScreen from './web-view-autor';
 
 export {
   SplashScreen,
@@ -11,5 +12,6 @@ export {
   HomeScreen,
   DetailDategorieScreen,
   SideMenuScreen,
-  ProfileScreen
+  ProfileScreen,
+  WebViewAutorScreen
 };

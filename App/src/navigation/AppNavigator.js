@@ -29,6 +29,7 @@ import {
   DetailDategorieScreen,
   SideMenuScreen,
   ProfileScreen,
+  WebViewAutorScreen,
 } from '../screens';
 
 const screens = createStackNavigator(
@@ -41,9 +42,9 @@ const screens = createStackNavigator(
     },
     Profile: {
       screen: ProfileScreen,
-      navigationOptions: {
-        header: null
-      },
+    },
+    WebViewAutor: {
+      screen: WebViewAutorScreen,
     },
     DetailDategorie: {
       screen: DetailDategorieScreen,

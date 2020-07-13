@@ -5,7 +5,6 @@ import {
   ScrollView,
   SafeAreaView,
   Image,
-  Linking
 } from 'react-native';
 import {
   AntDesign,
@@ -69,16 +68,16 @@ const SideMenuScreen = (props) => (
         <NavItemTextFooter>Por Edison Sigueme</NavItemTextFooter>
       </ContainerTitleFooter>
       <ContainerIcons>
-        <ContainerIconFooter onPress={() => Linking.openURL('https://github.com/edisonAlbaSarmiento')}>
+        <ContainerIconFooter onPress={() => props.navigation.navigate('WebViewAutor', { urlRedirect: 'https://github.com/edisonAlbaSarmiento' })}>
           <AntDesign name="github" size={18} color="white" />
         </ContainerIconFooter>
-        <ContainerIconFooter onPress={() => Linking.openURL('https://www.instagram.com/edison_alba_s')}>
+        <ContainerIconFooter onPress={() => props.navigation.navigate('WebViewAutor', { urlRedirect: 'https://www.instagram.com/edison_alba_s' })}>
           <AntDesign name="instagram" size={18} color="white" />
         </ContainerIconFooter>
-        <ContainerIconFooter onPress={() => Linking.openURL('https://www.facebook.com/edison.albasarmiento/')}>
+        <ContainerIconFooter onPress={() => props.navigation.navigate('WebViewAutor', { urlRedirect: 'https://www.facebook.com/edison.albasarmiento/' })}>
           <AntDesign name="facebook-square" size={18} color="white" />
         </ContainerIconFooter>
-        <ContainerIconFooter onPress={() => Linking.openURL('https://co.linkedin.com/in/edison-jordan-alba-sarmiento-866799154')}>
+        <ContainerIconFooter onPress={() => props.navigation.navigate('WebViewAutor', { urlRedirect: 'https://co.linkedin.com/in/edison-jordan-alba-sarmiento-866799154' })}>
           <AntDesign name="linkedin-square" size={18} color="white" />
         </ContainerIconFooter>
       </ContainerIcons>

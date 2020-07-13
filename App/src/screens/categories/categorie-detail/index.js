@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
 import { Icon } from 'native-base';
 import { AntDesign } from '@expo/vector-icons';
 import {
