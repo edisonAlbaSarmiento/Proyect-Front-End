@@ -25,7 +25,7 @@ class Splash extends Component {
 
   changeState = () => {
     this.setState({
-      isLoggedIn: true
+      isLoggedIn: false
     });
   }
 
@@ -35,6 +35,8 @@ class Splash extends Component {
     } = this.props;
     const { isLoggedIn } = this.state;
     if (isLoggedIn) {
+      navigation.navigate('Home');
+    } else {
       navigation.navigate('Login');
     }
   };
