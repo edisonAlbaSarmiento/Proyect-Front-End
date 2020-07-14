@@ -5,7 +5,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject",
-    "lint": "eslint --fix --ext .js src"
+    "lint": "eslint --fix --ext .js src",
+    "generate": "expo build:android -t apk"
   },
   "dependencies": {
     "@expo/vector-icons": "^10.2.0",
