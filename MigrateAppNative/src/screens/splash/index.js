@@ -25,7 +25,7 @@ class Splash extends Component {
 
   changeState = () => {
     this.setState({
-      isLoggedIn: true,
+      isLoggedIn: false,
     });
   };
 

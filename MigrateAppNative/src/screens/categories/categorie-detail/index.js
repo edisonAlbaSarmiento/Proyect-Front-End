@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Icon } from 'native-base';
+import React, {Component} from 'react';
+import {Icon} from 'native-base';
 // import { AntDesign } from '@expo/vector-icons';
 import {
   Container,
@@ -34,7 +34,7 @@ class DetailDategorie extends Component {
   }
 
   render() {
-    const { navigation } = this.props;
+    const {navigation} = this.props;
 
     return (
       <Container>
@@ -49,31 +49,24 @@ class DetailDategorie extends Component {
           <ContainerTitleCard>
             <TitleCard> Bedroom in Luxury Home </TitleCard>
             <ContainerStar>
-              <Icon name="star-half" style={{ fontSize: 16, color: '#e17c2b' }} />
+              <Icon name="star-half" style={{fontSize: 16, color: '#e17c2b'}} />
               <TitlePunctuationCard> 5.0 </TitlePunctuationCard>
             </ContainerStar>
-
           </ContainerTitleCard>
           <ContainerSubTitleCard>
             <SubTitleCard> Trestreet City, Sector 70, USA </SubTitleCard>
             <SubTitleCard fontSizeText="18px"> $170/night </SubTitleCard>
-
           </ContainerSubTitleCard>
         </ContainerCardHeader>
         <ContainerDescription>
           <Description>
-            Lorem Ipsum is simply dummy
-            text of the printing and typesetting i
-            ndustry. Lorem Ipsum has been the indust
-            rys standard dummy text ever since the 150
-            0s, when an unknown printer took a galley o
-            f type and scrambled it to make a type specimen book.
-            {' '}
+            Lorem Ipsum is simply dummy text of the printing and typesetting i
+            ndustry. Lorem Ipsum has been the indust rys standard dummy text
+            ever since the 150 0s, when an unknown printer took a galley o f
+            type and scrambled it to make a type specimen book.{' '}
           </Description>
           <ContainerInformation>
-            <TitleContainerInformation>
-              Amenities
-            </TitleContainerInformation>
+            <TitleContainerInformation>Amenities</TitleContainerInformation>
             <ContainerInformationItems>
               <TitleContainerInformationItems>
                 Free Wifi
@@ -87,21 +80,17 @@ class DetailDategorie extends Component {
               <TitleContainerInformationItems>
                 Fire Extinguisher
               </TitleContainerInformationItems>
-
             </ContainerInformationItems>
           </ContainerInformation>
           <ContainerButtons>
             <Button>
-              <TextButton>
-                Book Now
-              </TextButton>
+              <TextButton>Book Now</TextButton>
             </Button>
             <ButtonHeart>
-              <Icon name="heart" style={{ fontSize: 25, color: '#cbc9ca' }} />
+              <Icon name="heart" style={{fontSize: 25, color: '#cbc9ca'}} />
             </ButtonHeart>
           </ContainerButtons>
         </ContainerDescription>
-
       </Container>
     );
   }
