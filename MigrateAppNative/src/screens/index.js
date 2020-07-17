@@ -13,5 +13,5 @@ export {
   DetailDategorieScreen,
   SideMenuScreen,
   ProfileScreen,
-  WebViewAutorScreen
+  WebViewAutorScreen,
 };

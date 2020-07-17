@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, {Component} from 'react';
+import {StyleSheet, View} from 'react-native';
 import LottieView from 'lottie-react-native';
 
 const loading = require('../../assets/loading.json');
 
 class Splash extends Component {
   static navigationOptions = {
-    drawerLockMode: 'locked-closed'
-  }
+    drawerLockMode: 'locked-closed',
+  };
 
   constructor(props) {
     super(props);
@@ -25,15 +25,13 @@ class Splash extends Component {
 
   changeState = () => {
     this.setState({
-      isLoggedIn: false
+      isLoggedIn: true,
     });
-  }
+  };
 
   processNavigation = async () => {
-    const {
-      navigation,
-    } = this.props;
-    const { isLoggedIn } = this.state;
+    const {navigation} = this.props;
+    const {isLoggedIn} = this.state;
     if (isLoggedIn) {
       navigation.navigate('Home');
     } else {
