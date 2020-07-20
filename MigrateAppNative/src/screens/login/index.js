@@ -1,7 +1,6 @@
-/* eslint-disable import/no-unresolved */
-import React, { Component } from 'react';
-import { CheckBox } from 'native-base';
-import { Alert } from 'react-native';
+import React, {Component} from 'react';
+import {CheckBox} from 'native-base';
+import {Alert} from 'react-native';
 import {
   Container,
   ContainerImage,
@@ -30,18 +29,18 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isSelected: false
+      isSelected: false,
     };
   }
 
   setSelection = () => {
-    const { isSelected } = this.state;
-    this.setState({ isSelected: !isSelected });
-  }
+    const {isSelected} = this.state;
+    this.setState({isSelected: !isSelected});
+  };
 
   render() {
-    const { isSelected } = this.state;
-    const { navigation } = this.props;
+    const {isSelected} = this.state;
+    const {navigation} = this.props;
     return (
       <Container>
         <ContainerImage>
@@ -64,26 +63,20 @@ class Login extends Component {
                 <SubText> Remember me </SubText>
               </ContainerTextCheck>
             </ContainerCheck>
-            <SubText
-              colorText="#006B48"
-              onPress={() => Alert.alert('forgot')}
-            >
+            <SubText colorText="#006B48" onPress={() => Alert.alert('forgot')}>
               Forgot Password
             </SubText>
           </ContainerSecond>
           <ContainerButton>
             <Button onPress={() => navigation.navigate('Home')}>
-              <TextButton>
-                Login
-              </TextButton>
+              <TextButton>Login</TextButton>
             </Button>
           </ContainerButton>
           <ContainerThree>
             <SubText> Do not have an account?</SubText>
             <SubText
               colorText="#006B48"
-              onPress={() => Alert.alert('New Account')}
-            >
+              onPress={() => Alert.alert('New Account')}>
               Create one new account
             </SubText>
           </ContainerThree>
@@ -95,7 +88,11 @@ class Login extends Component {
               <ImageIcon source={iconGoogle} />
             </Button>
             <Button backgroundColor="#3d5a9a" marginLeft="15%">
-              <ImageIcon widthImage="15" heightImage="30" source={iconFacebook} />
+              <ImageIcon
+                widthImage="15"
+                heightImage="30"
+                source={iconFacebook}
+              />
             </Button>
           </ContainerFooter>
         </ContainerForm>

@@ -1,19 +1,12 @@
-import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import React from 'react';
+import {View, Text} from 'react-native';
 
-class Profile extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <View>
-        <Text> textInComponent </Text>
-      </View>
-    );
-  }
+function Profile() {
+  return (
+    <View>
+      <Text>text</Text>
+    </View>
+  );
 }
 
 export default Profile;

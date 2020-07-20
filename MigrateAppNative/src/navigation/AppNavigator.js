@@ -19,9 +19,7 @@ const screens = createStackNavigator({
       header: null,
     },
   },
-  Profile: {
-    screen: ProfileScreen,
-  },
+
   WebViewAutor: {
     screen: WebViewAutorScreen,
   },
@@ -63,6 +61,9 @@ const AuthNavigator = createStackNavigator({
       header: null,
       drawerLockMode: 'locked-closed',
     },
+  },
+    Profile: {
+    screen: ProfileScreen,
   },
   Home: {
     screen: App,
