@@ -1,16 +1,14 @@
 import React from 'react';
 
 import AppNavigator from './src/navigation/AppNavigator';
+import {NavigationContainer} from '@react-navigation/native';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return <AppNavigator />;
-  }
+function App() {
+  return (
+    <NavigationContainer>
+      <AppNavigator />
+    </NavigationContainer>
+  );
 }
 
 export default App;
