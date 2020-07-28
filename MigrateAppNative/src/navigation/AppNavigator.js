@@ -21,6 +21,9 @@ const screens = createStackNavigator({
   },
   Profile: {
     screen: ProfileScreen,
+    navigationOptions: {
+      header: null,
+    },
   },
   WebViewAutor: {
     screen: WebViewAutorScreen,
@@ -64,11 +67,11 @@ const AuthNavigator = createStackNavigator({
       drawerLockMode: 'locked-closed',
     },
   },
-  // Home: {
-  //   screen: App,
-  //   navigationOptions: {
-  //     header: null,
-  //   },
-  // },
+  Home: {
+    screen: App,
+    navigationOptions: {
+      header: null,
+    },
+  },
 });
 export default AuthNavigator;
