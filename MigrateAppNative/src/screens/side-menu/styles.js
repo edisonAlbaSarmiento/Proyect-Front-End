@@ -19,13 +19,13 @@ export const ContainerIcon = styled.View`
 
 export const ContainerSideMenu = styled.View`
   flex-direction: column;
-  height: 70%;
+  height: 66%;
 `;
 
 export const ContainerFooter = styled.View`
   background-color: #00b075;
   width: 100%;
-  height: 12%;
+  height: 16%;
   flex-direction: column;
   padding: 5%;
   border-top-left-radius: 15px;
