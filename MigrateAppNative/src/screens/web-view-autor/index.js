@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { WebView } from 'react-native-webview';
+import React, {Component} from 'react';
+import {WebView} from 'react-native-webview';
 
 class WebViewAutor extends Component {
   constructor(props) {
@@ -8,11 +8,9 @@ class WebViewAutor extends Component {
   }
 
   render() {
-    const { navigation } = this.props;
+    const {navigation} = this.props;
     const urlRedirect = navigation.getParam('urlRedirect');
-    return (
-      <WebView source={{ uri: `${urlRedirect}` }} />
-    );
+    return <WebView source={{uri: `${urlRedirect}`}} />;
   }
 }
 

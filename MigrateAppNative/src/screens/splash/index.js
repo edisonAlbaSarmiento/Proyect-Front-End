@@ -33,9 +33,9 @@ class Splash extends Component {
     const {navigation} = this.props;
     const {isLoggedIn} = this.state;
     if (isLoggedIn) {
-      navigation.navigate('Home');
+      navigation.navigate('App');
     } else {
-      navigation.navigate('Login');
+      navigation.navigate('Auth');
     }
   };
 

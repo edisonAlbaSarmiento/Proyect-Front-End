@@ -40,20 +40,18 @@ const SideMenuScreen = (props) => (
           <NavItemText>Home</NavItemText>
           <ContainerIcon>
             <Icon name="home2" size={18} color="#00b075" />
-
-            {/* <Icon name="home" size={18} color="#00b075" /> */}
           </ContainerIcon>
         </NavItem>
         <NavItem onPress={() => props.navigation.navigate('Profile')}>
           <NavItemText>Profile</NavItemText>
           <ContainerIcon>
-            {/* <MaterialCommunityIcons name="face-profile" size={18} color="#00b075" /> */}
+            <Icon name="home2" size={18} color="#00b075" />
           </ContainerIcon>
         </NavItem>
         <NavItem onPress={() => props.navigation.navigate('Login')}>
           <NavItemText>Salir</NavItemText>
           <ContainerIcon>
-            {/* <AntDesign name="logout" size={18} color="#00b075" /> */}
+            <Icon name="home2" size={18} color="#00b075" />
           </ContainerIcon>
         </NavItem>
       </ScrollView>
@@ -69,7 +67,7 @@ const SideMenuScreen = (props) => (
               urlRedirect: 'https://github.com/edisonAlbaSarmiento',
             })
           }>
-          {/* <AntDesign name="github" size={18} color="white" /> */}
+          <Icon name="home2" size={18} color="white" />
         </ContainerIconFooter>
         <ContainerIconFooter
           onPress={() =>
@@ -77,7 +75,7 @@ const SideMenuScreen = (props) => (
               urlRedirect: 'https://www.instagram.com/edison_alba_s',
             })
           }>
-          {/* <AntDesign name="instagram" size={18} color="white" /> */}
+          <Icon name="home2" size={18} color="white" />
         </ContainerIconFooter>
         <ContainerIconFooter
           onPress={() =>
@@ -85,7 +83,7 @@ const SideMenuScreen = (props) => (
               urlRedirect: 'https://www.facebook.com/edison.albasarmiento/',
             })
           }>
-          {/* <AntDesign name="facebook-square" size={18} color="white" /> */}
+          <Icon name="home2" size={18} color="white" />
         </ContainerIconFooter>
         <ContainerIconFooter
           onPress={() =>
@@ -94,7 +92,7 @@ const SideMenuScreen = (props) => (
                 'https://co.linkedin.com/in/edison-jordan-alba-sarmiento-866799154',
             })
           }>
-          {/* <AntDesign name="linkedin-square" size={18} color="white" /> */}
+          <Icon name="home2" size={18} color="white" />
         </ContainerIconFooter>
       </ContainerIcons>
     </ContainerFooter>

@@ -1,13 +1,13 @@
 import React from 'react';
 
-import AppNavigator from './src/navigation/AppNavigator';
-import {NavigationContainer} from '@react-navigation/native';
-
+import NewNavigation from './src/navigation/AppNavigator';
+import {ThemeProvider} from 'styled-components';
+import theme from './src/theme';
 function App() {
   return (
-    <NavigationContainer>
-      <AppNavigator />
-    </NavigationContainer>
+    <ThemeProvider theme={theme}>
+      <NewNavigation />
+    </ThemeProvider>
   );
 }
 

@@ -27,7 +27,6 @@ export const ContainerFooter = styled.View`
   width: 100%;
   height: 16%;
   flex-direction: column;
-  padding: 5%;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 `;

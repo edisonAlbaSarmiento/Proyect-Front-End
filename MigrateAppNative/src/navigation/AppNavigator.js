@@ -1,7 +1,8 @@
 import React from 'react';
 
-import {createStackNavigator, createDrawerNavigator} from 'react-navigation';
-
+import {createAppContainer, createSwitchNavigator} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+import {createDrawerNavigator} from 'react-navigation-drawer';
 import {
   SplashScreen,
   LoginScreen,
@@ -11,30 +12,31 @@ import {
   ProfileScreen,
   WebViewAutorScreen,
 } from '../screens';
+import withTheme from 'styled-components';
 
-const screens = createStackNavigator({
-  Home: {
-    screen: HomeScreen,
-    navigationOptions: {
-      header: null,
+const screens = createStackNavigator(
+  {
+    Home: {
+      screen: HomeScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    Profile: {
+      screen: ProfileScreen,
+    },
+    WebViewAutor: {
+      screen: WebViewAutorScreen,
+    },
+    DetailDategorie: {
+      screen: DetailDategorieScreen,
+      navigationOptions: {
+        header: null,
+      },
     },
   },
-  Profile: {
-    screen: ProfileScreen,
-    navigationOptions: {
-      header: null,
-    },
-  },
-  WebViewAutor: {
-    screen: WebViewAutorScreen,
-  },
-  DetailDategorie: {
-    screen: DetailDategorieScreen,
-    navigationOptions: {
-      header: null,
-    },
-  },
-});
+  {initialRouteName: 'Home'},
+);
 
 const App = createDrawerNavigator(
   {
@@ -53,25 +55,28 @@ const App = createDrawerNavigator(
   },
 );
 
-const AuthNavigator = createStackNavigator({
-  Splash: {
-    screen: SplashScreen,
-    navigationOptions: {
-      header: null,
+const Auth = createStackNavigator(
+  {
+    Login: {
+      screen: LoginScreen,
+      navigationOptions: {
+        header: null,
+        drawerLockMode: 'locked-closed',
+      },
     },
   },
-  Login: {
-    screen: LoginScreen,
-    navigationOptions: {
-      header: null,
-      drawerLockMode: 'locked-closed',
+  {initialRouteName: 'Login'},
+);
+
+const Navigation = createAppContainer(
+  createSwitchNavigator(
+    {
+      Main: SplashScreen,
+      Auth,
+      App,
     },
-  },
-  Home: {
-    screen: App,
-    navigationOptions: {
-      header: null,
-    },
-  },
-});
-export default AuthNavigator;
+    {initialRouteName: 'Main'},
+  ),
+);
+
+export default Navigation;
