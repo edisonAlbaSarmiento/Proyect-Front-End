@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {CheckBox} from 'native-base';
+import CheckBox from '@react-native-community/checkbox';
 import {Alert} from 'react-native';
 import {
   Container,
@@ -55,9 +55,14 @@ class Login extends Component {
           <ContainerSecond>
             <ContainerCheck>
               <CheckBox
-                checked={isSelected}
-                color="#006B48"
-                onPress={this.setSelection}
+                disabled={false}
+                value={isSelected}
+                tintColors="#006B48"
+                tintColor="#afafb1"
+                onTintColor="#006B48"
+                onCheckColor="#006B48"
+                boxType="square"
+                onValueChange={() => this.setSelection()}
               />
               <ContainerTextCheck>
                 <SubText> Remember me </SubText>

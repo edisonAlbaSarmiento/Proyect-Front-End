@@ -6,8 +6,6 @@ import {
   RefreshControl,
 } from 'react-native';
 
-import {Icon} from 'native-base';
-// import { Entypo } from '@expo/vector-icons';
 import {
   Container,
   ContainerHeader,
@@ -34,55 +32,56 @@ import {
   ContainerHeaderSubTitle,
   ContainerHeaderLeft,
 } from './styles';
+import Icon from '../../assets/icons/config-icons';
 
 const iconChaqueta = require('../../assets/chaquetaIcon.png');
 const iconProfile = require('../../assets/goku.jpeg');
 
 const dataCategories = [
   {
-    item: 'search',
+    item: 'home2',
   },
   {
-    item: 'search',
+    item: 'home2',
   },
   {
-    item: 'search',
+    item: 'home2',
   },
   {
-    item: 'search',
+    item: 'home2',
   },
   {
-    item: 'search',
+    item: 'home2',
   },
   {
-    item: 'search',
+    item: 'home2',
   },
   {
-    item: 'search',
+    item: 'home2',
   },
   {
-    item: 'search',
+    item: 'home2',
   },
   {
-    item: 'search',
+    item: 'home2',
   },
   {
-    item: 'search',
+    item: 'home2',
   },
   {
-    item: 'search',
+    item: 'home2',
   },
   {
-    item: 'search',
+    item: 'home2',
   },
   {
-    item: 'search',
+    item: 'home2',
   },
   {
-    item: 'search',
+    item: 'home2',
   },
   {
-    item: 'search',
+    item: 'home2',
   },
 ];
 class Home extends Component {
@@ -112,7 +111,7 @@ class Home extends Component {
               onPress={() => {
                 navigation.toggleDrawer();
               }}>
-              {/* <Entypo name="menu" size={30} color="#00b075" /> */}
+              <Icon name="home2" size={30} color="#cbcbcb" />
             </TouchableOpacity>
             <ContainerTitle>
               <ContainerHeaderTitle> Location </ContainerHeaderTitle>
@@ -124,9 +123,9 @@ class Home extends Component {
           </ContainerHeader>
           <ContainerBody>
             <ContainerSearch>
-              <Icon name="search" style={{fontSize: 30, color: '#cbcbcb'}} />
+              {/* <Icon name="home2" size={30} color="#cbcbcb" /> */}
               <TextInput placeholder="Search" />
-              <Icon name="keypad" style={{fontSize: 20, color: '#cbcbcb'}} />
+              {/* <Icon name="home2" size={30} color="#cbcbcb" /> */}
             </ContainerSearch>
             <ContainerCategories>
               <ContainerItems
@@ -135,11 +134,8 @@ class Home extends Component {
                 showsHorizontalScrollIndicator={false}
                 renderItem={({item}) => (
                   <ContainerTitleItems>
-                    <CardItem id={item.id}>
-                      <Icon
-                        name={`${item.item}`}
-                        style={{fontSize: 30, color: '#cbcbcb'}}
-                      />
+                    <CardItem key={item.id}>
+                      {/* <Icon name={`${item.item}`} size={30} color="#cbcbcb" /> */}
                     </CardItem>
                     <TitleItems> {name} </TitleItems>
                   </ContainerTitleItems>

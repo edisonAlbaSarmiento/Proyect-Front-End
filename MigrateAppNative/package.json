@@ -8,9 +8,22 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "bundle:android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "bundle:ios": "react-native bundle --entry-file='index.js' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios' --assets-dest='./ios'",
+    "pack-android-debug": "cd android && gradlew assembleDebug",
+    "pack-android-debug-mac": "cd android && ./gradlew assembleDebug",
+    "iphone5": "react-native run-ios --simulator='iPhone 5s'",
+    "iphone6": "react-native run-ios --simulator='iPhone 6'",
+    "iphone7": "react-native run-ios --simulator='iPhone 7'",
+    "iphone8": "react-native run-ios --simulator='iPhone 8'",
+    "iphone11": "react-native run-ios --simulator='iPhone 11'",
+    "clean-android": "cd android && gradlew clean",
+    "clean-android-mac": "cd android && ./gradlew clean",
+    "clean-cache": "react-native start --reset-cache"
   },
   "dependencies": {
+    "@react-native-community/checkbox": "^0.4.2",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-native-community/picker": "^1.6.5",
     "@react-native-community/toolbar-android": "^0.1.0-rc.2",
