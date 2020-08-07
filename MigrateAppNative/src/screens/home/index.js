@@ -111,7 +111,7 @@ class Home extends Component {
               onPress={() => {
                 navigation.toggleDrawer();
               }}>
-              <Icon name="home2" size={30} color="#cbcbcb" />
+              {/* <Icon name="home2" size={30} color="#cbcbcb" /> */}
             </TouchableOpacity>
             <ContainerTitle>
               <ContainerHeaderTitle> Location </ContainerHeaderTitle>
@@ -154,7 +154,6 @@ class Home extends Component {
             }>
             <View
               style={{
-                paddingTop: 20,
                 width: '100%',
                 height: '100%',
                 flexDirection: 'row',
@@ -166,8 +165,8 @@ class Home extends Component {
                   key={item.item}
                   style={{
                     margin: 20,
-                    width: 140,
-                    height: 130,
+                    width: 160,
+                    height: 160,
                     marginTop: 50,
                   }}>
                   <ContainerCardProduct

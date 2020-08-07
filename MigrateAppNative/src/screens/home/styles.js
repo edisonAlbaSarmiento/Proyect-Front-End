@@ -28,7 +28,6 @@ export const ContainerHeaderLeft = styled.Image`
   height: 40px;
   border-radius: 10;
   background-color: red;
-
 `;
 
 export const ContainerHeaderSubTitle = styled.Text`
@@ -48,26 +47,25 @@ export const ContainerBody = styled.View`
 `;
 
 export const ContainerSearch = styled.View`
-width: 100%;
-height: 50;
-padding: 20px;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-border-radius: 20;
-border-color: white;
-/* Shadow */
-shadow-color: #000;
-shadow-offset: {
-  height: 0;
-  width: 3;
-}
-shadow-opacity: 0.29;
-shadow-radius: 4.65;
-elevation: 3;
-/* Shadow */
-background-color: white;
-
+  width: 100%;
+  height: 50;
+  padding: 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20;
+  border-color: white;
+  /* Shadow */
+  shadow-color: #000;
+  shadow-offset: {
+    height: 0;
+    width: 3;
+  }
+  shadow-opacity: 0.29;
+  shadow-radius: 4.65;
+  elevation: 3;
+  /* Shadow */
+  background-color: white;
 `;
 
 export const ContainerCategories = styled.View`
@@ -81,7 +79,7 @@ export const ContainerItems = styled.FlatList``;
 
 export const CardItem = styled.TouchableOpacity`
   width: 60;
-  height: 50%;
+  height: 42%;
   border-radius: 10px;
   align-items: center;
   justify-content: center;
@@ -119,8 +117,7 @@ export const TextInput = styled.TextInput`
 `;
 
 export const ContainerItems2 = styled.FlatList`
-background-color: black;
-
+  background-color: black;
 `;
 
 export const ContainerCategoriesItems = styled.View`
@@ -175,7 +172,7 @@ export const ContainerCardProductItem = styled.View`
   background-color: #dbe1ef;
   border-radius: 50;
   top: -45;
-  left: 35%;
+  left: 55%;
 `;
 
 export const ContainerCardIcon = styled.View`
@@ -188,7 +185,7 @@ export const ContainerCardText = styled.View`
   width: 100%;
   height: 100%;
   align-items: center;
-  bottom: 100%;
+  bottom: 50%;
   justify-content: center;
 `;
 
@@ -199,12 +196,10 @@ export const ContainerCardTextSecond = styled.View`
   justify-content: space-between;
   padding-top: 10px;
   padding-bottom: 10px;
-
 `;
 
 export const ScrollViewContent = styled.ScrollView`
   background-color: #f9f9f9;
-
 `;
 
 export const ImageIcon = styled.Image`
